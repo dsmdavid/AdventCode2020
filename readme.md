@@ -13,5 +13,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 
 ## Index
 
-1. Sum 2020 -- [Alteryx](Code/Alteryx/Day 01) and [Python](Code/Python/Day 01/Day 01.ipynb)  
+1. Sum 2020 -- [Alteryx]("Code/Alteryx/Day 01") and [Python]("Code/Python/Day 01/Day 01.ipynb")  
   
