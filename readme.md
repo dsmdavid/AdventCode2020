@@ -14,3 +14,4 @@ I will try to solve the puzzles in Alteryx and in Python.
 ## Index
 
 1. Sum 2020 -- [Alteryx](Code/Alteryx/Day_01) and [Python](Code/Python/Day_01/Day_01.ipynb)  
+1. Password Checker -- [Alteryx](Code/Alteryx/Day_02) and [Python](Code/Python/Day_02/Day_02.ipynb)  
