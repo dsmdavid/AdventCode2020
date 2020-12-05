@@ -21,3 +21,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Password Checker -- [Alteryx](Code/Alteryx/Day_02) and [Python](Code/Python/Day_02/Day_02.ipynb)  
 1. Slope Slider -- [Alteryx](Code/Alteryx/Day_03) and [Python](Code/Python/Day_03/Day_03.ipynb)  
 1. Jumping the Passport Queue -- [Alteryx](Code/Alteryx/Day_04) and [Python](Code/Python/Day_04/Day_04.ipynb)  
+1. Binary Tickets -- [Alteryx](Code/Alteryx/Day_05) and [Python](Code/Python/Day_05/Day_05.ipynb)  
+
