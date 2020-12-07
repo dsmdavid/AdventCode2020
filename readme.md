@@ -23,4 +23,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Jumping the Passport Queue -- [Alteryx](Code/Alteryx/Day_04) and [Python](Code/Python/Day_04/Day_04.ipynb)  
 1. Binary Tickets -- [Alteryx](Code/Alteryx/Day_05) and [Python](Code/Python/Day_05/Day_05.ipynb)  
 1. Custom Lettes -- [Alteryx](Code/Alteryx/Day_06) and [Python](Code/Python/Day_06/Day_06.ipynb)  
+1. Bags within Bags-- [Alteryx](Code/Alteryx/Day_07) and [Python](Code/Python/Day_07/Day_07.ipynb)  
 
