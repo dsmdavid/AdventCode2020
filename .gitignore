@@ -2,3 +2,4 @@ ignore/
 .ipynb_checkpoints
 *.bak
 token
+Code/Python/debug.log
