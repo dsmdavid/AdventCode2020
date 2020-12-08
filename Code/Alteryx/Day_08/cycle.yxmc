@@ -1,0 +1,717 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>data</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="9" />
+              <Fields>
+                <Field name="RecordID" />
+                <Field name="Field_1" />
+                <Field name="instruction" />
+                <Field name="value" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>nop +0</c>
+                  <c>nop</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>2</c>
+                  <c>acc +1</c>
+                  <c>acc</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>3</c>
+                  <c>jmp +4</c>
+                  <c>jmp</c>
+                  <c>4</c>
+                </r>
+                <r>
+                  <c>4</c>
+                  <c>acc +3</c>
+                  <c>acc</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>5</c>
+                  <c>jmp -3</c>
+                  <c>jmp</c>
+                  <c>-3</c>
+                </r>
+                <r>
+                  <c>6</c>
+                  <c>acc -99</c>
+                  <c>acc</c>
+                  <c>-99</c>
+                </r>
+                <r>
+                  <c>7</c>
+                  <c>acc +1</c>
+                  <c>acc</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>8</c>
+                  <c>jmp -4</c>
+                  <c>jmp</c>
+                  <c>-4</c>
+                </r>
+                <r>
+                  <c>9</c>
+                  <c>acc +6</c>
+                  <c>acc</c>
+                  <c>6</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="246" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="curr_instruction" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="TextInput:" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="acc_val" source="TextInput:" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="curr_instruction" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="acc_val" />
+                <Field name="curr_instruction" />
+                <Field name="history" />
+                <Field name="completed" />
+                <Field name="Count" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0</c>
+                  <c>1</c>
+                  <c>,1,</c>
+                  <c>No</c>
+                  <c>653</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="acc_val" source="TextInput:" type="Byte" />
+            <Field name="curr_instruction" source="TextInput:" type="Byte" />
+            <Field name="history" size="3" source="TextInput:" type="String" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="150" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="acc_val" selected="True" type="Int64" size="8" />
+            <SelectField field="curr_instruction" selected="True" type="Int64" size="8" />
+            <SelectField field="history" selected="True" type="V_WString" size="1000000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="acc_val" source="TextInput:" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="354" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" field="acc_val" size="8" type="Int64" />
+            <FormulaField expression="if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" field="Next_Instruction" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>update acc_val and get next instruction row_id</AnnotationText>
+          <DefaultAnnotationText>acc_val = if [instruction] = 'acc'
+then [acc_val] + [value]
+else [acc_val]
+endif...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="498" y="138" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>!Contains([history],
+','+ ToString([Next_Instruction])+',')
+&amp;&amp;
+[Next_Instruction] != [Count]+1</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>have we visited the next instruction already? (or have we completed the puzzle)?</AnnotationText>
+          <DefaultAnnotationText>!Contains([history],
+','+ ToString([Next_Instruction])+',')
+&amp;&amp;
+[Next_Instruction...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="606" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[history]+','+ToString([Next_Instruction])+&quot;,&quot;" field="history" size="1000000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>update history</AnnotationText>
+          <DefaultAnnotationText><![CDATA[history = [history]+','+ToString([Next_Instruction])+","
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="Formula: [history]+','+ToString([Next_Instruction])+&quot;,&quot;" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="714" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="True" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="False" />
+            <SelectField field="Field_1" selected="False" />
+            <SelectField field="instruction" selected="False" />
+            <SelectField field="value" selected="False" />
+            <SelectField field="acc_val" selected="True" />
+            <SelectField field="curr_instruction" selected="False" />
+            <SelectField field="Next_Instruction" selected="True" rename="curr_instruction" />
+            <SelectField field="history" selected="True" />
+            <SelectField field="completed" selected="True" />
+            <SelectField field="Count" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+            <Field name="history" size="1000000" source="Formula: [history]+','+ToString([Next_Instruction])+&quot;,&quot;" type="V_WString" />
+            <Field name="completed" size="2" source="TextInput:" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="678" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="Formula: if [Next_Instruction] = [Count]+1&#xA;then 'Yes'&#xA;else&#xA;[completed]&#xA;endif" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="834" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="834" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output</Name>
+          <Abbrev>O</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>O Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="594" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Next_Instruction] = [Count]+1&#xA;then 'Yes'&#xA;else&#xA;[completed]&#xA;endif" field="completed" size="2" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>have we completed?</AnnotationText>
+          <DefaultAnnotationText><![CDATA[completed = if [Next_Instruction] = [Count]+1
+then 'Yes'
+else
+[completed]
+endif
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="7" source="TextInput:" type="String" />
+            <Field name="instruction" size="3" source="TextInput:" type="String" />
+            <Field name="value" source="TextInput:" type="Int16" />
+            <Field name="acc_val" source="Formula: if [instruction] = 'acc'&#xA;then [acc_val] + [value]&#xA;else [acc_val]&#xA;endif" type="Int64" />
+            <Field name="curr_instruction" source="TextInput:" type="Int64" />
+            <Field name="history" size="1000000" source="TextInput:" type="V_WString" />
+            <Field name="completed" size="2" source="Formula: if [Next_Instruction] = [Count]+1&#xA;then 'Yes'&#xA;else&#xA;[completed]&#xA;endif" type="String" />
+            <Field name="Count" source="TextInput:" type="Int16" />
+            <Field name="Next_Instruction" source="Formula: if [instruction] in ('acc','nop') then [curr_instruction] + 1&#xA;elseif [instruction] = 'jmp' then [curr_instruction] + [value]&#xA;else -1&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="294" y="54" width="216" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text><![CDATA[Iterative / Inner
+]]></Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="3" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Join" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="True" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="False" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="8" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="10" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>cycle</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (11)</Name>
+          <ToolId value="11" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (12)</Description>
+              <Name>Macro Output (12)</Name>
+              <ToolId value="12" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (4)</Name>
+              <ToolId value="4" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (2)</Name>
+              <ToolId value="2" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (13)</Description>
+              <Name>Macro Output (13)</Name>
+              <ToolId value="13" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>iter</Input>
+        <Output>iter</Output>
+        <IterationLimit value="10000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
+        <Tool ToolId="4" Selected="True" />
+        <Tool ToolId="12" Selected="True" />
+        <Tool ToolId="13" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
