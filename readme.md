@@ -25,5 +25,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Custom Lettes -- [Alteryx](Code/Alteryx/Day_06) and [Python](Code/Python/Day_06/Day_06.ipynb)  
 1. Bags within Bags-- [Alteryx](Code/Alteryx/Day_07) and [Python](Code/Python/Day_07/Day_07.ipynb)  
 1. Infinite Loop-- [Alteryx](Code/Alteryx/Day_08) and [Python](Code/Python/Day_08/Day_08.ipynb)  
-
+1. Encoding Error-- [Alteryx](Code/Alteryx/Day_09) and [Python](Code/Python/Day_09/Day_09.ipynb)  
 
