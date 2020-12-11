@@ -26,4 +26,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Bags within Bags-- [Alteryx](Code/Alteryx/Day_07) and [Python](Code/Python/Day_07/Day_07.ipynb)  
 1. Infinite Loop-- [Alteryx](Code/Alteryx/Day_08) and [Python](Code/Python/Day_08/Day_08.ipynb)  
 1. Encoding Error-- [Alteryx](Code/Alteryx/Day_09) and [Python](Code/Python/Day_09/Day_09.ipynb)  
-
+1. Chain of jolts! -- [Alteryx](Code/Alteryx/Day_10)  
+1. Musical Chairs -- [Alteryx](Code/Alteryx/Day_11)  
