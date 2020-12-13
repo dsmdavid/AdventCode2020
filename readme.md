@@ -28,3 +28,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Encoding Error-- [Alteryx](Code/Alteryx/Day_09) and [Python](Code/Python/Day_09/Day_09.ipynb)  
 1. Chain of jolts! -- [Alteryx](Code/Alteryx/Day_10)  
 1. Musical Chairs -- [Alteryx](Code/Alteryx/Day_11)  
+1. Steering the ship -- [Alteryx](Code/Alteryx/Day_12)  
+1. Bus scheduler -- [Alteryx](Code/Alteryx/Day_13) and [Python](Code/Python/Day_13/Day_13.ipynb)  

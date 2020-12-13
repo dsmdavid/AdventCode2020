@@ -1,0 +1,50 @@
+
+tostring(
+    if [Instruction] = 'F'
+then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1')) + [Value]*tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1'))
+endif)
++'y,' +
+tostring (
+if [Instruction] = 'F'
+then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2')) + [Value] *tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2'))
+endif)
++'x,' +
+tostring(
+    if [Instruction] in ('L','R') then
+	if [new_instruction] = 'E'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'W'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'N'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'S'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	endif
+elseif [Instruction] in ('N','S') then
+	tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3')) + IIF([Instruction] = 'N',[value],-[value])
+else
+tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+endif
+)
++'n,' +
+tostring(
+if [Instruction] in ('L','R') then
+	if [new_instruction] = 'E'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'W'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'N'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'S'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	endif
+elseif [Instruction] in ('E','W') then
+	tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4')) + IIF([Instruction] = 'E',[value],-[value])
+else
+tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+endif)
++'e'

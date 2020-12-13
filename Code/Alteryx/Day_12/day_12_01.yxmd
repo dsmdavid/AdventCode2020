@@ -1,0 +1,1006 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="954" y="618" width="132" height="300" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>CONSTANTS</Text>
+          <Font name="Arial" size="14.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="121" g="204" b="142" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="954" y="366" width="132" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>INPUTS</Text>
+          <Font name="Arial" size="14.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="121" g="204" b="142" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="630" width="876" height="696" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Prompt</Text>
+          <Font name="Arial" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="209" g="209" b="233" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>My approach to Day 12 of Advent of Code 2020</Text>
+          <Font name="Bauhaus 93" size="24" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="90" width="804" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Day  -Part I</Text>
+          <Font name="Bauhaus 93" size="24" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="978" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">F:\Dropbox\python\AdventCode2020\Inputs\Day_12\Day_12_01.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>254</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>,</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day_12_01.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="254" source="File: F:\Dropbox\python\AdventCode2020\Inputs\Day_12\Day_12_01.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="978" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="5" />
+          <Fields>
+            <Field name="Field_1" />
+          </Fields>
+          <Data>
+            <r>
+              <c>F10</c>
+            </r>
+            <r>
+              <c>N3</c>
+            </r>
+            <r>
+              <c>F7</c>
+            </r>
+            <r>
+              <c>R90</c>
+            </r>
+            <r>
+              <c>F11</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Sample</AnnotationText>
+          <DefaultAnnotationText>Sample</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="1098" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <RegExExpression value="(.)(\d+)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>Field_1</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="Instruction" type="String" size="3" />
+            <Field field="Value" type="Int32" size="4" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1214" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>Field_1</UpdateField_Name>
+          <CreateField_Name>Direction</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if [Instruction] = 'L' then mod([Row-1:Direction]- [Value],360)
+elseif [Instruction] = 'R' then mod([Row-1:Direction]+ [Value],360)
+else [Row-1:Direction]
+endif</Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if [Instruction] = 'L' then mod([Row-1:Direction]- [Value],36...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1330" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [Instruction] = 'F'&#xA;then Switch([Direction],'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') else [Instruction]&#xA;endif" field="new_instruction" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>new_instruction = if [Instruction] = 'F'
+then Switch([Direction],'E',0,'E',90,'S...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1446" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="new_instruction" action="GroupBy" rename="new_instruction" />
+            <SummarizeField field="Value" action="Sum" rename="Sum_Value" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1562" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [new_instruction] ='N' then [Sum_Value]&#xA;elseif [new_instruction] = 'S' then - [Sum_Value]&#xA;else 0 endif" field="N" size="8" type="Int64" />
+            <FormulaField expression="if [new_instruction] ='E' then [Sum_Value]&#xA;elseif [new_instruction] = 'W' then - [Sum_Value]&#xA;else 0 endif" field="E" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>N = if [new_instruction] ='N' then [Sum_Value]
+elseif [new_instruction] = 'S' th...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="101">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1678" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="N" action="Sum" rename="Sum_N" />
+            <SummarizeField field="E" action="Sum" rename="Sum_E" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1794" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ABS([Sum_N]) + ABS([Sum_E])" field="Manhattan" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Manhattan = ABS([Sum_N]) + ABS([Sum_E])
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="139">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1122" y="366" width="756" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Part I</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="140">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1110" y="654" width="756" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Part II</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="141">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="1194" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>Locations</CreateField_Name>
+          <CreateField_Type>V_WString</CreateField_Type>
+          <CreateField_Size>255</CreateField_Size>
+          <OtherRows>NULL</OtherRows>
+          <NumRows value="1" />
+          <Expression><![CDATA[
+tostring(
+    if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'F'
+then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1')) + tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2'))*tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+else tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1'))
+endif)
++'y,' +
+tostring (
+if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'F'
+then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2')) + tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')) *tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+else tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2'))
+endif)
++'x,' +
+tostring(
+    if REGEX_Replace([Field_1],'(.)(\d+)','$1') in ('L','R') then
+	if Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'E'
+		then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'W'
+		then - tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'N'
+		then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'S'
+		then - tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	else tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	endif
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') in ('N','S') then
+	tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3')) + IIF(REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'N',tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),-tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')))
+else
+tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+endif
+)
++'n,' +
+tostring(
+if REGEX_Replace([Field_1],'(.)(\d+)','$1') in ('L','R') then
+	if Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'E'
+		then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'W'
+		then - tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'N'
+		then - tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif Switch(if REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'L' then mod(- tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'R' then mod(+ tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),360)
+else 0
+endif,'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S') = 'S'
+		then tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	else tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	endif
+elseif REGEX_Replace([Field_1],'(.)(\d+)','$1') in ('E','W') then
+	tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4')) + IIF(REGEX_Replace([Field_1],'(.)(\d+)','$1') = 'E',tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')),-tonumber(REGEX_Replace([Field_1],'(.)(\d+)','$2')))
+else
+tonumber(REGEX_Replace(iif(isnull([Row-1:Locations]),'0y,0x,1n,10e',[Row-1:Locations]),'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+endif)
++'e']]></Expression>
+          <GroupByFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[
+tostring(
+    if REGEX_Replace([Field_1],'(.)(\d+)','$1') = ...]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="142">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1314" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="143">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1410" y="714" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1')))&#xA; + ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2')))" field="Manhattan" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Manhattan = ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="125">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="1937" y="545" width="599" height="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Container 125</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="120">
+          <GuiSettings>
+            <Position x="2202" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration />
+            <Annotation DisplayMode="0">
+              <Name>iter (110)</Name>
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
+          </Properties>
+          <EngineSettings Macro="iter.yxmc" />
+        </Node>
+        <Node ToolID="106">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+            <Position x="2058" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FieldName>RecordID</FieldName>
+              <StartValue>1</StartValue>
+              <FieldType>Int32</FieldType>
+              <FieldSize>6</FieldSize>
+              <Position>0</Position>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+        </Node>
+        <Node ToolID="109">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="1974" y="630" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="if [Instruction] = 'L' then mod(- [Value],360)&#xA;elseif [Instruction] = 'R' then mod(+ [Value],360)&#xA;else 0&#xA;endif" field="direction" size="8" type="Int64" />
+                <FormulaField expression=" Switch([direction],'E',0,'E',90,'S',180,'W',270,'N',-90,'N',-180,'W',-270,'S')" field="new_instruction" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>direction = if [Instruction] = 'L' then mod(- [Value],360)
+elseif [Instruction] ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="119">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="2322" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Last</Mode>
+              <N>1</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="121">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2394" y="642" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ABS([S_N]) + ABS([S_E])" field="Manhattan" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[Manhattan = ABS([S_N]) + ABS([S_E])
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="124">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="2370" y="738" width="100" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text><![CDATA[26,234	29,901	71	782	56,135
+]]></Text>
+              <Font name="Arial" size="8.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="126">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="2118" y="810" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Locations" selected="True" size="255" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="127">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+            <Position x="2334" y="798" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Mode>Last</Mode>
+              <N>1</N>
+              <GroupFields orderChanged="False" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+        </Node>
+        <Node ToolID="128">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="2406" y="798" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1')))&#xA; + ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2')))" field="Manhattan" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Manhattan = ABS(tonumber(REGEX_Replace([Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="122">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+            <Position x="2202" y="882" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <UpdateField value="True" />
+              <UpdateField_Name>Locations</UpdateField_Name>
+              <CreateField_Name>Locations</CreateField_Name>
+              <CreateField_Type>V_WString</CreateField_Type>
+              <CreateField_Size>255</CreateField_Size>
+              <OtherRows>Empty</OtherRows>
+              <NumRows value="1" />
+              <Expression>if isnull([Locations]) then 
+tostring(
+    if [Instruction] = 'F'
+then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1')) + [Value]*tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$1'))
+endif)
++'y,' +
+tostring (
+if [Instruction] = 'F'
+then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2')) + [Value] *tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$2'))
+endif)
++'x,' +
+tostring(
+    if [Instruction] in ('L','R') then
+	if [new_instruction] = 'E'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'W'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'N'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'S'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	endif
+elseif [Instruction] in ('N','S') then
+	tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3')) + IIF([Instruction] = 'N',value,-value)
+else
+tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+endif
+)
++'n,' +
+tostring(
+if [Instruction] in ('L','R') then
+	if [new_instruction] = 'E'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'W'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	elseif [new_instruction] = 'N'
+		then - tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	elseif [new_instruction] = 'S'
+		then tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$3'))
+	else tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+	endif
+elseif [Instruction] in ('E','W') then
+	tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4')) + IIF([Instruction] = 'E',value,-value)
+else
+tonumber(REGEX_Replace([Row-1:Locations],'(\-*\d+)y,(\-*\d+)x,(\-*\d+)n,(\-*\d+)e','$4'))
+endif)
++'e'
+
+else [Locations]
+endif</Expression>
+              <GroupByFields />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>if isnull([Locations]) then 
+tostring(
+    if [Instruction] =...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+        </Node>
+        <Node ToolID="123">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+            <Position x="2058" y="858" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <ByName_ErrorMode>Warning</ByName_ErrorMode>
+              <ByName_OutputMode>All</ByName_OutputMode>
+              <Mode>ByName</Mode>
+              <SetOutputOrder value="True" />
+              <OutputOrder>
+                <Connection>#1</Connection>
+                <Connection>#2</Connection>
+              </OutputOrder>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+        </Node>
+        <Node ToolID="108">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+            <Position x="1962" y="846" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="WP_N" />
+                <Field name="WP_E" />
+                <Field name="S_N" />
+                <Field name="S_E" />
+                <Field name="Locations" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>10</c>
+                  <c>0</c>
+                  <c>0</c>
+                  <c>0y,0x,1n,10e</c>
+                </r>
+              </Data>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+        </Node>
+        <Node ToolID="145">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="2070" y="750" width="276" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Translate logic</Text>
+              <Font name="Arial" size="20.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+        <Node ToolID="144">
+          <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+            <Position x="2046" y="594" width="372" height="40" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Text>Build a macro first</Text>
+              <Font name="Arial" size="20.25" style="0" />
+              <TextColor name="Black" />
+              <FillColor name="White" />
+              <Shape shape="0" />
+              <Justification Justification="4" />
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+          </Properties>
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="141" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection Wireless="True">
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="109" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="101" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="101" Connection="Output" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="141" Connection="Output" />
+      <Destination ToolID="142" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="142" Connection="Output" />
+      <Destination ToolID="143" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="120" Connection="Output8" />
+      <Destination ToolID="119" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="120" Connection="Input2" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Output" />
+      <Destination ToolID="120" Connection="Iter" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="106" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="108" Connection="Output" />
+      <Destination ToolID="123" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="109" Connection="Output" />
+      <Destination ToolID="106" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="119" Connection="Output" />
+      <Destination ToolID="121" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="126" Connection="Output" />
+      <Destination ToolID="122" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="127" Connection="Output" />
+      <Destination ToolID="128" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="122" Connection="Output" />
+      <Destination ToolID="127" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="123" Connection="Output" />
+      <Destination ToolID="126" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>day_12_01</Name>
+      <Description>My Approach to Advent of Code 2020</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>David Sanchez</Author>
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="https://github.com/dsmdavid/AdventCode2020" displayed="https://github.com/dsmdavid/AdventCode2020" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>
