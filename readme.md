@@ -30,3 +30,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Musical Chairs -- [Alteryx](Code/Alteryx/Day_11)  
 1. Steering the ship -- [Alteryx](Code/Alteryx/Day_12)  
 1. Bus scheduler -- [Alteryx](Code/Alteryx/Day_13) and [Python](Code/Python/Day_13/Day_13.ipynb)  
+1. Docking bitmasks -- [Alteryx](Code/Alteryx/Day_14) and [Python](Code/Python/Day_14/Day_14.ipynb)  
+

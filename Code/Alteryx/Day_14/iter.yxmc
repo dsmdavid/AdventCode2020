@@ -1,0 +1,481 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="330" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="instructionid" />
+                <Field name="Field_1" />
+                <Field name="mask" />
+                <Field name="maskid" />
+                <Field name="mem" />
+                <Field name="new_mem_bin" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>00000000000000000000000000000001101X</c>
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                  <c />
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" size="36" source="TextInput:" type="String" />
+            <Field name="Field_1" source="TextInput:" type="Bool" />
+            <Field name="mask" source="TextInput:" type="Bool" />
+            <Field name="maskid" source="TextInput:" type="Bool" />
+            <Field name="mem" source="TextInput:" type="Bool" />
+            <Field name="new_mem_bin" source="TextInput:" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.GenerateRows.GenerateRows">
+        <Position x="606" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name />
+          <CreateField_Name>RowCount</CreateField_Name>
+          <CreateField_Type>Int32</CreateField_Type>
+          <CreateField_Size>4</CreateField_Size>
+          <Expression_Init>1</Expression_Init>
+          <Expression_Cond>RowCount &lt;= 2</Expression_Cond>
+          <Expression_Loop>RowCount + 1</Expression_Loop>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxGenerateRows" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="702" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" field="new_mem_bin" size="1" type="Bool" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[new_mem_bin = ReplaceFirst([new_mem_bin], 'X',
+tostring(mod([RowCount],2)))
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="Formula: ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="798" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>Contains</Operator>
+            <Field>new_mem_bin</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-14 09:40:53</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>X</Operand>
+              <StartDate>2020-12-14 09:40:53</StartDate>
+              <EndDate>2020-12-14 09:40:53</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([new_mem_bin],"X")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="Formula: ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="Formula: ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="894" y="258" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="instructionid" selected="True" />
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="mask" selected="True" />
+            <SelectField field="maskid" selected="True" />
+            <SelectField field="mem" selected="True" />
+            <SelectField field="new_mem_bin" selected="True" />
+            <SelectField field="RowCount" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="Formula: ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="990" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="990" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output8</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="894" y="342" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="instructionid" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="Field_1" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="mask" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="maskid" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="mem" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="new_mem_bin" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="RowCount" selected="True" type="Int32" forced="True" size="4" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="Formula: ReplaceFirst([new_mem_bin], 'X',&#xA;tostring(mod([RowCount],2)))" type="V_WString" />
+            <Field name="RowCount" type="Int32" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="462" y="270" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="instructionid" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="Field_1" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="mask" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="maskid" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="mem" selected="True" type="Int64" forced="True" size="8" />
+            <SelectField field="new_mem_bin" selected="True" type="V_WString" forced="True" size="1000" />
+            <SelectField field="RowCount" selected="False" type="Int32" forced="True" size="4" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="instructionid" source="TextInput:" type="Int64" />
+            <Field name="Field_1" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="mask" size="1000" source="TextInput:" type="V_WString" />
+            <Field name="maskid" source="TextInput:" type="Int64" />
+            <Field name="mem" source="TextInput:" type="Int64" />
+            <Field name="new_mem_bin" size="1000" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="426" y="114" width="492" height="96" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Repleaces the first X with 0 (one row) and (1) the next row as long as there are X present in the string</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="False" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="11" Connection="Output" />
+      <Destination ToolID="8" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>iter</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (6)</Name>
+          <ToolId value="6" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (8)</Description>
+              <Name>Macro Output (8)</Name>
+              <ToolId value="8" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>iter</Input>
+        <Output>iter</Output>
+        <IterationLimit value="1000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="7" Selected="True" />
+        <Tool ToolId="8" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
