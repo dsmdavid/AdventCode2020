@@ -31,4 +31,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Steering the ship -- [Alteryx](Code/Alteryx/Day_12)  
 1. Bus scheduler -- [Alteryx](Code/Alteryx/Day_13) and [Python](Code/Python/Day_13/Day_13.ipynb)  
 1. Docking bitmasks -- [Alteryx](Code/Alteryx/Day_14) and [Python](Code/Python/Day_14/Day_14.ipynb)  
-
+1. Rambunctious Recitation  -- [Alteryx -only part 1!](Code/Alteryx/Day_15) and [Python](Code/Python/Day_15/Day_15.ipynb)  
+1. Ticket Translation -- [Alteryx](Code/Alteryx/Day_16) and [Python](Code/Python/Day_16/Day_16.ipynb)  
