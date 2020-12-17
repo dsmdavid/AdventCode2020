@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="2">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
-        <Position x="102" y="102" />
+        <Position x="54" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -39,7 +39,7 @@
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText>Input</DefaultAnnotationText>
-          <Left value="False" />
+          <Left value="True" />
         </Annotation>
         <MetaInfo connection="Output">
           <RecordInfo>
@@ -52,7 +52,7 @@
     </Node>
     <Node ToolID="3">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-        <Position x="342" y="198" />
+        <Position x="294" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -76,7 +76,7 @@
     </Node>
     <Node ToolID="5">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="606" y="198" />
+        <Position x="558" y="150" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -109,7 +109,7 @@
     </Node>
     <Node ToolID="6">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-        <Position x="702" y="186" />
+        <Position x="654" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -135,7 +135,7 @@
     </Node>
     <Node ToolID="7">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-        <Position x="990" y="186" />
+        <Position x="942" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -163,7 +163,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="9">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="798" y="186" />
+        <Position x="750" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -194,7 +194,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="10">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
-        <Position x="894" y="186" />
+        <Position x="846" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -220,7 +220,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="11">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="1086" y="186" />
+        <Position x="1038" y="138" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -248,7 +248,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="12">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
-        <Position x="1182" y="102" />
+        <Position x="1134" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -281,6 +281,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
         <Position x="0" y="0" width="59" height="59" />
       </GuiSettings>
       <Properties>
+        <Configuration />
         <Annotation DisplayMode="0">
           <Name />
           <DefaultAnnotationText />
@@ -290,7 +291,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="14">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1374" y="102" />
+        <Position x="1326" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -307,7 +308,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="15">
       <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
-        <Position x="1374" y="222" />
+        <Position x="1326" y="174" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -324,16 +325,16 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="16">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="1278" y="114" />
+        <Position x="1230" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
-          <Expression>[Engine.IterationNumber] &lt; 100000 - 8</Expression>
+          <Expression>[Engine.IterationNumber] &lt; 2020 - 8</Expression>
           <Mode>Custom</Mode>
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
-          <DefaultAnnotationText>[Engine.IterationNumber] &lt; 100000 - 8</DefaultAnnotationText>
+          <DefaultAnnotationText>[Engine.IterationNumber] &lt; 2020 - 8</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
         <MetaInfo connection="True">
@@ -353,7 +354,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="17">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="990" y="138" />
+        <Position x="942" y="90" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -384,7 +385,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="20">
       <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
-        <Position x="414" y="114" />
+        <Position x="366" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -419,7 +420,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="21">
       <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
-        <Position x="510" y="114" />
+        <Position x="462" y="66" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -452,7 +453,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
     </Node>
     <Node ToolID="22">
       <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-        <Position x="762" y="102" />
+        <Position x="714" y="54" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -661,6 +662,7 @@ RecordID = ToNumber([...</DefaultAnnotationText>
       <Wiz_CustomGraphic value="False" />
       <Wiz_ShowOutput value="True" />
       <Wiz_OpenOutputTools>
+        <Tool ToolId="2" Selected="True" />
         <Tool ToolId="14" Selected="True" />
         <Tool ToolId="15" Selected="True" />
       </Wiz_OpenOutputTools>

@@ -3,3 +3,4 @@ ignore/
 *.bak
 token
 Code/Python/debug.log
+debug.log

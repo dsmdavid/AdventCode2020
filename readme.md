@@ -33,3 +33,5 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Docking bitmasks -- [Alteryx](Code/Alteryx/Day_14) and [Python](Code/Python/Day_14/Day_14.ipynb)  
 1. Rambunctious Recitation  -- [Alteryx -only part 1!](Code/Alteryx/Day_15) and [Python](Code/Python/Day_15/Day_15.ipynb)  
 1. Ticket Translation -- [Alteryx](Code/Alteryx/Day_16) and [Python](Code/Python/Day_16/Day_16.ipynb)  
+1. Infinite Energy -- [Alteryx](Code/Alteryx/Day_17) and [Python](Code/Python/Day_17/Day_17.ipynb)  
+
