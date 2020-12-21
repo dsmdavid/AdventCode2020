@@ -3,7 +3,7 @@
   <Nodes>
     <Node ToolID="62">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="966" y="618" width="132" height="300" />
+        <Position x="954" y="618" width="132" height="300" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -23,7 +23,7 @@
     </Node>
     <Node ToolID="61">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="966" y="366" width="132" height="240" />
+        <Position x="954" y="366" width="132" height="240" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -43,7 +43,7 @@
     </Node>
     <Node ToolID="60">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="78" y="630" width="876" height="696" />
+        <Position x="66" y="630" width="876" height="696" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -63,7 +63,7 @@
     </Node>
     <Node ToolID="88">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="66" y="54" width="804" height="40" />
+        <Position x="54" y="54" width="804" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -83,7 +83,7 @@
     </Node>
     <Node ToolID="89">
       <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
-        <Position x="66" y="90" width="804" height="40" />
+        <Position x="54" y="90" width="804" height="40" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -103,7 +103,7 @@
     </Node>
     <Node ToolID="92">
       <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
-        <Position x="990" y="414" />
+        <Position x="978" y="414" />
       </GuiSettings>
       <Properties>
         <Configuration>
@@ -127,9 +127,6 @@
           <DefaultAnnotationText>Day_05_01.txt</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
-        <Dependencies>
-          <Implicit />
-        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: F:\Dropbox\python\AdventCode2020\Inputs\Day_05\Day_05_01.txt" type="V_String" />
@@ -140,7 +137,7 @@
     </Node>
     <Node ToolID="93">
       <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
-        <Position x="990" y="498" />
+        <Position x="978" y="498" />
       </GuiSettings>
       <Properties>
         <Configuration>

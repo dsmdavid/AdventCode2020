@@ -1,0 +1,881 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>iter</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="RecordID" />
+                <Field name="Field_1" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1</c>
+                  <c>((2 * 4 + 9) * (6 + 9 * 8 + 6) + 6) + 2 + 4 * 2</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="294" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" field="group" size="1073741823" type="V_WString" />
+            <FormulaField expression="if [group] = [Field_1] then [group] else '(' +[group]+')' endif" field="group_copy" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" field="first_group" size="1073741823" type="V_WString" />
+            <FormulaField expression="if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" field="new_result" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>group = REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', "$2")
+group_copy = ...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="TextInput:" type="String" />
+            <Field name="group" size="1073741823" source="Formula: REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" type="V_WString" />
+            <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+            <Field name="first_group" size="1073741823" source="Formula: REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" type="V_WString" />
+            <Field name="new_result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MultiRowFormula.MultiRowFormula">
+        <Position x="486" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UpdateField value="False" />
+          <UpdateField_Name>RecordID</UpdateField_Name>
+          <CreateField_Name>result</CreateField_Name>
+          <CreateField_Type>Int64</CreateField_Type>
+          <CreateField_Size>8</CreateField_Size>
+          <OtherRows>Empty</OtherRows>
+          <NumRows value="1" />
+          <Expression>if isempty([Row-1:group]) then tonumber([group])
+else
+  if [group] in ('+','*') then [Row-1:result]
+  else
+     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])
+     else [Row-1:result] * tonumber([group])
+     endif
+  endif
+endif</Expression>
+          <GroupByFields>
+            <Field field="RecordID" />
+          </GroupByFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>if isempty([Row-1:group]) then tonumber([group])
+else
+  if [g...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="TextInput:" type="String" />
+            <Field description="TextToColumns: Parsed from group" name="group" size="1073741823" source="TextToColumns: Parsed from group" type="V_WString" />
+            <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+            <Field name="first_group" size="1073741823" source="Formula: REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" type="V_WString" />
+            <Field name="new_result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+            <Field description="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" name="result" source="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMultiRowFormula" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="390" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>group</Field>
+          <Delimeters value="\s" />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="TextInput:" type="String" />
+            <Field description="TextToColumns: Parsed from group" name="group" size="1073741823" source="TextToColumns: Parsed from group" type="V_WString" />
+            <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+            <Field name="first_group" size="1073741823" source="Formula: REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" type="V_WString" />
+            <Field name="new_result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="582" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False">
+            <Field name="RecordID" />
+          </GroupFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="TextInput:" type="String" />
+            <Field description="TextToColumns: Parsed from group" name="group" size="1073741823" source="TextToColumns: Parsed from group" type="V_WString" />
+            <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+            <Field name="first_group" size="1073741823" source="Formula: REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" type="V_WString" />
+            <Field name="new_result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+            <Field description="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" name="result" source="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="678" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([Field_1], [group_copy], tostring([result]))" field="Field_1" size="47" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Field_1 = Replace([Field_1], [group_copy], tostring([result]))
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="Formula: Replace([Field_1], [group_copy], tostring([result]))" type="String" />
+            <Field description="TextToColumns: Parsed from group" name="group" size="1073741823" source="TextToColumns: Parsed from group" type="V_WString" />
+            <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+            <Field name="first_group" size="1073741823" source="Formula: REGEX_Replace([group], '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;)" type="V_WString" />
+            <Field name="new_result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+            <Field description="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" name="result" source="Formula: if isempty([Row-1:group]) then tonumber([group])&#xA;else&#xA;  if [group] in ('+','*') then [Row-1:result]&#xA;  else&#xA;     if [Row-1:group] = '+' then  [Row-1:result] + tonumber([group])&#xA;     else [Row-1:result] * tonumber([group])&#xA;     endif&#xA;  endif&#xA;endif" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="774" y="90" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="True" />
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="Formula: Replace([Field_1], [group_copy], tostring([result]))" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="32">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="894" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Contains([Field_1],"+") || Contains([Field_1], '*')
+|| Contains([Field_1],"(")</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([Field_1],"+") || Contains([Field_1], '*')
+|| Contains([Field_1],"(")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="Formula: Replace([Field_1], [group_copy], tostring([result]))" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="Formula: Replace([Field_1], [group_copy], tostring([result]))" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="33">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1026" y="54" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="35">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1038" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Result</Name>
+          <Abbrev>R</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>R Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="47">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="990" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>debug</Name>
+          <Abbrev>d</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>d Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="48">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="870" y="234" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[Engine.IterationNumber]" field="iter" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[iter = [Engine.IterationNumber]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="47" source="Formula: Replace([Field_1], [group_copy], tostring([result]))" type="String" />
+            <Field name="iter" source="Formula: [Engine.IterationNumber]" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="46">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="281" y="317" width="478" height="477" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>debug generate rows</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="False" />
+          <Folded value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="41">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="306" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )" field="Field_1" size="47" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Field_1 = 
+Replace([Field_1], 
+    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: &#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="42">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="414" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )" field="Field_1" size="47" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Field_1 = 
+Replace([Field_1], 
+    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: &#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="43">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="522" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="regex_replace(&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )&#xA;,&#xA;'\(\d+\)','$1')" field="Field_1" size="47" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Field_1 = regex_replace(
+Replace([Field_1], 
+    if REGEX_Replace([Field_1], '^....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: regex_replace(&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )&#xA;,&#xA;'\(\d+\)','$1')" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="44">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="630" y="402" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="regex_replace(&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )&#xA;,&#xA;'\(\d+\)','$1')" field="Field_1" size="47" type="String" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>Field_1 = regex_replace(
+Replace([Field_1], 
+    if REGEX_Replace([Field_1], '^....</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: regex_replace(&#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )&#xA;,&#xA;'\(\d+\)','$1')" type="String" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="45">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="486" y="366" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Field_1], '\((\d+)\)','$1')" field="test" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[test = REGEX_Replace([Field_1], '\((\d+)\)','$1')
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: &#xA;Replace([Field_1], &#xA;    if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;, &#xA;     Replace(if REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) = [Field_1] then REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;) else '(' +REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)+')' endif&#xA;,&#xA;         REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),&#xA;         //Result:&#xA;         tostring(&#xA;            if GetWord(&#xA;                REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),1) = '+'&#xA;                then ToNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) + ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;                else toNumber(GetWord(&#xA;                    REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;), 0)) * ToNumber(GetWord(&#xA;                        REGEX_Replace(REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;), '(\d+\s[\+\*]\s\d+).*', &quot;$1&quot;),2))&#xA;            endif&#xA;            ))&#xA;    )" type="String" />
+                <Field name="test" size="1073741823" source="Formula: REGEX_Replace([Field_1], '\((\d+)\)','$1')" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="38">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="329" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" field="group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if [group] = [Field_1] then [group] else '(' +[group]+')' endif" field="group_copy" size="1073741823" type="V_WString" />
+                <FormulaField expression="if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" field="first_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" field="result" size="1073741823" type="V_WString" />
+                <FormulaField expression="Replace([group_copy], [first_group], [result])" field="new_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" field="Field_1" size="47" type="String" />
+                <FormulaField expression=" REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" field="test" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" field="test1" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>group = REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', "$2")
+group_copy = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" type="String" />
+                <Field name="group" size="1073741823" source="Formula: REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" type="V_WString" />
+                <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+                <Field name="first_group" size="1073741823" source="Formula: if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" type="V_WString" />
+                <Field name="result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+                <Field name="new_group" size="1073741823" source="Formula: Replace([group_copy], [first_group], [result])" type="V_WString" />
+                <Field name="test" size="1073741823" source="Formula:  REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" type="V_WString" />
+                <Field name="test1" size="1073741823" source="Formula: REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="49">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="414" y="618" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" field="group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if [group] = [Field_1] then [group] else '(' +[group]+')' endif" field="group_copy" size="1073741823" type="V_WString" />
+                <FormulaField expression="if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" field="first_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" field="result" size="1073741823" type="V_WString" />
+                <FormulaField expression="Replace([group_copy], [first_group], [result])" field="new_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" field="Field_1" size="47" type="String" />
+                <FormulaField expression=" REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" field="test" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" field="test1" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>group = REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', "$2")
+group_copy = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" type="String" />
+                <Field name="group" size="1073741823" source="Formula: REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" type="V_WString" />
+                <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+                <Field name="first_group" size="1073741823" source="Formula: if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" type="V_WString" />
+                <Field name="result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+                <Field name="new_group" size="1073741823" source="Formula: Replace([group_copy], [first_group], [result])" type="V_WString" />
+                <Field name="test" size="1073741823" source="Formula:  REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" type="V_WString" />
+                <Field name="test1" size="1073741823" source="Formula: REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="50">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="486" y="618" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" field="group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if [group] = [Field_1] then [group] else '(' +[group]+')' endif" field="group_copy" size="1073741823" type="V_WString" />
+                <FormulaField expression="if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" field="first_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" field="result" size="1073741823" type="V_WString" />
+                <FormulaField expression="Replace([group_copy], [first_group], [result])" field="new_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" field="Field_1" size="47" type="String" />
+                <FormulaField expression=" REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" field="test" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" field="test1" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>group = REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', "$2")
+group_copy = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" type="String" />
+                <Field name="group" size="1073741823" source="Formula: REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" type="V_WString" />
+                <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+                <Field name="first_group" size="1073741823" source="Formula: if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" type="V_WString" />
+                <Field name="result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+                <Field name="new_group" size="1073741823" source="Formula: Replace([group_copy], [first_group], [result])" type="V_WString" />
+                <Field name="test" size="1073741823" source="Formula:  REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" type="V_WString" />
+                <Field name="test1" size="1073741823" source="Formula: REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="51">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="618" y="606" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" field="group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if [group] = [Field_1] then [group] else '(' +[group]+')' endif" field="group_copy" size="1073741823" type="V_WString" />
+                <FormulaField expression="if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" field="first_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" field="result" size="1073741823" type="V_WString" />
+                <FormulaField expression="Replace([group_copy], [first_group], [result])" field="new_group" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" field="Field_1" size="47" type="String" />
+                <FormulaField expression=" REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" field="test" size="1073741823" type="V_WString" />
+                <FormulaField expression="REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" field="test1" size="1073741823" type="V_WString" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>group = REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', "$2")
+group_copy = ...</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="RecordID" source="TextInput:" type="Byte" />
+                <Field name="Field_1" size="47" source="Formula: REGEX_Replace(&#xA;Replace([Field_1], [group_copy], [new_group])&#xA;,'\((\d+)\)','$1')" type="String" />
+                <Field name="group" size="1073741823" source="Formula: REGEX_Replace([Field_1], '^.*?(\(([^\(\)]+)\)).*?$', &quot;$2&quot;)" type="V_WString" />
+                <Field name="group_copy" size="1073741823" source="Formula: if [group] = [Field_1] then [group] else '(' +[group]+')' endif" type="V_WString" />
+                <Field name="first_group" size="1073741823" source="Formula: if REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')&#xA;then &#xA;REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;else&#xA;REGEX_Replace([group], '.*?(\d+\s\*\s\d+).*', &quot;$1&quot;)&#xA;endif" type="V_WString" />
+                <Field name="result" size="1073741823" source="Formula: if GetWord([first_group],1) = '+'&#xA; then ToNumber(GetWord([first_group], 0)) + ToNumber(GetWord([first_group],2))&#xA; else toNumber(GetWord([first_group], 0)) * ToNumber(GetWord([first_group],2))&#xA;endif" type="V_WString" />
+                <Field name="new_group" size="1073741823" source="Formula: Replace([group_copy], [first_group], [result])" type="V_WString" />
+                <Field name="test" size="1073741823" source="Formula:  REGEX_Match([group], '.*(\d+\s[\+]\s\d+).*')" type="V_WString" />
+                <Field name="test1" size="1073741823" source="Formula: REGEX_Replace([group], '.*?(\d+\s\+\s\d+).*', &quot;$1&quot;)&#xA;" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+      </ChildNodes>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="38" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="41" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="32" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="7" Connection="Output" />
+      <Destination ToolID="48" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="True" />
+      <Destination ToolID="34" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="32" Connection="False" />
+      <Destination ToolID="35" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="48" Connection="Output" />
+      <Destination ToolID="47" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="41" Connection="Output" />
+      <Destination ToolID="42" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="43" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="42" Connection="Output" />
+      <Destination ToolID="45" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="43" Connection="Output" />
+      <Destination ToolID="44" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="38" Connection="Output" />
+      <Destination ToolID="49" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="49" Connection="Output" />
+      <Destination ToolID="50" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="50" Connection="Output" />
+      <Destination ToolID="51" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (47)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>iter</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (33)</Name>
+          <ToolId value="33" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (34)</Description>
+              <Name>Macro Output (34)</Name>
+              <ToolId value="34" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (35)</Description>
+              <Name>Macro Output (35)</Name>
+              <ToolId value="35" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (47)</Description>
+              <Name>Macro Output (47)</Name>
+              <ToolId value="47" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>iter</Input>
+        <Output>iter</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="34" Selected="True" />
+        <Tool ToolId="35" Selected="True" />
+        <Tool ToolId="47" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

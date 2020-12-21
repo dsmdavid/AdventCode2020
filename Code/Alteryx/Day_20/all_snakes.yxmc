@@ -1,0 +1,590 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="450" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Combination</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-21 11:50:59</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>2</Operand>
+              <StartDate>2020-12-21 11:50:59</StartDate>
+              <EndDate>2020-12-21 11:50:59</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Combination] = 2</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="20" source="TextInput:" type="String" />
+            <Field name="Tile" source="TextInput:" type="Byte" />
+            <Field name="Combination" source="TextInput:" type="Byte" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="20" source="TextInput:" type="String" />
+            <Field name="Tile" source="TextInput:" type="Byte" />
+            <Field name="Combination" source="TextInput:" type="Byte" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="10">
+      <GuiSettings>
+        <Position x="558" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output21">
+          <RecordInfo>
+            <Field name="Field_1" size="150" source="Formula: if [direction] = 'sense' then [Field_1]&#xA;else ReverseString([Field_1])&#xA;endif" type="V_WString" />
+            <Field name="Tile" source="(Multiple Sources)" type="Int64" />
+            <Field name="rotation" source="(Multiple Sources)" type="Int64" />
+            <Field name="direction" size="255" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro=".\orientatorrr20.yxmc" />
+    </Node>
+    <Node ToolID="11">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="654" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_26404_f0611c49a60e4aa68bae4e145beaaf0e_\Engine_9528_5a1d0eb6340749e6a315c87ad6afeedf_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="750" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output13</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="174" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input14</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="24" />
+              <Fields>
+                <Field name="Field_1" />
+                <Field name="Tile" />
+                <Field name="Combination" />
+                <Field name="rotation" />
+                <Field name="direction" />
+              </Fields>
+              <Data>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>0</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>0</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>1</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>5</c>
+                  <c>2</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>7</c>
+                  <c>3</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[                  # ]]></c>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>0</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>0</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>1</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>5</c>
+                  <c>2</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>7</c>
+                  <c>3</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c>#    ##    ##    ###</c>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>1</c>
+                  <c>0</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>2</c>
+                  <c>0</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>3</c>
+                  <c>1</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>4</c>
+                  <c>1</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>5</c>
+                  <c>2</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>6</c>
+                  <c>2</c>
+                  <c>anti-sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>7</c>
+                  <c>3</c>
+                  <c>sense</c>
+                </r>
+                <r>
+                  <c><![CDATA[ #  #  #  #  #  #   ]]></c>
+                  <c>1</c>
+                  <c>8</c>
+                  <c>3</c>
+                  <c>anti-sense</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="20" source="TextInput:" type="String" />
+            <Field name="Tile" source="TextInput:" type="Byte" />
+            <Field name="Combination" source="TextInput:" type="Byte" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="438" y="30" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Control Parameter (15)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="450" y="90" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="570" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Combination" action="GroupBy" rename="Combination" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Combination" source="Summarize: GroupBy - Combination" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Combination" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="654" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="150" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="Tile" source="(Multiple Sources)" type="Int64" />
+            <Field name="rotation" source="(Multiple Sources)" type="Int64" />
+            <Field name="direction" size="255" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Combination" source="Summarize: GroupBy - Combination" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="10" Connection="Input20" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output21" />
+      <Destination ToolID="11" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="10" Connection="Output21" />
+      <Destination ToolID="18" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="18" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="14" Connection="Output" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="16" Connection="Action" />
+      <Destination ToolID="9" Connection="Action" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="15" Connection="Question" />
+      <Destination ToolID="16" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.Control Parameter (15)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>all_snakes</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="16" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="False" />
+              <Destination>9/Simple/Operands/Operand</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (12)</Name>
+          <ToolId value="12" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (13)</Description>
+              <Name>Macro Output (13)</Name>
+              <ToolId value="13" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (14)</Name>
+              <ToolId value="14" />
+            </Question>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>Control Parameter (15)</Description>
+              <Name>Control Parameter (15)</Name>
+              <ToolId value="15" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>Control Parameter (15)</Name>
+            <Description>Control Parameter (15)</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="11" Selected="False" />
+        <Tool ToolId="10" Selected="True" />
+        <Tool ToolId="13" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

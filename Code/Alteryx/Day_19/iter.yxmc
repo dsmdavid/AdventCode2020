@@ -1,0 +1,1130 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="28">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="318" y="66" width="100" height="180" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Have we finished?</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="128" b="128" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="54" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Rule0</Name>
+          <Abbrev>0</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="Field_1" />
+                <Field name="rule_id" />
+                <Field name="rule" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>0: 4 1 5</c>
+                  <c><![CDATA[ 0 ]]></c>
+                  <c><![CDATA[  4  8  11]]></c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>0 Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="42" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>All_Rules</Name>
+          <Abbrev>A</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="134" />
+              <Fields>
+                <Field name="Field_1" />
+                <Field name="rule_id" />
+                <Field name="rule" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>75: 105 116 | 40 131</c>
+                  <c><![CDATA[ 75 ]]></c>
+                  <c><![CDATA[  105  116  |  40  131  ]]></c>
+                </r>
+                <r>
+                  <c>50: 40 116 | 84 131</c>
+                  <c><![CDATA[ 50 ]]></c>
+                  <c><![CDATA[  40  116  |  84  131  ]]></c>
+                </r>
+                <r>
+                  <c>57: 5 116 | 15 131</c>
+                  <c><![CDATA[ 57 ]]></c>
+                  <c><![CDATA[  5  116  |  15  131  ]]></c>
+                </r>
+                <r>
+                  <c>20: 128 131 | 84 116</c>
+                  <c><![CDATA[ 20 ]]></c>
+                  <c><![CDATA[  128  131  |  84  116  ]]></c>
+                </r>
+                <r>
+                  <c>61: 63 116</c>
+                  <c><![CDATA[ 61 ]]></c>
+                  <c><![CDATA[  63  116  ]]></c>
+                </r>
+                <r>
+                  <c>56: 84 131 | 128 116</c>
+                  <c><![CDATA[ 56 ]]></c>
+                  <c><![CDATA[  84  131  |  128  116  ]]></c>
+                </r>
+                <r>
+                  <c>51: 116 131 | 131 116</c>
+                  <c><![CDATA[ 51 ]]></c>
+                  <c><![CDATA[  116  131  |  131  116  ]]></c>
+                </r>
+                <r>
+                  <c>122: 38 116 | 78 131</c>
+                  <c><![CDATA[ 122 ]]></c>
+                  <c><![CDATA[  38  116  |  78  131  ]]></c>
+                </r>
+                <r>
+                  <c>87: 120 116 | 114 131</c>
+                  <c><![CDATA[ 87 ]]></c>
+                  <c><![CDATA[  120  116  |  114  131  ]]></c>
+                </r>
+                <r>
+                  <c>130: 131 | 116</c>
+                  <c><![CDATA[ 130 ]]></c>
+                  <c><![CDATA[  131  |  116  ]]></c>
+                </r>
+                <r>
+                  <c>23: 40 130</c>
+                  <c><![CDATA[ 23 ]]></c>
+                  <c><![CDATA[  40  130  ]]></c>
+                </r>
+                <r>
+                  <c>3: 131 102 | 116 76</c>
+                  <c><![CDATA[ 3 ]]></c>
+                  <c><![CDATA[  131  102  |  116  76  ]]></c>
+                </r>
+                <r>
+                  <c>54: 105 116 | 104 131</c>
+                  <c><![CDATA[ 54 ]]></c>
+                  <c><![CDATA[  105  116  |  104  131  ]]></c>
+                </r>
+                <r>
+                  <c>31: 116 83 | 131 48</c>
+                  <c><![CDATA[ 31 ]]></c>
+                  <c><![CDATA[  116  83  |  131  48  ]]></c>
+                </r>
+                <r>
+                  <c>74: 40 116 | 133 131</c>
+                  <c><![CDATA[ 74 ]]></c>
+                  <c><![CDATA[  40  116  |  133  131  ]]></c>
+                </r>
+                <r>
+                  <c>9: 94 131 | 16 116</c>
+                  <c><![CDATA[ 9 ]]></c>
+                  <c><![CDATA[  94  131  |  16  116  ]]></c>
+                </r>
+                <r>
+                  <c>70: 128 116 | 104 131</c>
+                  <c><![CDATA[ 70 ]]></c>
+                  <c><![CDATA[  128  116  |  104  131  ]]></c>
+                </r>
+                <r>
+                  <c>44: 77 131 | 28 116</c>
+                  <c><![CDATA[ 44 ]]></c>
+                  <c><![CDATA[  77  131  |  28  116  ]]></c>
+                </r>
+                <r>
+                  <c>108: 116 105 | 131 94</c>
+                  <c><![CDATA[ 108 ]]></c>
+                  <c><![CDATA[  116  105  |  131  94  ]]></c>
+                </r>
+                <r>
+                  <c>66: 16 116 | 105 131</c>
+                  <c><![CDATA[ 66 ]]></c>
+                  <c><![CDATA[  16  116  |  105  131  ]]></c>
+                </r>
+                <r>
+                  <c>118: 116 131 | 116 116</c>
+                  <c><![CDATA[ 118 ]]></c>
+                  <c><![CDATA[  116  131  |  116  116  ]]></c>
+                </r>
+                <r>
+                  <c>69: 105 116 | 94 131</c>
+                  <c><![CDATA[ 69 ]]></c>
+                  <c><![CDATA[  105  116  |  94  131  ]]></c>
+                </r>
+                <r>
+                  <c>78: 116 117 | 131 7</c>
+                  <c><![CDATA[ 78 ]]></c>
+                  <c><![CDATA[  116  117  |  131  7  ]]></c>
+                </r>
+                <r>
+                  <c>71: 51 116 | 104 131</c>
+                  <c><![CDATA[ 71 ]]></c>
+                  <c><![CDATA[  51  116  |  104  131  ]]></c>
+                </r>
+                <r>
+                  <c>132: 130 116 | 116 131</c>
+                  <c><![CDATA[ 132 ]]></c>
+                  <c><![CDATA[  130  116  |  116  131  ]]></c>
+                </r>
+                <r>
+                  <c>53: 116 51 | 131 40</c>
+                  <c><![CDATA[ 53 ]]></c>
+                  <c><![CDATA[  116  51  |  131  40  ]]></c>
+                </r>
+                <r>
+                  <c>103: 116 97 | 131 70</c>
+                  <c><![CDATA[ 103 ]]></c>
+                  <c><![CDATA[  116  97  |  131  70  ]]></c>
+                </r>
+                <r>
+                  <c>105: 116 116</c>
+                  <c><![CDATA[ 105 ]]></c>
+                  <c><![CDATA[  116  116  ]]></c>
+                </r>
+                <r>
+                  <c>46: 105 131 | 105 116</c>
+                  <c><![CDATA[ 46 ]]></c>
+                  <c><![CDATA[  105  131  |  105  116  ]]></c>
+                </r>
+                <r>
+                  <c>125: 116 33 | 131 113</c>
+                  <c><![CDATA[ 125 ]]></c>
+                  <c><![CDATA[  116  33  |  131  113  ]]></c>
+                </r>
+                <r>
+                  <c>1: 116 68 | 131 68</c>
+                  <c><![CDATA[ 1 ]]></c>
+                  <c><![CDATA[  116  68  |  131  68  ]]></c>
+                </r>
+                <r>
+                  <c>55: 104 116 | 94 131</c>
+                  <c><![CDATA[ 55 ]]></c>
+                  <c><![CDATA[  104  116  |  94  131  ]]></c>
+                </r>
+                <r>
+                  <c>77: 116 16 | 131 84</c>
+                  <c><![CDATA[ 77 ]]></c>
+                  <c><![CDATA[  116  16  |  131  84  ]]></c>
+                </r>
+                <r>
+                  <c>91: 25 116 | 58 131</c>
+                  <c><![CDATA[ 91 ]]></c>
+                  <c><![CDATA[  25  116  |  58  131  ]]></c>
+                </r>
+                <r>
+                  <c>43: 116 32 | 131 60</c>
+                  <c><![CDATA[ 43 ]]></c>
+                  <c><![CDATA[  116  32  |  131  60  ]]></c>
+                </r>
+                <r>
+                  <c>49: 116 106 | 131 55</c>
+                  <c><![CDATA[ 49 ]]></c>
+                  <c><![CDATA[  116  106  |  131  55  ]]></c>
+                </r>
+                <r>
+                  <c>33: 62 131 | 69 116</c>
+                  <c><![CDATA[ 33 ]]></c>
+                  <c><![CDATA[  62  131  |  69  116  ]]></c>
+                </r>
+                <r>
+                  <c>99: 116 65 | 131 18</c>
+                  <c><![CDATA[ 99 ]]></c>
+                  <c><![CDATA[  116  65  |  131  18  ]]></c>
+                </r>
+                <r>
+                  <c>39: 131 94 | 116 68</c>
+                  <c><![CDATA[ 39 ]]></c>
+                  <c><![CDATA[  131  94  |  116  68  ]]></c>
+                </r>
+                <r>
+                  <c>84: 130 116 | 131 131</c>
+                  <c><![CDATA[ 84 ]]></c>
+                  <c><![CDATA[  130  116  |  131  131  ]]></c>
+                </r>
+                <r>
+                  <c>124: 20 131 | 13 116</c>
+                  <c><![CDATA[ 124 ]]></c>
+                  <c><![CDATA[  20  131  |  13  116  ]]></c>
+                </r>
+                <r>
+                  <c>110: 116 37 | 131 117</c>
+                  <c><![CDATA[ 110 ]]></c>
+                  <c><![CDATA[  116  37  |  131  117  ]]></c>
+                </r>
+                <r>
+                  <c>41: 94 131 | 133 116</c>
+                  <c><![CDATA[ 41 ]]></c>
+                  <c><![CDATA[  94  131  |  133  116  ]]></c>
+                </r>
+                <r>
+                  <c>13: 131 94 | 116 63</c>
+                  <c><![CDATA[ 13 ]]></c>
+                  <c><![CDATA[  131  94  |  116  63  ]]></c>
+                </r>
+                <r>
+                  <c>104: 131 116 | 130 131</c>
+                  <c><![CDATA[ 104 ]]></c>
+                  <c><![CDATA[  131  116  |  130  131  ]]></c>
+                </r>
+                <r>
+                  <c>113: 116 129 | 131 108</c>
+                  <c><![CDATA[ 113 ]]></c>
+                  <c><![CDATA[  116  129  |  131  108  ]]></c>
+                </r>
+                <r>
+                  <c>64: 116 71 | 131 55</c>
+                  <c><![CDATA[ 64 ]]></c>
+                  <c><![CDATA[  116  71  |  131  55  ]]></c>
+                </r>
+                <r>
+                  <c>58: 116 68</c>
+                  <c><![CDATA[ 58 ]]></c>
+                  <c><![CDATA[  116  68  ]]></c>
+                </r>
+                <r>
+                  <c>2: 131 40 | 116 128</c>
+                  <c><![CDATA[ 2 ]]></c>
+                  <c><![CDATA[  131  40  |  116  128  ]]></c>
+                </r>
+                <r>
+                  <c>32: 53 116 | 9 131</c>
+                  <c><![CDATA[ 32 ]]></c>
+                  <c><![CDATA[  53  116  |  9  131  ]]></c>
+                </r>
+                <r>
+                  <c>11: 42 31</c>
+                  <c><![CDATA[ 11 ]]></c>
+                  <c><![CDATA[ 42 31 (?R)]]></c>
+                </r>
+                <r>
+                  <c>73: 131 29 | 116 2</c>
+                  <c><![CDATA[ 73 ]]></c>
+                  <c><![CDATA[  131  29  |  116  2  ]]></c>
+                </r>
+                <r>
+                  <c>133: 131 116</c>
+                  <c><![CDATA[ 133 ]]></c>
+                  <c><![CDATA[  131  116  ]]></c>
+                </r>
+                <r>
+                  <c>21: 91 116 | 6 131</c>
+                  <c><![CDATA[ 21 ]]></c>
+                  <c><![CDATA[  91  116  |  6  131  ]]></c>
+                </r>
+                <r>
+                  <c>134: 116 88 | 131 56</c>
+                  <c><![CDATA[ 134 ]]></c>
+                  <c><![CDATA[  116  88  |  131  56  ]]></c>
+                </r>
+                <r>
+                  <c>119: 52 131 | 81 116</c>
+                  <c><![CDATA[ 119 ]]></c>
+                  <c><![CDATA[  52  131  |  81  116  ]]></c>
+                </r>
+                <r>
+                  <c>45: 28 131 | 85 116</c>
+                  <c><![CDATA[ 45 ]]></c>
+                  <c><![CDATA[  28  131  |  85  116  ]]></c>
+                </r>
+                <r>
+                  <c>115: 86 116 | 99 131</c>
+                  <c><![CDATA[ 115 ]]></c>
+                  <c><![CDATA[  86  116  |  99  131  ]]></c>
+                </r>
+                <r>
+                  <c>85: 116 63 | 131 51</c>
+                  <c><![CDATA[ 85 ]]></c>
+                  <c><![CDATA[  116  63  |  131  51  ]]></c>
+                </r>
+                <r>
+                  <c>109: 112 116 | 61 131</c>
+                  <c><![CDATA[ 109 ]]></c>
+                  <c><![CDATA[  112  116  |  61  131  ]]></c>
+                </r>
+                <r>
+                  <c>10: 131 121 | 116 30</c>
+                  <c><![CDATA[ 10 ]]></c>
+                  <c><![CDATA[  131  121  |  116  30  ]]></c>
+                </r>
+                <r>
+                  <c>67: 116 68 | 131 84</c>
+                  <c><![CDATA[ 67 ]]></c>
+                  <c><![CDATA[  116  68  |  131  84  ]]></c>
+                </r>
+                <r>
+                  <c>28: 131 40</c>
+                  <c><![CDATA[ 28 ]]></c>
+                  <c><![CDATA[  131  40  ]]></c>
+                </r>
+                <r>
+                  <c>129: 116 51 | 131 63</c>
+                  <c><![CDATA[ 129 ]]></c>
+                  <c><![CDATA[  116  51  |  131  63  ]]></c>
+                </r>
+                <r>
+                  <c>97: 131 132 | 116 51</c>
+                  <c><![CDATA[ 97 ]]></c>
+                  <c><![CDATA[  131  132  |  116  51  ]]></c>
+                </r>
+                <r>
+                  <c>72: 45 131 | 103 116</c>
+                  <c><![CDATA[ 72 ]]></c>
+                  <c><![CDATA[  45  131  |  103  116  ]]></c>
+                </r>
+                <r>
+                  <c>63: 131 131</c>
+                  <c><![CDATA[ 63 ]]></c>
+                  <c><![CDATA[  131  131  ]]></c>
+                </r>
+                <r>
+                  <c>36: 82 116 | 10 131</c>
+                  <c><![CDATA[ 36 ]]></c>
+                  <c><![CDATA[  82  116  |  10  131  ]]></c>
+                </r>
+                <r>
+                  <c>114: 131 84 | 116 51</c>
+                  <c><![CDATA[ 114 ]]></c>
+                  <c><![CDATA[  131  84  |  116  51  ]]></c>
+                </r>
+                <r>
+                  <c>79: 110 131 | 89 116</c>
+                  <c><![CDATA[ 79 ]]></c>
+                  <c><![CDATA[  110  131  |  89  116  ]]></c>
+                </r>
+                <r>
+                  <c>95: 116 133 | 131 105</c>
+                  <c><![CDATA[ 95 ]]></c>
+                  <c><![CDATA[  116  133  |  131  105  ]]></c>
+                </r>
+                <r>
+                  <c>25: 63 116 | 16 131</c>
+                  <c><![CDATA[ 25 ]]></c>
+                  <c><![CDATA[  63  116  |  16  131  ]]></c>
+                </r>
+                <r>
+                  <c>24: 131 125 | 116 12</c>
+                  <c><![CDATA[ 24 ]]></c>
+                  <c><![CDATA[  131  125  |  116  12  ]]></c>
+                </r>
+                <r>
+                  <c>82: 116 107 | 131 109</c>
+                  <c><![CDATA[ 82 ]]></c>
+                  <c><![CDATA[  116  107  |  131  109  ]]></c>
+                </r>
+                <r>
+                  <c>40: 131 116 | 116 116</c>
+                  <c><![CDATA[ 40 ]]></c>
+                  <c><![CDATA[  131  116  |  116  116  ]]></c>
+                </r>
+                <r>
+                  <c>121: 112 116 | 100 131</c>
+                  <c><![CDATA[ 121 ]]></c>
+                  <c><![CDATA[  112  116  |  100  131  ]]></c>
+                </r>
+                <r>
+                  <c>117: 68 116 | 133 131</c>
+                  <c><![CDATA[ 117 ]]></c>
+                  <c><![CDATA[  68  116  |  133  131  ]]></c>
+                </r>
+                <r>
+                  <c>8: 42</c>
+                  <c><![CDATA[ 8 ]]></c>
+                  <c><![CDATA[ 42 +]]></c>
+                </r>
+                <r>
+                  <c>94: 116 131 | 131 131</c>
+                  <c><![CDATA[ 94 ]]></c>
+                  <c><![CDATA[  116  131  |  131  131  ]]></c>
+                </r>
+                <r>
+                  <c>60: 102 116 | 62 131</c>
+                  <c><![CDATA[ 60 ]]></c>
+                  <c><![CDATA[  102  116  |  62  131  ]]></c>
+                </r>
+                <r>
+                  <c>123: 116 80 | 131 72</c>
+                  <c><![CDATA[ 123 ]]></c>
+                  <c><![CDATA[  116  80  |  131  72  ]]></c>
+                </r>
+                <r>
+                  <c>19: 127 116 | 21 131</c>
+                  <c><![CDATA[ 19 ]]></c>
+                  <c><![CDATA[  127  116  |  21  131  ]]></c>
+                </r>
+                <r>
+                  <c>80: 131 111 | 116 87</c>
+                  <c><![CDATA[ 80 ]]></c>
+                  <c><![CDATA[  131  111  |  116  87  ]]></c>
+                </r>
+                <r>
+                  <c>35: 131 98 | 116 59</c>
+                  <c><![CDATA[ 35 ]]></c>
+                  <c><![CDATA[  131  98  |  116  59  ]]></c>
+                </r>
+                <r>
+                  <c>102: 116 84</c>
+                  <c><![CDATA[ 102 ]]></c>
+                  <c><![CDATA[  116  84  ]]></c>
+                </r>
+                <r>
+                  <c>48: 36 131 | 24 116</c>
+                  <c><![CDATA[ 48 ]]></c>
+                  <c><![CDATA[  36  131  |  24  116  ]]></c>
+                </r>
+                <r>
+                  <c>38: 23 131 | 41 116</c>
+                  <c><![CDATA[ 38 ]]></c>
+                  <c><![CDATA[  23  131  |  41  116  ]]></c>
+                </r>
+                <r>
+                  <c>100: 131 133 | 116 34</c>
+                  <c><![CDATA[ 100 ]]></c>
+                  <c><![CDATA[  131  133  |  116  34  ]]></c>
+                </r>
+                <r>
+                  <c>17: 116 118 | 131 133</c>
+                  <c><![CDATA[ 17 ]]></c>
+                  <c><![CDATA[  116  118  |  131  133  ]]></c>
+                </r>
+                <r>
+                  <c>18: 3 116 | 44 131</c>
+                  <c><![CDATA[ 18 ]]></c>
+                  <c><![CDATA[  3  116  |  44  131  ]]></c>
+                </r>
+                <r>
+                  <c>26: 79 116 | 4 131</c>
+                  <c><![CDATA[ 26 ]]></c>
+                  <c><![CDATA[  79  116  |  4  131  ]]></c>
+                </r>
+                <r>
+                  <c>37: 116 84 | 131 68</c>
+                  <c><![CDATA[ 37 ]]></c>
+                  <c><![CDATA[  116  84  |  131  68  ]]></c>
+                </r>
+                <r>
+                  <c>16: 130 130</c>
+                  <c><![CDATA[ 16 ]]></c>
+                  <c><![CDATA[  130  130  ]]></c>
+                </r>
+                <r>
+                  <c>81: 131 128 | 116 133</c>
+                  <c><![CDATA[ 81 ]]></c>
+                  <c><![CDATA[  131  128  |  116  133  ]]></c>
+                </r>
+                <r>
+                  <c>52: 16 131</c>
+                  <c><![CDATA[ 52 ]]></c>
+                  <c><![CDATA[  16  131  ]]></c>
+                </r>
+                <r>
+                  <c>5: 131 14 | 116 50</c>
+                  <c><![CDATA[ 5 ]]></c>
+                  <c><![CDATA[  131  14  |  116  50  ]]></c>
+                </r>
+                <r>
+                  <c>42: 115 131 | 22 116</c>
+                  <c><![CDATA[ 42 ]]></c>
+                  <c><![CDATA[  115  131  |  22  116  ]]></c>
+                </r>
+                <r>
+                  <c>34: 131 116 | 131 131</c>
+                  <c><![CDATA[ 34 ]]></c>
+                  <c><![CDATA[  131  116  |  131  131  ]]></c>
+                </r>
+                <r>
+                  <c>47: 122 116 | 57 131</c>
+                  <c><![CDATA[ 47 ]]></c>
+                  <c><![CDATA[  122  116  |  57  131  ]]></c>
+                </r>
+                <r>
+                  <c>93: 131 95 | 116 46</c>
+                  <c><![CDATA[ 93 ]]></c>
+                  <c><![CDATA[  131  95  |  116  46  ]]></c>
+                </r>
+                <r>
+                  <c>7: 130 40</c>
+                  <c><![CDATA[ 7 ]]></c>
+                  <c><![CDATA[  130  40  ]]></c>
+                </r>
+                <r>
+                  <c>126: 16 130</c>
+                  <c><![CDATA[ 126 ]]></c>
+                  <c><![CDATA[  16  130  ]]></c>
+                </r>
+                <r>
+                  <c>12: 73 116 | 49 131</c>
+                  <c><![CDATA[ 12 ]]></c>
+                  <c><![CDATA[  73  116  |  49  131  ]]></c>
+                </r>
+                <r>
+                  <c>131: "b"</c>
+                  <c><![CDATA[ 131 ]]></c>
+                  <c><![CDATA[  b  ]]></c>
+                </r>
+                <r>
+                  <c>98: 131 104 | 116 128</c>
+                  <c><![CDATA[ 98 ]]></c>
+                  <c><![CDATA[  131  104  |  116  128  ]]></c>
+                </r>
+                <r>
+                  <c>30: 39 116 | 7 131</c>
+                  <c><![CDATA[ 30 ]]></c>
+                  <c><![CDATA[  39  116  |  7  131  ]]></c>
+                </r>
+                <r>
+                  <c>15: 50 131 | 108 116</c>
+                  <c><![CDATA[ 15 ]]></c>
+                  <c><![CDATA[  50  131  |  108  116  ]]></c>
+                </r>
+                <r>
+                  <c>107: 54 116 | 1 131</c>
+                  <c><![CDATA[ 107 ]]></c>
+                  <c><![CDATA[  54  116  |  1  131  ]]></c>
+                </r>
+                <r>
+                  <c>68: 116 131</c>
+                  <c><![CDATA[ 68 ]]></c>
+                  <c><![CDATA[  116  131  ]]></c>
+                </r>
+                <r>
+                  <c>96: 131 75 | 116 17</c>
+                  <c><![CDATA[ 96 ]]></c>
+                  <c><![CDATA[  131  75  |  116  17  ]]></c>
+                </r>
+                <r>
+                  <c>111: 27 116 | 75 131</c>
+                  <c><![CDATA[ 111 ]]></c>
+                  <c><![CDATA[  27  116  |  75  131  ]]></c>
+                </r>
+                <r>
+                  <c>89: 116 126 | 131 66</c>
+                  <c><![CDATA[ 89 ]]></c>
+                  <c><![CDATA[  116  126  |  131  66  ]]></c>
+                </r>
+                <r>
+                  <c>59: 104 130</c>
+                  <c><![CDATA[ 59 ]]></c>
+                  <c><![CDATA[  104  130  ]]></c>
+                </r>
+                <r>
+                  <c>106: 51 131 | 105 116</c>
+                  <c><![CDATA[ 106 ]]></c>
+                  <c><![CDATA[  51  131  |  105  116  ]]></c>
+                </r>
+                <r>
+                  <c>92: 67 131</c>
+                  <c><![CDATA[ 92 ]]></c>
+                  <c><![CDATA[  67  131  ]]></c>
+                </r>
+                <r>
+                  <c>127: 131 119 | 116 134</c>
+                  <c><![CDATA[ 127 ]]></c>
+                  <c><![CDATA[  131  119  |  116  134  ]]></c>
+                </r>
+                <r>
+                  <c>112: 34 116 | 84 131</c>
+                  <c><![CDATA[ 112 ]]></c>
+                  <c><![CDATA[  34  116  |  84  131  ]]></c>
+                </r>
+                <r>
+                  <c>62: 132 116 | 16 131</c>
+                  <c><![CDATA[ 62 ]]></c>
+                  <c><![CDATA[  132  116  |  16  131  ]]></c>
+                </r>
+                <r>
+                  <c>116: "a"</c>
+                  <c><![CDATA[ 116 ]]></c>
+                  <c><![CDATA[  a  ]]></c>
+                </r>
+                <r>
+                  <c>88: 40 116 | 128 131</c>
+                  <c><![CDATA[ 88 ]]></c>
+                  <c><![CDATA[  40  116  |  128  131  ]]></c>
+                </r>
+                <r>
+                  <c>22: 116 19 | 131 123</c>
+                  <c><![CDATA[ 22 ]]></c>
+                  <c><![CDATA[  116  19  |  131  123  ]]></c>
+                </r>
+                <r>
+                  <c>90: 116 92 | 131 124</c>
+                  <c><![CDATA[ 90 ]]></c>
+                  <c><![CDATA[  116  92  |  131  124  ]]></c>
+                </r>
+                <r>
+                  <c>14: 16 131 | 105 116</c>
+                  <c><![CDATA[ 14 ]]></c>
+                  <c><![CDATA[  16  131  |  105  116  ]]></c>
+                </r>
+                <r>
+                  <c>4: 35 116 | 96 131</c>
+                  <c><![CDATA[ 4 ]]></c>
+                  <c><![CDATA[  35  116  |  96  131  ]]></c>
+                </r>
+                <r>
+                  <c>27: 40 116 | 51 131</c>
+                  <c><![CDATA[ 27 ]]></c>
+                  <c><![CDATA[  40  116  |  51  131  ]]></c>
+                </r>
+                <r>
+                  <c>65: 64 131 | 93 116</c>
+                  <c><![CDATA[ 65 ]]></c>
+                  <c><![CDATA[  64  131  |  93  116  ]]></c>
+                </r>
+                <r>
+                  <c>76: 116 84 | 131 40</c>
+                  <c><![CDATA[ 76 ]]></c>
+                  <c><![CDATA[  116  84  |  131  40  ]]></c>
+                </r>
+                <r>
+                  <c>6: 116 101 | 131 74</c>
+                  <c><![CDATA[ 6 ]]></c>
+                  <c><![CDATA[  116  101  |  131  74  ]]></c>
+                </r>
+                <r>
+                  <c>101: 131 16 | 116 133</c>
+                  <c><![CDATA[ 101 ]]></c>
+                  <c><![CDATA[  131  16  |  116  133  ]]></c>
+                </r>
+                <r>
+                  <c>29: 131 34 | 116 51</c>
+                  <c><![CDATA[ 29 ]]></c>
+                  <c><![CDATA[  131  34  |  116  51  ]]></c>
+                </r>
+                <r>
+                  <c>86: 131 43 | 116 90</c>
+                  <c><![CDATA[ 86 ]]></c>
+                  <c><![CDATA[  131  43  |  116  90  ]]></c>
+                </r>
+                <r>
+                  <c>128: 130 131 | 116 116</c>
+                  <c><![CDATA[ 128 ]]></c>
+                  <c><![CDATA[  130  131  |  116  116  ]]></c>
+                </r>
+                <r>
+                  <c>120: 116 133 | 131 94</c>
+                  <c><![CDATA[ 120 ]]></c>
+                  <c><![CDATA[  116  133  |  131  94  ]]></c>
+                </r>
+                <r>
+                  <c>83: 26 131 | 47 116</c>
+                  <c><![CDATA[ 83 ]]></c>
+                  <c><![CDATA[  26  131  |  47  116  ]]></c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="22" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="25" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="342" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>REGEX_CountMatches([rule],'\d')&gt;0</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>REGEX_CountMatches([rule],'\d')&gt;0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="100000" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="100000" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="462" y="66" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="534" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Result</Name>
+          <Abbrev>R</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>R Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="474" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="REGEX_Replace([rule],' ','')" field="rule" size="100000" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>remove spaces</AnnotationText>
+          <DefaultAnnotationText><![CDATA[rule = REGEX_Replace([rule],' ','')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="100000" source="Formula: REGEX_Replace([rule],' ','')" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.FindReplace.FindReplace">
+        <Position x="234" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldFind>rule</FieldFind>
+          <FieldSearch>rule_id</FieldSearch>
+          <ReplaceFoundField>rule</ReplaceFoundField>
+          <FindMode>FindAny</FindMode>
+          <NoCase value="False" />
+          <MatchWholeWord value="False" />
+          <ReplaceMode>Replace</ReplaceMode>
+          <ReplaceMultipleFound value="True" />
+          <ReplaceAppendFields />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="100000" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFindReplace" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="rule" selected="True" type="V_String" size="100000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="8" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="100000" source="TextInput:" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="27">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="138" y="162" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="rule" selected="True" type="V_WString" size="10000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="22" source="TextInput:" type="String" />
+            <Field name="rule_id" source="TextInput:" type="Byte" />
+            <Field name="rule" size="10000" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="25" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="27" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="True" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="18" Connection="False" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Output" />
+      <Destination ToolID="24" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="27" Connection="Output" />
+      <Destination ToolID="24" Connection="Source" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (1)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (3)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (20)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (21)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>iter</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (14)</Name>
+          <ToolId value="14" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (3)</Name>
+              <ToolId value="3" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (20)</Description>
+              <Name>Macro Output (20)</Name>
+              <ToolId value="20" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (21)</Description>
+              <Name>Macro Output (21)</Name>
+              <ToolId value="21" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Rule0</Input>
+        <Output>iter</Output>
+        <IterationLimit value="10000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="1" Selected="True" />
+        <Tool ToolId="3" Selected="True" />
+        <Tool ToolId="20" Selected="True" />
+        <Tool ToolId="21" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

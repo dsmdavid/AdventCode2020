@@ -1,0 +1,454 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="114" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>iter</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="RecordID" />
+                <Field name="Field_1" />
+                <Field name="group" />
+                <Field name="group_copy" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>219</c>
+                  <c>6 * 3 * 8 + 20898 * 7 + 30</c>
+                  <c><![CDATA[ 6 * 3 * 8 + 20898 * 7 + 30 ]]></c>
+                  <c>6 * 3 * 8 + 20898 * 7 + 30</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="TextInput:" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="246" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" field="t1" size="1073741823" type="V_WString" />
+            <FormulaField expression="t1" field="t1_copy" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>t1 = if Contains([group], '+') then
+REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="TextInput:" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+            <Field name="t1" size="1073741823" source="Formula: if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" type="V_WString" />
+            <Field name="t1_copy" size="1073741823" source="Formula: t1" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="330" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>t1</Field>
+          <RegExExpression value="^(\d+)\s+([^\d]+)\s+(\d+)\s*$" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>t1</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="op1" type="Int64" size="8" />
+            <Field field="op" type="V_WString" size="1073741823" />
+            <Field field="op2" type="Int64" size="8" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="TextInput:" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+            <Field name="t1" size="1073741823" source="Formula: if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" type="V_WString" />
+            <Field name="t1_copy" size="1073741823" source="Formula: t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op1" source="RegEx: Parsed from t1" type="Int64" />
+            <Field description="RegEx: Parsed from t1" name="op" size="1073741823" source="RegEx: Parsed from t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op2" source="RegEx: Parsed from t1" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="426" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if Contains([op], '+')&#xA;then [op1] + [op2]&#xA;else [op1] * [op2]&#xA;endif" field="Result" size="1073741823" type="V_WString" />
+            <FormulaField expression="Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" field="group" size="28" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Result = if Contains([op], '+')
+then [op1] + [op2]
+else [op1] * [op2]
+endif
+grou...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="Formula: Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+            <Field name="t1" size="1073741823" source="Formula: if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" type="V_WString" />
+            <Field name="t1_copy" size="1073741823" source="Formula: t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op1" source="RegEx: Parsed from t1" type="Int64" />
+            <Field description="RegEx: Parsed from t1" name="op" size="1073741823" source="RegEx: Parsed from t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op2" source="RegEx: Parsed from t1" type="Int64" />
+            <Field name="Result" size="1073741823" source="Formula: if Contains([op], '+')&#xA;then [op1] + [op2]&#xA;else [op1] * [op2]&#xA;endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="618" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="t1" selected="False" />
+            <SelectField field="t1_copy" selected="False" />
+            <SelectField field="op1" selected="False" />
+            <SelectField field="op" selected="False" />
+            <SelectField field="op2" selected="False" />
+            <SelectField field="Result" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="Formula: Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="522" y="150" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Contains([group],"+") || Contains([group], '*')
+|| Contains([group],"(")</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Contains([group],"+") || Contains([group], '*')
+|| Contains([group],"(")</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="Formula: Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+            <Field name="t1" size="1073741823" source="Formula: if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" type="V_WString" />
+            <Field name="t1_copy" size="1073741823" source="Formula: t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op1" source="RegEx: Parsed from t1" type="Int64" />
+            <Field description="RegEx: Parsed from t1" name="op" size="1073741823" source="RegEx: Parsed from t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op2" source="RegEx: Parsed from t1" type="Int64" />
+            <Field name="Result" size="1073741823" source="Formula: if Contains([op], '+')&#xA;then [op1] + [op2]&#xA;else [op1] * [op2]&#xA;endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="Formula: Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+            <Field name="t1" size="1073741823" source="Formula: if Contains([group], '+') then&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\+\s+([^\s]+))(.*?$)', '$2')&#xA;else&#xA;REGEX_Replace([group], '^(.*?)(([^\s]+)\s+\*\s+([^\s]+))(.*?$)', '$2')&#xA;endif" type="V_WString" />
+            <Field name="t1_copy" size="1073741823" source="Formula: t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op1" source="RegEx: Parsed from t1" type="Int64" />
+            <Field description="RegEx: Parsed from t1" name="op" size="1073741823" source="RegEx: Parsed from t1" type="V_WString" />
+            <Field description="RegEx: Parsed from t1" name="op2" source="RegEx: Parsed from t1" type="Int64" />
+            <Field name="Result" size="1073741823" source="Formula: if Contains([op], '+')&#xA;then [op1] + [op2]&#xA;else [op1] * [op2]&#xA;endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="654" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="RecordID" selected="True" />
+            <SelectField field="Field_1" selected="True" />
+            <SelectField field="group" selected="True" />
+            <SelectField field="group_copy" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" size="26" source="TextInput:" type="String" />
+            <Field name="group" size="28" source="Formula: Replace([group], ' ' +Trim([t1], ' ') +' ', ' '+[Result]+' ')" type="String" />
+            <Field name="group_copy" size="26" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="750" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iter</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="762" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Result</Name>
+          <Abbrev>R</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>R Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="4" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Output" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="True" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="False" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="20" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>iter_group</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (18)</Name>
+          <ToolId value="18" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (19)</Description>
+              <Name>Macro Output (19)</Name>
+              <ToolId value="19" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (20)</Description>
+              <Name>Macro Output (20)</Name>
+              <ToolId value="20" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>iter</Input>
+        <Output>iter</Output>
+        <IterationLimit value="100" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="19" Selected="True" />
+        <Tool ToolId="20" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

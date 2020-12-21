@@ -1,0 +1,1310 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="129">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2442" y="690" width="240" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Part II</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="126">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2442" y="342" width="240" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Part I</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="62">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="954" y="618" width="132" height="300" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>CONSTANTS</Text>
+          <Font name="Arial" size="14.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="121" g="204" b="142" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="61">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="954" y="366" width="132" height="240" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>INPUTS</Text>
+          <Font name="Arial" size="14.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="121" g="204" b="142" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="60">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="66" y="630" width="876" height="696" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Prompt</Text>
+          <Font name="Arial" size="12" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="209" g="209" b="233" />
+          <Shape shape="0" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="88">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="54" width="804" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>My approach to Day ... of Advent of Code 2020</Text>
+          <Font name="Bauhaus 93" size="24" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="89">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="54" y="90" width="804" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Day  -Part I</Text>
+          <Font name="Bauhaus 93" size="24" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="3" />
+          <Justification Justification="3" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="92">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.DbFileInput.DbFileInput">
+        <Position x="978" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Passwords />
+          <File RecordLimit="" SearchSubDirs="False" FileFormat="0" OutputFileName="">F:\Dropbox\python\AdventCode2020\Inputs\Day_21\Day_21_01.txt</File>
+          <FormatSpecificOptions>
+            <HeaderRow>False</HeaderRow>
+            <IgnoreErrors>False</IgnoreErrors>
+            <AllowShareWrite>False</AllowShareWrite>
+            <ImportLine>1</ImportLine>
+            <FieldLen>100000</FieldLen>
+            <SingleThreadRead>False</SingleThreadRead>
+            <IgnoreQuotes>DoubleQuotes</IgnoreQuotes>
+            <Delimeter>\0</Delimeter>
+            <QuoteRecordBreak>False</QuoteRecordBreak>
+            <CodePage>28591</CodePage>
+          </FormatSpecificOptions>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Day_21_01.txt</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Field_1" size="100000" source="File: F:\Dropbox\python\AdventCode2020\Inputs\Day_21\Day_21_01.txt" type="V_String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxDbFileInput" />
+    </Node>
+    <Node ToolID="93">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="978" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="4" />
+          <Fields>
+            <Field name="Field_1" />
+          </Fields>
+          <Data>
+            <r>
+              <c>mxmxvkd kfcds sqjhc nhms (contains dairy, fish)</c>
+            </r>
+            <r>
+              <c>trh fvjkl sbzzf mxmxvkd (contains dairy)</c>
+            </r>
+            <r>
+              <c>sqjhc fvjkl (contains soy)</c>
+            </r>
+            <r>
+              <c>sqjhc mxmxvkd sbzzf (contains fish)</c>
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Sample</AnnotationText>
+          <DefaultAnnotationText>Sample</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="94">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RegEx.RegEx">
+        <Position x="1122" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>Field_1</Field>
+          <RegExExpression value="^([^\(]+)\(contains ([^\)]*)\)" />
+          <CaseInsensitve value="True" />
+          <Method>ParseComplex</Method>
+          <Replace expression="">
+            <CopyUnmatched value="True" />
+          </Replace>
+          <ParseSimple>
+            <SplitToRows value="False" />
+            <RootName>Field_1</RootName>
+            <NumFields value="3" />
+            <ErrorHandling>Warn</ErrorHandling>
+          </ParseSimple>
+          <ParseComplex>
+            <Field field="ingredientes" type="V_String" size="10000" />
+            <Field field="allergens" type="V_String" size="47" />
+          </ParseComplex>
+          <Match>
+            <Field>Field_1_Matched</Field>
+            <ErrorUnmatched value="False" />
+          </Match>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRegEx" />
+    </Node>
+    <Node ToolID="95">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1314" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>ListID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="96">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="1410" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>ingredientes</Field>
+          <Delimeters value="\s" />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="98">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1218" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="replace([allergens],',','')" field="allergens" size="47" type="V_String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[allergens = replace([allergens],',','')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="99">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1674" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="allergens" />
+          </GroupFields>
+          <HeaderField field="ingredientes" />
+          <DataField field="ListID" />
+          <Methods>
+            <Method method="Count" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field description="TextToColumns: Parsed from allergens" name="allergens" size="47" source="CrossTab:Group:Count:" type="V_String" />
+            <Field name="Count_bbxkm" source="CrossTab:Header:ingredientes:bbxkm:CountNonNulls:" type="Double" />
+            <Field name="Count_bcnt" source="CrossTab:Header:ingredientes:bcnt:CountNonNulls:" type="Double" />
+            <Field name="Count_bcqqrr" source="CrossTab:Header:ingredientes:bcqqrr:CountNonNulls:" type="Double" />
+            <Field name="Count_bfhfqp" source="CrossTab:Header:ingredientes:bfhfqp:CountNonNulls:" type="Double" />
+            <Field name="Count_bhflr" source="CrossTab:Header:ingredientes:bhflr:CountNonNulls:" type="Double" />
+            <Field name="Count_bhsvqks" source="CrossTab:Header:ingredientes:bhsvqks:CountNonNulls:" type="Double" />
+            <Field name="Count_bkmfl" source="CrossTab:Header:ingredientes:bkmfl:CountNonNulls:" type="Double" />
+            <Field name="Count_bktfm" source="CrossTab:Header:ingredientes:bktfm:CountNonNulls:" type="Double" />
+            <Field name="Count_blpflv" source="CrossTab:Header:ingredientes:blpflv:CountNonNulls:" type="Double" />
+            <Field name="Count_bpmpfs" source="CrossTab:Header:ingredientes:bpmpfs:CountNonNulls:" type="Double" />
+            <Field name="Count_bpqm" source="CrossTab:Header:ingredientes:bpqm:CountNonNulls:" type="Double" />
+            <Field name="Count_bqblkh" source="CrossTab:Header:ingredientes:bqblkh:CountNonNulls:" type="Double" />
+            <Field name="Count_brrb" source="CrossTab:Header:ingredientes:brrb:CountNonNulls:" type="Double" />
+            <Field name="Count_brtnxz" source="CrossTab:Header:ingredientes:brtnxz:CountNonNulls:" type="Double" />
+            <Field name="Count_bxkrd" source="CrossTab:Header:ingredientes:bxkrd:CountNonNulls:" type="Double" />
+            <Field name="Count_bxlcs" source="CrossTab:Header:ingredientes:bxlcs:CountNonNulls:" type="Double" />
+            <Field name="Count_bzxl" source="CrossTab:Header:ingredientes:bzxl:CountNonNulls:" type="Double" />
+            <Field name="Count_cggjv" source="CrossTab:Header:ingredientes:cggjv:CountNonNulls:" type="Double" />
+            <Field name="Count_cjzfxzt" source="CrossTab:Header:ingredientes:cjzfxzt:CountNonNulls:" type="Double" />
+            <Field name="Count_clsfjdj" source="CrossTab:Header:ingredientes:clsfjdj:CountNonNulls:" type="Double" />
+            <Field name="Count_crqz" source="CrossTab:Header:ingredientes:crqz:CountNonNulls:" type="Double" />
+            <Field name="Count_csmrb" source="CrossTab:Header:ingredientes:csmrb:CountNonNulls:" type="Double" />
+            <Field name="Count_csrhqtx" source="CrossTab:Header:ingredientes:csrhqtx:CountNonNulls:" type="Double" />
+            <Field name="Count_cz" source="CrossTab:Header:ingredientes:cz:CountNonNulls:" type="Double" />
+            <Field name="Count_dbfx" source="CrossTab:Header:ingredientes:dbfx:CountNonNulls:" type="Double" />
+            <Field name="Count_dbkz" source="CrossTab:Header:ingredientes:dbkz:CountNonNulls:" type="Double" />
+            <Field name="Count_dkk" source="CrossTab:Header:ingredientes:dkk:CountNonNulls:" type="Double" />
+            <Field name="Count_dtcr" source="CrossTab:Header:ingredientes:dtcr:CountNonNulls:" type="Double" />
+            <Field name="Count_dtxnkhj" source="CrossTab:Header:ingredientes:dtxnkhj:CountNonNulls:" type="Double" />
+            <Field name="Count_dxvnl" source="CrossTab:Header:ingredientes:dxvnl:CountNonNulls:" type="Double" />
+            <Field name="Count_dxvsp" source="CrossTab:Header:ingredientes:dxvsp:CountNonNulls:" type="Double" />
+            <Field name="Count_dzkb" source="CrossTab:Header:ingredientes:dzkb:CountNonNulls:" type="Double" />
+            <Field name="Count_ffnsz" source="CrossTab:Header:ingredientes:ffnsz:CountNonNulls:" type="Double" />
+            <Field name="Count_ffqpft" source="CrossTab:Header:ingredientes:ffqpft:CountNonNulls:" type="Double" />
+            <Field name="Count_fh" source="CrossTab:Header:ingredientes:fh:CountNonNulls:" type="Double" />
+            <Field name="Count_fkp" source="CrossTab:Header:ingredientes:fkp:CountNonNulls:" type="Double" />
+            <Field name="Count_fkxsxc" source="CrossTab:Header:ingredientes:fkxsxc:CountNonNulls:" type="Double" />
+            <Field name="Count_flfpkf" source="CrossTab:Header:ingredientes:flfpkf:CountNonNulls:" type="Double" />
+            <Field name="Count_fmjpdnv" source="CrossTab:Header:ingredientes:fmjpdnv:CountNonNulls:" type="Double" />
+            <Field name="Count_fnjz" source="CrossTab:Header:ingredientes:fnjz:CountNonNulls:" type="Double" />
+            <Field name="Count_fpfzjd" source="CrossTab:Header:ingredientes:fpfzjd:CountNonNulls:" type="Double" />
+            <Field name="Count_fppqtg" source="CrossTab:Header:ingredientes:fppqtg:CountNonNulls:" type="Double" />
+            <Field name="Count_fqgccl" source="CrossTab:Header:ingredientes:fqgccl:CountNonNulls:" type="Double" />
+            <Field name="Count_fqzkg" source="CrossTab:Header:ingredientes:fqzkg:CountNonNulls:" type="Double" />
+            <Field name="Count_fvpcbh" source="CrossTab:Header:ingredientes:fvpcbh:CountNonNulls:" type="Double" />
+            <Field name="Count_fvxx" source="CrossTab:Header:ingredientes:fvxx:CountNonNulls:" type="Double" />
+            <Field name="Count_gbthm" source="CrossTab:Header:ingredientes:gbthm:CountNonNulls:" type="Double" />
+            <Field name="Count_gdt" source="CrossTab:Header:ingredientes:gdt:CountNonNulls:" type="Double" />
+            <Field name="Count_ghk" source="CrossTab:Header:ingredientes:ghk:CountNonNulls:" type="Double" />
+            <Field name="Count_gjb" source="CrossTab:Header:ingredientes:gjb:CountNonNulls:" type="Double" />
+            <Field name="Count_gjddl" source="CrossTab:Header:ingredientes:gjddl:CountNonNulls:" type="Double" />
+            <Field name="Count_gjtttz" source="CrossTab:Header:ingredientes:gjtttz:CountNonNulls:" type="Double" />
+            <Field name="Count_gkzs" source="CrossTab:Header:ingredientes:gkzs:CountNonNulls:" type="Double" />
+            <Field name="Count_glcs" source="CrossTab:Header:ingredientes:glcs:CountNonNulls:" type="Double" />
+            <Field name="Count_gmgzk" source="CrossTab:Header:ingredientes:gmgzk:CountNonNulls:" type="Double" />
+            <Field name="Count_gnthh" source="CrossTab:Header:ingredientes:gnthh:CountNonNulls:" type="Double" />
+            <Field name="Count_gpjstjg" source="CrossTab:Header:ingredientes:gpjstjg:CountNonNulls:" type="Double" />
+            <Field name="Count_grlj" source="CrossTab:Header:ingredientes:grlj:CountNonNulls:" type="Double" />
+            <Field name="Count_gsmg" source="CrossTab:Header:ingredientes:gsmg:CountNonNulls:" type="Double" />
+            <Field name="Count_gsprc" source="CrossTab:Header:ingredientes:gsprc:CountNonNulls:" type="Double" />
+            <Field name="Count_gxhf" source="CrossTab:Header:ingredientes:gxhf:CountNonNulls:" type="Double" />
+            <Field name="Count_gznnn" source="CrossTab:Header:ingredientes:gznnn:CountNonNulls:" type="Double" />
+            <Field name="Count_hbdcs" source="CrossTab:Header:ingredientes:hbdcs:CountNonNulls:" type="Double" />
+            <Field name="Count_hcql" source="CrossTab:Header:ingredientes:hcql:CountNonNulls:" type="Double" />
+            <Field name="Count_hffsbh" source="CrossTab:Header:ingredientes:hffsbh:CountNonNulls:" type="Double" />
+            <Field name="Count_hgtzzp" source="CrossTab:Header:ingredientes:hgtzzp:CountNonNulls:" type="Double" />
+            <Field name="Count_hjc" source="CrossTab:Header:ingredientes:hjc:CountNonNulls:" type="Double" />
+            <Field name="Count_hkl" source="CrossTab:Header:ingredientes:hkl:CountNonNulls:" type="Double" />
+            <Field name="Count_hkmrt" source="CrossTab:Header:ingredientes:hkmrt:CountNonNulls:" type="Double" />
+            <Field name="Count_hkvglb" source="CrossTab:Header:ingredientes:hkvglb:CountNonNulls:" type="Double" />
+            <Field name="Count_hkvh" source="CrossTab:Header:ingredientes:hkvh:CountNonNulls:" type="Double" />
+            <Field name="Count_hmgz" source="CrossTab:Header:ingredientes:hmgz:CountNonNulls:" type="Double" />
+            <Field name="Count_hnvcpljs" source="CrossTab:Header:ingredientes:hnvcpljs:CountNonNulls:" type="Double" />
+            <Field name="Count_hrf" source="CrossTab:Header:ingredientes:hrf:CountNonNulls:" type="Double" />
+            <Field name="Count_hvtn" source="CrossTab:Header:ingredientes:hvtn:CountNonNulls:" type="Double" />
+            <Field name="Count_jdhzzz" source="CrossTab:Header:ingredientes:jdhzzz:CountNonNulls:" type="Double" />
+            <Field name="Count_jhf" source="CrossTab:Header:ingredientes:jhf:CountNonNulls:" type="Double" />
+            <Field name="Count_jhrbjsr" source="CrossTab:Header:ingredientes:jhrbjsr:CountNonNulls:" type="Double" />
+            <Field name="Count_jktsl" source="CrossTab:Header:ingredientes:jktsl:CountNonNulls:" type="Double" />
+            <Field name="Count_jlmvcn" source="CrossTab:Header:ingredientes:jlmvcn:CountNonNulls:" type="Double" />
+            <Field name="Count_jmfgh" source="CrossTab:Header:ingredientes:jmfgh:CountNonNulls:" type="Double" />
+            <Field name="Count_jmttf" source="CrossTab:Header:ingredientes:jmttf:CountNonNulls:" type="Double" />
+            <Field name="Count_jvhjxn" source="CrossTab:Header:ingredientes:jvhjxn:CountNonNulls:" type="Double" />
+            <Field name="Count_jz" source="CrossTab:Header:ingredientes:jz:CountNonNulls:" type="Double" />
+            <Field name="Count_jzrks" source="CrossTab:Header:ingredientes:jzrks:CountNonNulls:" type="Double" />
+            <Field name="Count_jzzjz" source="CrossTab:Header:ingredientes:jzzjz:CountNonNulls:" type="Double" />
+            <Field name="Count_kbtrd" source="CrossTab:Header:ingredientes:kbtrd:CountNonNulls:" type="Double" />
+            <Field name="Count_kjd" source="CrossTab:Header:ingredientes:kjd:CountNonNulls:" type="Double" />
+            <Field name="Count_kmsdzs" source="CrossTab:Header:ingredientes:kmsdzs:CountNonNulls:" type="Double" />
+            <Field name="Count_kmzlpb" source="CrossTab:Header:ingredientes:kmzlpb:CountNonNulls:" type="Double" />
+            <Field name="Count_knfdh" source="CrossTab:Header:ingredientes:knfdh:CountNonNulls:" type="Double" />
+            <Field name="Count_kshxlf" source="CrossTab:Header:ingredientes:kshxlf:CountNonNulls:" type="Double" />
+            <Field name="Count_ktmxcn" source="CrossTab:Header:ingredientes:ktmxcn:CountNonNulls:" type="Double" />
+            <Field name="Count_kvbmftc" source="CrossTab:Header:ingredientes:kvbmftc:CountNonNulls:" type="Double" />
+            <Field name="Count_kznc" source="CrossTab:Header:ingredientes:kznc:CountNonNulls:" type="Double" />
+            <Field name="Count_lblqc" source="CrossTab:Header:ingredientes:lblqc:CountNonNulls:" type="Double" />
+            <Field name="Count_lbnmnf" source="CrossTab:Header:ingredientes:lbnmnf:CountNonNulls:" type="Double" />
+            <Field name="Count_lcdd" source="CrossTab:Header:ingredientes:lcdd:CountNonNulls:" type="Double" />
+            <Field name="Count_lcmvc" source="CrossTab:Header:ingredientes:lcmvc:CountNonNulls:" type="Double" />
+            <Field name="Count_lfcl" source="CrossTab:Header:ingredientes:lfcl:CountNonNulls:" type="Double" />
+            <Field name="Count_ljtb" source="CrossTab:Header:ingredientes:ljtb:CountNonNulls:" type="Double" />
+            <Field name="Count_llgjg" source="CrossTab:Header:ingredientes:llgjg:CountNonNulls:" type="Double" />
+            <Field name="Count_llnhqgx" source="CrossTab:Header:ingredientes:llnhqgx:CountNonNulls:" type="Double" />
+            <Field name="Count_lpdz" source="CrossTab:Header:ingredientes:lpdz:CountNonNulls:" type="Double" />
+            <Field name="Count_lrfhq" source="CrossTab:Header:ingredientes:lrfhq:CountNonNulls:" type="Double" />
+            <Field name="Count_lzlq" source="CrossTab:Header:ingredientes:lzlq:CountNonNulls:" type="Double" />
+            <Field name="Count_mbdbdt" source="CrossTab:Header:ingredientes:mbdbdt:CountNonNulls:" type="Double" />
+            <Field name="Count_mdvm" source="CrossTab:Header:ingredientes:mdvm:CountNonNulls:" type="Double" />
+            <Field name="Count_mftgt" source="CrossTab:Header:ingredientes:mftgt:CountNonNulls:" type="Double" />
+            <Field name="Count_mlgch" source="CrossTab:Header:ingredientes:mlgch:CountNonNulls:" type="Double" />
+            <Field name="Count_mljgf" source="CrossTab:Header:ingredientes:mljgf:CountNonNulls:" type="Double" />
+            <Field name="Count_mlkv" source="CrossTab:Header:ingredientes:mlkv:CountNonNulls:" type="Double" />
+            <Field name="Count_mlrmmt" source="CrossTab:Header:ingredientes:mlrmmt:CountNonNulls:" type="Double" />
+            <Field name="Count_mlsgjf" source="CrossTab:Header:ingredientes:mlsgjf:CountNonNulls:" type="Double" />
+            <Field name="Count_mqngs" source="CrossTab:Header:ingredientes:mqngs:CountNonNulls:" type="Double" />
+            <Field name="Count_mtbbmqx" source="CrossTab:Header:ingredientes:mtbbmqx:CountNonNulls:" type="Double" />
+            <Field name="Count_nbkrmh" source="CrossTab:Header:ingredientes:nbkrmh:CountNonNulls:" type="Double" />
+            <Field name="Count_ncdrm" source="CrossTab:Header:ingredientes:ncdrm:CountNonNulls:" type="Double" />
+            <Field name="Count_nct" source="CrossTab:Header:ingredientes:nct:CountNonNulls:" type="Double" />
+            <Field name="Count_nkth" source="CrossTab:Header:ingredientes:nkth:CountNonNulls:" type="Double" />
+            <Field name="Count_nptsm" source="CrossTab:Header:ingredientes:nptsm:CountNonNulls:" type="Double" />
+            <Field name="Count_nq" source="CrossTab:Header:ingredientes:nq:CountNonNulls:" type="Double" />
+            <Field name="Count_ntbvc" source="CrossTab:Header:ingredientes:ntbvc:CountNonNulls:" type="Double" />
+            <Field name="Count_nvbhlj" source="CrossTab:Header:ingredientes:nvbhlj:CountNonNulls:" type="Double" />
+            <Field name="Count_nzjkbs" source="CrossTab:Header:ingredientes:nzjkbs:CountNonNulls:" type="Double" />
+            <Field name="Count_pllzxb" source="CrossTab:Header:ingredientes:pllzxb:CountNonNulls:" type="Double" />
+            <Field name="Count_pqnvb" source="CrossTab:Header:ingredientes:pqnvb:CountNonNulls:" type="Double" />
+            <Field name="Count_pssbs" source="CrossTab:Header:ingredientes:pssbs:CountNonNulls:" type="Double" />
+            <Field name="Count_pzdsp" source="CrossTab:Header:ingredientes:pzdsp:CountNonNulls:" type="Double" />
+            <Field name="Count_pzzghh" source="CrossTab:Header:ingredientes:pzzghh:CountNonNulls:" type="Double" />
+            <Field name="Count_qjtlb" source="CrossTab:Header:ingredientes:qjtlb:CountNonNulls:" type="Double" />
+            <Field name="Count_qjzzmx" source="CrossTab:Header:ingredientes:qjzzmx:CountNonNulls:" type="Double" />
+            <Field name="Count_qmfg" source="CrossTab:Header:ingredientes:qmfg:CountNonNulls:" type="Double" />
+            <Field name="Count_qpnvcj" source="CrossTab:Header:ingredientes:qpnvcj:CountNonNulls:" type="Double" />
+            <Field name="Count_qqczc" source="CrossTab:Header:ingredientes:qqczc:CountNonNulls:" type="Double" />
+            <Field name="Count_qtbgl" source="CrossTab:Header:ingredientes:qtbgl:CountNonNulls:" type="Double" />
+            <Field name="Count_qtxd" source="CrossTab:Header:ingredientes:qtxd:CountNonNulls:" type="Double" />
+            <Field name="Count_qvzd" source="CrossTab:Header:ingredientes:qvzd:CountNonNulls:" type="Double" />
+            <Field name="Count_rdrfcd" source="CrossTab:Header:ingredientes:rdrfcd:CountNonNulls:" type="Double" />
+            <Field name="Count_rfbzdxpt" source="CrossTab:Header:ingredientes:rfbzdxpt:CountNonNulls:" type="Double" />
+            <Field name="Count_rfdspl" source="CrossTab:Header:ingredientes:rfdspl:CountNonNulls:" type="Double" />
+            <Field name="Count_rfxr" source="CrossTab:Header:ingredientes:rfxr:CountNonNulls:" type="Double" />
+            <Field name="Count_rgpl" source="CrossTab:Header:ingredientes:rgpl:CountNonNulls:" type="Double" />
+            <Field name="Count_rmdlkn" source="CrossTab:Header:ingredientes:rmdlkn:CountNonNulls:" type="Double" />
+            <Field name="Count_rqkxrrt" source="CrossTab:Header:ingredientes:rqkxrrt:CountNonNulls:" type="Double" />
+            <Field name="Count_rrp" source="CrossTab:Header:ingredientes:rrp:CountNonNulls:" type="Double" />
+            <Field name="Count_rsdnp" source="CrossTab:Header:ingredientes:rsdnp:CountNonNulls:" type="Double" />
+            <Field name="Count_rtdfn" source="CrossTab:Header:ingredientes:rtdfn:CountNonNulls:" type="Double" />
+            <Field name="Count_rvcgr" source="CrossTab:Header:ingredientes:rvcgr:CountNonNulls:" type="Double" />
+            <Field name="Count_rvgfqs" source="CrossTab:Header:ingredientes:rvgfqs:CountNonNulls:" type="Double" />
+            <Field name="Count_rznvzm" source="CrossTab:Header:ingredientes:rznvzm:CountNonNulls:" type="Double" />
+            <Field name="Count_sgxqfj" source="CrossTab:Header:ingredientes:sgxqfj:CountNonNulls:" type="Double" />
+            <Field name="Count_skdj" source="CrossTab:Header:ingredientes:skdj:CountNonNulls:" type="Double" />
+            <Field name="Count_skpqxj" source="CrossTab:Header:ingredientes:skpqxj:CountNonNulls:" type="Double" />
+            <Field name="Count_slqbc" source="CrossTab:Header:ingredientes:slqbc:CountNonNulls:" type="Double" />
+            <Field name="Count_sncdd" source="CrossTab:Header:ingredientes:sncdd:CountNonNulls:" type="Double" />
+            <Field name="Count_sq" source="CrossTab:Header:ingredientes:sq:CountNonNulls:" type="Double" />
+            <Field name="Count_sqqg" source="CrossTab:Header:ingredientes:sqqg:CountNonNulls:" type="Double" />
+            <Field name="Count_srbjjv" source="CrossTab:Header:ingredientes:srbjjv:CountNonNulls:" type="Double" />
+            <Field name="Count_srqhhvfp" source="CrossTab:Header:ingredientes:srqhhvfp:CountNonNulls:" type="Double" />
+            <Field name="Count_sstkmq" source="CrossTab:Header:ingredientes:sstkmq:CountNonNulls:" type="Double" />
+            <Field name="Count_st" source="CrossTab:Header:ingredientes:st:CountNonNulls:" type="Double" />
+            <Field name="Count_svpth" source="CrossTab:Header:ingredientes:svpth:CountNonNulls:" type="Double" />
+            <Field name="Count_szhpqll" source="CrossTab:Header:ingredientes:szhpqll:CountNonNulls:" type="Double" />
+            <Field name="Count_tfqzgb" source="CrossTab:Header:ingredientes:tfqzgb:CountNonNulls:" type="Double" />
+            <Field name="Count_tftzqv" source="CrossTab:Header:ingredientes:tftzqv:CountNonNulls:" type="Double" />
+            <Field name="Count_thkp" source="CrossTab:Header:ingredientes:thkp:CountNonNulls:" type="Double" />
+            <Field name="Count_tjvtpjq" source="CrossTab:Header:ingredientes:tjvtpjq:CountNonNulls:" type="Double" />
+            <Field name="Count_tlhj" source="CrossTab:Header:ingredientes:tlhj:CountNonNulls:" type="Double" />
+            <Field name="Count_tnk" source="CrossTab:Header:ingredientes:tnk:CountNonNulls:" type="Double" />
+            <Field name="Count_tqzgb" source="CrossTab:Header:ingredientes:tqzgb:CountNonNulls:" type="Double" />
+            <Field name="Count_tsxkcg" source="CrossTab:Header:ingredientes:tsxkcg:CountNonNulls:" type="Double" />
+            <Field name="Count_txgdclk" source="CrossTab:Header:ingredientes:txgdclk:CountNonNulls:" type="Double" />
+            <Field name="Count_tzxqf" source="CrossTab:Header:ingredientes:tzxqf:CountNonNulls:" type="Double" />
+            <Field name="Count_vcpfq" source="CrossTab:Header:ingredientes:vcpfq:CountNonNulls:" type="Double" />
+            <Field name="Count_vfgp" source="CrossTab:Header:ingredientes:vfgp:CountNonNulls:" type="Double" />
+            <Field name="Count_vfmmq" source="CrossTab:Header:ingredientes:vfmmq:CountNonNulls:" type="Double" />
+            <Field name="Count_vjxfx" source="CrossTab:Header:ingredientes:vjxfx:CountNonNulls:" type="Double" />
+            <Field name="Count_vkdj" source="CrossTab:Header:ingredientes:vkdj:CountNonNulls:" type="Double" />
+            <Field name="Count_vml" source="CrossTab:Header:ingredientes:vml:CountNonNulls:" type="Double" />
+            <Field name="Count_vrcln" source="CrossTab:Header:ingredientes:vrcln:CountNonNulls:" type="Double" />
+            <Field name="Count_vrcp" source="CrossTab:Header:ingredientes:vrcp:CountNonNulls:" type="Double" />
+            <Field name="Count_vspv" source="CrossTab:Header:ingredientes:vspv:CountNonNulls:" type="Double" />
+            <Field name="Count_vtfsc" source="CrossTab:Header:ingredientes:vtfsc:CountNonNulls:" type="Double" />
+            <Field name="Count_vvx" source="CrossTab:Header:ingredientes:vvx:CountNonNulls:" type="Double" />
+            <Field name="Count_vzxrgn" source="CrossTab:Header:ingredientes:vzxrgn:CountNonNulls:" type="Double" />
+            <Field name="Count_xfqnss" source="CrossTab:Header:ingredientes:xfqnss:CountNonNulls:" type="Double" />
+            <Field name="Count_xjgfn" source="CrossTab:Header:ingredientes:xjgfn:CountNonNulls:" type="Double" />
+            <Field name="Count_xmbr" source="CrossTab:Header:ingredientes:xmbr:CountNonNulls:" type="Double" />
+            <Field name="Count_xncd" source="CrossTab:Header:ingredientes:xncd:CountNonNulls:" type="Double" />
+            <Field name="Count_xpk" source="CrossTab:Header:ingredientes:xpk:CountNonNulls:" type="Double" />
+            <Field name="Count_xrrlfcs" source="CrossTab:Header:ingredientes:xrrlfcs:CountNonNulls:" type="Double" />
+            <Field name="Count_xxjkk" source="CrossTab:Header:ingredientes:xxjkk:CountNonNulls:" type="Double" />
+            <Field name="Count_xzdzl" source="CrossTab:Header:ingredientes:xzdzl:CountNonNulls:" type="Double" />
+            <Field name="Count_zgj" source="CrossTab:Header:ingredientes:zgj:CountNonNulls:" type="Double" />
+            <Field name="Count_zmdxkbl" source="CrossTab:Header:ingredientes:zmdxkbl:CountNonNulls:" type="Double" />
+            <Field name="Count_zmqm" source="CrossTab:Header:ingredientes:zmqm:CountNonNulls:" type="Double" />
+            <Field name="Count_znbs" source="CrossTab:Header:ingredientes:znbs:CountNonNulls:" type="Double" />
+            <Field name="Count_znhdgj" source="CrossTab:Header:ingredientes:znhdgj:CountNonNulls:" type="Double" />
+            <Field name="Count_zqtrtmt" source="CrossTab:Header:ingredientes:zqtrtmt:CountNonNulls:" type="Double" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="allergens" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="100">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
+        <Position x="1518" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Field>allergens</Field>
+          <Delimeters value="\s" />
+          <NumFields value="1" />
+          <Flags value="0" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
+    </Node>
+    <Node ToolID="102">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1662" y="546" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="allergens" action="GroupBy" rename="allergens" />
+            <SummarizeField field="ListID" action="CountDistinct" rename="Total_Aliments_with_allergen" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Number of times allergens appear</AnnotationText>
+          <DefaultAnnotationText>Number of times allergens appear</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="103">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Transpose.Transpose">
+        <Position x="1770" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ErrorWarn>Warn</ErrorWarn>
+          <KeyFields>
+            <Field field="allergens" />
+          </KeyFields>
+          <DataFields>
+            <Field field="allergens" selected="False" />
+            <Field field="Count_bbxkm" selected="True" />
+            <Field field="Count_bcnt" selected="True" />
+            <Field field="Count_bcqqrr" selected="True" />
+            <Field field="Count_bfhfqp" selected="True" />
+            <Field field="Count_bhflr" selected="True" />
+            <Field field="Count_bhsvqks" selected="True" />
+            <Field field="Count_bkmfl" selected="True" />
+            <Field field="Count_bktfm" selected="True" />
+            <Field field="Count_blpflv" selected="True" />
+            <Field field="Count_bpmpfs" selected="True" />
+            <Field field="Count_bpqm" selected="True" />
+            <Field field="Count_bqblkh" selected="True" />
+            <Field field="Count_brrb" selected="True" />
+            <Field field="Count_brtnxz" selected="True" />
+            <Field field="Count_bxkrd" selected="True" />
+            <Field field="Count_bxlcs" selected="True" />
+            <Field field="Count_bzxl" selected="True" />
+            <Field field="Count_cggjv" selected="True" />
+            <Field field="Count_cjzfxzt" selected="True" />
+            <Field field="Count_clsfjdj" selected="True" />
+            <Field field="Count_crqz" selected="True" />
+            <Field field="Count_csmrb" selected="True" />
+            <Field field="Count_csrhqtx" selected="True" />
+            <Field field="Count_cz" selected="True" />
+            <Field field="Count_dbfx" selected="True" />
+            <Field field="Count_dbkz" selected="True" />
+            <Field field="Count_dkk" selected="True" />
+            <Field field="Count_dtcr" selected="True" />
+            <Field field="Count_dtxnkhj" selected="True" />
+            <Field field="Count_dxvnl" selected="True" />
+            <Field field="Count_dxvsp" selected="True" />
+            <Field field="Count_dzkb" selected="True" />
+            <Field field="Count_ffnsz" selected="True" />
+            <Field field="Count_ffqpft" selected="True" />
+            <Field field="Count_fh" selected="True" />
+            <Field field="Count_fkp" selected="True" />
+            <Field field="Count_fkxsxc" selected="True" />
+            <Field field="Count_flfpkf" selected="True" />
+            <Field field="Count_fmjpdnv" selected="True" />
+            <Field field="Count_fnjz" selected="True" />
+            <Field field="Count_fpfzjd" selected="True" />
+            <Field field="Count_fppqtg" selected="True" />
+            <Field field="Count_fqgccl" selected="True" />
+            <Field field="Count_fqzkg" selected="True" />
+            <Field field="Count_fvpcbh" selected="True" />
+            <Field field="Count_fvxx" selected="True" />
+            <Field field="Count_gbthm" selected="True" />
+            <Field field="Count_gdt" selected="True" />
+            <Field field="Count_ghk" selected="True" />
+            <Field field="Count_gjb" selected="True" />
+            <Field field="Count_gjddl" selected="True" />
+            <Field field="Count_gjtttz" selected="True" />
+            <Field field="Count_gkzs" selected="True" />
+            <Field field="Count_glcs" selected="True" />
+            <Field field="Count_gmgzk" selected="True" />
+            <Field field="Count_gnthh" selected="True" />
+            <Field field="Count_gpjstjg" selected="True" />
+            <Field field="Count_grlj" selected="True" />
+            <Field field="Count_gsmg" selected="True" />
+            <Field field="Count_gsprc" selected="True" />
+            <Field field="Count_gxhf" selected="True" />
+            <Field field="Count_gznnn" selected="True" />
+            <Field field="Count_hbdcs" selected="True" />
+            <Field field="Count_hcql" selected="True" />
+            <Field field="Count_hffsbh" selected="True" />
+            <Field field="Count_hgtzzp" selected="True" />
+            <Field field="Count_hjc" selected="True" />
+            <Field field="Count_hkl" selected="True" />
+            <Field field="Count_hkmrt" selected="True" />
+            <Field field="Count_hkvglb" selected="True" />
+            <Field field="Count_hkvh" selected="True" />
+            <Field field="Count_hmgz" selected="True" />
+            <Field field="Count_hnvcpljs" selected="True" />
+            <Field field="Count_hrf" selected="True" />
+            <Field field="Count_hvtn" selected="True" />
+            <Field field="Count_jdhzzz" selected="True" />
+            <Field field="Count_jhf" selected="True" />
+            <Field field="Count_jhrbjsr" selected="True" />
+            <Field field="Count_jktsl" selected="True" />
+            <Field field="Count_jlmvcn" selected="True" />
+            <Field field="Count_jmfgh" selected="True" />
+            <Field field="Count_jmttf" selected="True" />
+            <Field field="Count_jvhjxn" selected="True" />
+            <Field field="Count_jz" selected="True" />
+            <Field field="Count_jzrks" selected="True" />
+            <Field field="Count_jzzjz" selected="True" />
+            <Field field="Count_kbtrd" selected="True" />
+            <Field field="Count_kjd" selected="True" />
+            <Field field="Count_kmsdzs" selected="True" />
+            <Field field="Count_kmzlpb" selected="True" />
+            <Field field="Count_knfdh" selected="True" />
+            <Field field="Count_kshxlf" selected="True" />
+            <Field field="Count_ktmxcn" selected="True" />
+            <Field field="Count_kvbmftc" selected="True" />
+            <Field field="Count_kznc" selected="True" />
+            <Field field="Count_lblqc" selected="True" />
+            <Field field="Count_lbnmnf" selected="True" />
+            <Field field="Count_lcdd" selected="True" />
+            <Field field="Count_lcmvc" selected="True" />
+            <Field field="Count_lfcl" selected="True" />
+            <Field field="Count_ljtb" selected="True" />
+            <Field field="Count_llgjg" selected="True" />
+            <Field field="Count_llnhqgx" selected="True" />
+            <Field field="Count_lpdz" selected="True" />
+            <Field field="Count_lrfhq" selected="True" />
+            <Field field="Count_lzlq" selected="True" />
+            <Field field="Count_mbdbdt" selected="True" />
+            <Field field="Count_mdvm" selected="True" />
+            <Field field="Count_mftgt" selected="True" />
+            <Field field="Count_mlgch" selected="True" />
+            <Field field="Count_mljgf" selected="True" />
+            <Field field="Count_mlkv" selected="True" />
+            <Field field="Count_mlrmmt" selected="True" />
+            <Field field="Count_mlsgjf" selected="True" />
+            <Field field="Count_mqngs" selected="True" />
+            <Field field="Count_mtbbmqx" selected="True" />
+            <Field field="Count_nbkrmh" selected="True" />
+            <Field field="Count_ncdrm" selected="True" />
+            <Field field="Count_nct" selected="True" />
+            <Field field="Count_nkth" selected="True" />
+            <Field field="Count_nptsm" selected="True" />
+            <Field field="Count_nq" selected="True" />
+            <Field field="Count_ntbvc" selected="True" />
+            <Field field="Count_nvbhlj" selected="True" />
+            <Field field="Count_nzjkbs" selected="True" />
+            <Field field="Count_pllzxb" selected="True" />
+            <Field field="Count_pqnvb" selected="True" />
+            <Field field="Count_pssbs" selected="True" />
+            <Field field="Count_pzdsp" selected="True" />
+            <Field field="Count_pzzghh" selected="True" />
+            <Field field="Count_qjtlb" selected="True" />
+            <Field field="Count_qjzzmx" selected="True" />
+            <Field field="Count_qmfg" selected="True" />
+            <Field field="Count_qpnvcj" selected="True" />
+            <Field field="Count_qqczc" selected="True" />
+            <Field field="Count_qtbgl" selected="True" />
+            <Field field="Count_qtxd" selected="True" />
+            <Field field="Count_qvzd" selected="True" />
+            <Field field="Count_rdrfcd" selected="True" />
+            <Field field="Count_rfbzdxpt" selected="True" />
+            <Field field="Count_rfdspl" selected="True" />
+            <Field field="Count_rfxr" selected="True" />
+            <Field field="Count_rgpl" selected="True" />
+            <Field field="Count_rmdlkn" selected="True" />
+            <Field field="Count_rqkxrrt" selected="True" />
+            <Field field="Count_rrp" selected="True" />
+            <Field field="Count_rsdnp" selected="True" />
+            <Field field="Count_rtdfn" selected="True" />
+            <Field field="Count_rvcgr" selected="True" />
+            <Field field="Count_rvgfqs" selected="True" />
+            <Field field="Count_rznvzm" selected="True" />
+            <Field field="Count_sgxqfj" selected="True" />
+            <Field field="Count_skdj" selected="True" />
+            <Field field="Count_skpqxj" selected="True" />
+            <Field field="Count_slqbc" selected="True" />
+            <Field field="Count_sncdd" selected="True" />
+            <Field field="Count_sq" selected="True" />
+            <Field field="Count_sqqg" selected="True" />
+            <Field field="Count_srbjjv" selected="True" />
+            <Field field="Count_srqhhvfp" selected="True" />
+            <Field field="Count_sstkmq" selected="True" />
+            <Field field="Count_st" selected="True" />
+            <Field field="Count_svpth" selected="True" />
+            <Field field="Count_szhpqll" selected="True" />
+            <Field field="Count_tfqzgb" selected="True" />
+            <Field field="Count_tftzqv" selected="True" />
+            <Field field="Count_thkp" selected="True" />
+            <Field field="Count_tjvtpjq" selected="True" />
+            <Field field="Count_tlhj" selected="True" />
+            <Field field="Count_tnk" selected="True" />
+            <Field field="Count_tqzgb" selected="True" />
+            <Field field="Count_tsxkcg" selected="True" />
+            <Field field="Count_txgdclk" selected="True" />
+            <Field field="Count_tzxqf" selected="True" />
+            <Field field="Count_vcpfq" selected="True" />
+            <Field field="Count_vfgp" selected="True" />
+            <Field field="Count_vfmmq" selected="True" />
+            <Field field="Count_vjxfx" selected="True" />
+            <Field field="Count_vkdj" selected="True" />
+            <Field field="Count_vml" selected="True" />
+            <Field field="Count_vrcln" selected="True" />
+            <Field field="Count_vrcp" selected="True" />
+            <Field field="Count_vspv" selected="True" />
+            <Field field="Count_vtfsc" selected="True" />
+            <Field field="Count_vvx" selected="True" />
+            <Field field="Count_vzxrgn" selected="True" />
+            <Field field="Count_xfqnss" selected="True" />
+            <Field field="Count_xjgfn" selected="True" />
+            <Field field="Count_xmbr" selected="True" />
+            <Field field="Count_xncd" selected="True" />
+            <Field field="Count_xpk" selected="True" />
+            <Field field="Count_xrrlfcs" selected="True" />
+            <Field field="Count_xxjkk" selected="True" />
+            <Field field="Count_xzdzl" selected="True" />
+            <Field field="Count_zgj" selected="True" />
+            <Field field="Count_zmdxkbl" selected="True" />
+            <Field field="Count_zmqm" selected="True" />
+            <Field field="Count_znbs" selected="True" />
+            <Field field="Count_znhdgj" selected="True" />
+            <Field field="Count_zqtrtmt" selected="True" />
+            <Field field="*Unknown" selected="True" />
+          </DataFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTranspose" />
+    </Node>
+    <Node ToolID="104">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1854" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([Name], 'Count_','')" field="Name" size="13" type="String" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Name = Replace([Name], 'Count_','')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="108">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2082" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="allergens" />
+            <Field field="Value" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="allergens" />
+            <Field field="Total_Aliments_with_allergen" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_allergens" selected="True" rename="Right_allergens" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="109">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2286" y="414" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Name" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_allergens" selected="True" rename="Right_allergens" input="Right_" />
+                <SelectField field="Right_Name" selected="True" rename="Right_Name" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Right_Value" input="Right_" />
+                <SelectField field="Right_Right_allergens" selected="True" rename="Right_Right_allergens" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="110">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1950" y="426" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsNotNull</Operator>
+            <Field>Value</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-21 08:03:09</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2020-12-21 08:03:09</StartDate>
+              <EndDate>2020-12-21 08:03:09</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>!IsNull([Value])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="111">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="2466" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="ingredientes" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Name" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_allergens" selected="True" rename="Right_allergens" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="112">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2574" y="510" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="ListID" action="GroupBy" rename="ListID" />
+            <SummarizeField field="Name" action="GroupBy" rename="Name" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>Inert combinations of foods and ingredient</AnnotationText>
+          <DefaultAnnotationText>Count distinct Aliments</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="113">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1938" y="282" width="100" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>mxmxvkd contains dairy.
+sqjhc contains fish.
+fvjkl contains soy.</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="115">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2202" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Value" selected="False" />
+            <SelectField field="Right_allergens" selected="False" />
+            <SelectField field="Total_Aliments_with_allergen" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="130">
+      <GuiSettings>
+        <Position x="2334" y="774" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name>iter (116)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
+      </Properties>
+      <EngineSettings Macro="iter.yxmc" />
+    </Node>
+    <Node ToolID="120">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="2454" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="allergens" order="Ascending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>allergens - Ascending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="121">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="2526" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="Name" action="Concat" rename="Concat_Name">
+              <Concat_Start />
+              <Separator>,</Separator>
+              <Concat_End />
+            </SummarizeField>
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="122">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
+        <Position x="2610" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_28284_182674ffb5f1456eacd02804c3153812_\Engine_9528_9a9a0fbf14a945b88deab2964271d2e5_.yxdb</TempFile>
+          <TempFileDataProfiling />
+          <Layout>
+            <ViewMode>Single</ViewMode>
+            <ViewSize value="100" />
+            <View1>
+              <DefaultTab>Profile</DefaultTab>
+              <Hints>
+                <Table />
+              </Hints>
+            </View1>
+            <View2 />
+          </Layout>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
+    </Node>
+    <Node ToolID="123">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1302" y="414" width="288" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Split ingredients and allergens to rows (one column for each)</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="127">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2178" y="342" width="252" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Remove Potential Allergens</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="128">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2178" y="690" width="252" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Assign Allergen to Ingredient</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="124">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1638" y="342" width="384" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>How many times each ingredient appears for each allergen?</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="92" Connection="Output" />
+      <Destination ToolID="94" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="94" Connection="Output" />
+      <Destination ToolID="98" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="95" Connection="Output" />
+      <Destination ToolID="96" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="96" Connection="Output" />
+      <Destination ToolID="100" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="98" Connection="Output" />
+      <Destination ToolID="95" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="99" Connection="Output" />
+      <Destination ToolID="103" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="99" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="102" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="100" Connection="Output" />
+      <Destination ToolID="111" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="109" Connection="Left" />
+      <Destination ToolID="111" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="102" Connection="Output" />
+      <Destination ToolID="108" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="110" Connection="True" />
+      <Destination ToolID="108" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="103" Connection="Output" />
+      <Destination ToolID="104" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="104" Connection="Output" />
+      <Destination ToolID="110" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Join" />
+      <Destination ToolID="109" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Left" />
+      <Destination ToolID="109" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="108" Connection="Join" />
+      <Destination ToolID="115" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="111" Connection="Join" />
+      <Destination ToolID="112" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="115" Connection="Output" />
+      <Destination ToolID="130" Connection="iter" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="130" Connection="Match" />
+      <Destination ToolID="120" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="120" Connection="Output" />
+      <Destination ToolID="121" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="121" Connection="Output" />
+      <Destination ToolID="122" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>day_21_01</Name>
+      <Description>My Approach to Advent of Code 2020</Description>
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author>David Sanchez</Author>
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="https://github.com/dsmdavid/AdventCode2020" displayed="https://github.com/dsmdavid/AdventCode2020" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+  </Properties>
+</AlteryxDocument>

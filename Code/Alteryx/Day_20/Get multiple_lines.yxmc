@@ -1,0 +1,1469 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="1">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="270" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input</Name>
+          <Abbrev>D</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="6" />
+              <Fields>
+                <Field name="Tile" />
+                <Field name="direction" />
+                <Field name="rotation" />
+                <Field name="Item_Current" />
+                <Field name="Value" />
+                <Field name="Order" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1171</c>
+                  <c>sense</c>
+                  <c>0</c>
+                  <c>Col_10</c>
+                  <c>.#..#.....</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>sense</c>
+                  <c>2</c>
+                  <c>Col_01</c>
+                  <c>#...##.#.#</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>sense</c>
+                  <c>2</c>
+                  <c>Col_01</c>
+                  <c>.###..#...</c>
+                  <c>2</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>anti-sense</c>
+                  <c>0</c>
+                  <c>Row_01</c>
+                  <c>.#####.#.#</c>
+                  <c>3</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>sense</c>
+                  <c>2</c>
+                  <c>Col_01</c>
+                  <c>.###..#...</c>
+                  <c>5</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>sense</c>
+                  <c>2</c>
+                  <c>Col_01</c>
+                  <c>#...##.#.#</c>
+                  <c>6</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>D Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="690" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Order] = 6</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Order] = 6</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.ControlParam.ControlParam">
+        <Position x="666" y="30" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Control Parameter (4)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="270" y="390" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Rotation</Name>
+          <Abbrev>R</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="16" />
+              <Fields>
+                <Field name="Item_Current_Tile" />
+                <Field name="Item_Next_Tile" />
+                <Field name="Rotation" />
+                <Field name="Sense_change" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>Col_01</c>
+                  <c>Col_10</c>
+                  <c>0</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Col_10</c>
+                  <c>Col_01</c>
+                  <c>0</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Row_01</c>
+                  <c>Row_10</c>
+                  <c>0</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Row_10</c>
+                  <c>Row_01</c>
+                  <c>0</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Col_01</c>
+                  <c>Col_01</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Col_10</c>
+                  <c>Col_10</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Row_01</c>
+                  <c>Row_01</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Row_10</c>
+                  <c>Row_10</c>
+                  <c>2</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Col_01</c>
+                  <c>Row_01</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Col_01</c>
+                  <c>Row_10</c>
+                  <c>3</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Col_10</c>
+                  <c>Row_01</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Col_10</c>
+                  <c>Row_10</c>
+                  <c>1</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Row_10</c>
+                  <c>Col_10</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+                <r>
+                  <c>Row_10</c>
+                  <c>Col_01</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Row_01</c>
+                  <c>Col_10</c>
+                  <c>1</c>
+                  <c>0</c>
+                </r>
+                <r>
+                  <c>Row_01</c>
+                  <c>Col_01</c>
+                  <c>3</c>
+                  <c>1</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>Rotation</Name>
+          <DefaultAnnotationText>R Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Item_Current_Tile" size="6" source="TextInput:" type="String" />
+            <Field name="Item_Next_Tile" size="6" source="TextInput:" type="String" />
+            <Field name="Rotation" source="TextInput:" type="Byte" />
+            <Field name="Sense_change" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="270" y="318" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Pool</Name>
+          <Abbrev>P</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="72" />
+              <Fields>
+                <Field name="Tile" />
+                <Field name="Item_Next" />
+                <Field name="SA_next" />
+                <Field name="Value" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>1171</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>####...##.</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>.##...####</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>.....##...</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>...##.....</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>###.##.#..</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>..#.##.###</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>###....##.</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>.##....###</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>.#..#.....</c>
+                </r>
+                <r>
+                  <c>1171</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>.....#..#.</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>..##.#..#.</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>.#..#.##..</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>##.#.#....</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>....#.#.##</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>#..#......</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>......#..#</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>..###.#.#.</c>
+                </r>
+                <r>
+                  <c>1427</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>.#.#.###..</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>###.##.#..</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>..#.##.###</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>#.##...##.</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>.##...##.#</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>#...##.#.#</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>#.#.##...#</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>.....#..#.</c>
+                </r>
+                <r>
+                  <c>1489</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>.#..#.....</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>#...##.#..</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>..#.##...#</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>..##.#..#.</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>.#..#.##..</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>##.#..#..#</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>#..#..#.##</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>.#####..#.</c>
+                </r>
+                <r>
+                  <c>1951</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>.#..#####.</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>..###..###</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>###..###..</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>#....####.</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>.####....#</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>.#####..#.</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>.#..#####.</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>...#.##..#</c>
+                </r>
+                <r>
+                  <c>2311</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>#..##.#...</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>..###.#.#.</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>.#.#.###..</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>...#.#.#.#</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>#.#.#.#...</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>####...##.</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>.##...####</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>...###.#..</c>
+                </r>
+                <r>
+                  <c>2473</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>..#.###...</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>#.##...##.</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>.##...##.#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>..#.#....#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>#....#.#..</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>.#....####</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>####....#.</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>#..#......</c>
+                </r>
+                <r>
+                  <c>2729</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>......#..#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>...#.#.#.#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>#.#.#.#...</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Row_01</c>
+                  <c>sense</c>
+                  <c>#.#.#####.</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Row_01</c>
+                  <c>anti-sense</c>
+                  <c>.#####.#.#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>.###..#...</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>...#..###.</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>#...##.#.#</c>
+                </r>
+                <r>
+                  <c>2971</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>#.#.##...#</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Row_10</c>
+                  <c>sense</c>
+                  <c>..#.###...</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Row_10</c>
+                  <c>anti-sense</c>
+                  <c>...###.#..</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Col_01</c>
+                  <c>sense</c>
+                  <c>#..##.#...</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Col_01</c>
+                  <c>anti-sense</c>
+                  <c>...#.##..#</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Col_10</c>
+                  <c>sense</c>
+                  <c>.#....#...</c>
+                </r>
+                <r>
+                  <c>3079</c>
+                  <c>Col_10</c>
+                  <c>anti-sense</c>
+                  <c>...#....#.</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>P Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="Item_Next" size="6" source="TextInput:" type="String" />
+            <Field name="SA_next" size="10" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Action.Action">
+        <Position x="690" y="126" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Update Value</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="1578" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output14</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="426" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Tile" />
+            <Field field="direction" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Tile" />
+            <Field field="SA_next" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Tile" selected="True" rename="Right_Tile" input="Right_" />
+                <SelectField field="Right_Value" selected="True" rename="Right_Value" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Tile" />
+            <Field field="direction" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Right_Tile" source="TextInput:" type="Int16" />
+            <Field name="Item_Next" size="6" source="TextInput:" type="String" />
+            <Field name="SA_next" size="10" source="TextInput:" type="String" />
+            <Field name="Right_Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="Item_Next" size="6" source="TextInput:" type="String" />
+            <Field name="SA_next" size="10" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Tile" />
+            <Field field="SA_next" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="510" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>Left([Item_Current],3) != left([Item_Next],3)</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Left([Item_Current],3) != left([Item_Next],3)</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Right_Tile" source="TextInput:" type="Int16" />
+            <Field name="Item_Next" size="6" source="TextInput:" type="String" />
+            <Field name="SA_next" size="10" source="TextInput:" type="String" />
+            <Field name="Right_Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Right_Tile" source="TextInput:" type="Int16" />
+            <Field name="Item_Next" size="6" source="TextInput:" type="String" />
+            <Field name="SA_next" size="10" source="TextInput:" type="String" />
+            <Field name="Right_Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="606" y="210" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Item_Current" selected="False" />
+            <SelectField field="Value" selected="False" />
+            <SelectField field="Right_Tile" selected="False" />
+            <SelectField field="Item_Next" selected="True" rename="Item_Current" />
+            <SelectField field="SA_next" selected="False" />
+            <SelectField field="Right_Value" selected="True" rename="Value" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="786" y="198" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>RecordID</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="Tile" source="TextInput:" type="Int16" />
+            <Field name="direction" size="10" source="TextInput:" type="String" />
+            <Field name="rotation" source="TextInput:" type="Byte" />
+            <Field name="Order" source="TextInput:" type="Byte" />
+            <Field name="Item_Current" size="6" source="TextInput:" type="String" />
+            <Field name="Value" size="10" source="TextInput:" type="String" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="Tile" order="" />
+            <Field field="direction" order="" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="21">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1050" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="rotation" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Item_Current" size="6" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="direction" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="Value" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="order" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="Group" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="22">
+      <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
+        <Position x="1134" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SummarizeFields>
+            <SummarizeField field="RecordID" action="GroupBy" rename="RecordID" />
+            <SummarizeField field="Group" action="GroupBy" rename="Group" />
+            <SummarizeField field="Tile" action="Count" rename="Count" />
+          </SummarizeFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="Summarize: GroupBy - RecordID" type="Int32" />
+            <Field name="Group" source="Summarize: GroupBy - Group" type="Byte" />
+            <Field name="Count" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="Asc" />
+            <Field field="Group" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
+    </Node>
+    <Node ToolID="23">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sort.Sort">
+        <Position x="1218" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Count - Descending</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="Summarize: GroupBy - RecordID" type="Int32" />
+            <Field name="Group" source="Summarize: GroupBy - Group" type="Byte" />
+            <Field name="Count" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSort" />
+    </Node>
+    <Node ToolID="24">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="1338" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>First</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>First 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="Summarize: GroupBy - RecordID" type="Int32" />
+            <Field name="Group" source="Summarize: GroupBy - Group" type="Byte" />
+            <Field name="Count" source="Summarize: Count" type="Int64" />
+          </RecordInfo>
+          <SortInfo locale="0">
+            <Field field="Count" order="Descending" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="25">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="1422" y="246" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RecordID" />
+            <Field field="Group" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+            <Field field="Group" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_RecordID" selected="False" input="Left_" />
+                <SelectField field="Right_RecordID" selected="False" rename="Right_RecordID" input="Right_" />
+                <SelectField field="Right_Group" selected="False" rename="Right_Group" input="Right_" />
+                <SelectField field="Right_Count" selected="False" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="rotation" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Item_Current" size="6" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="direction" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="Value" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="order" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="Group" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+            <Field field="Group" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="rotation" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Item_Current" size="6" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="direction" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="Value" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="order" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Group" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="Summarize: GroupBy - RecordID" type="Int32" />
+            <Field name="Group" source="Summarize: GroupBy - Group" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+            <Field field="Group" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="26">
+      <GuiSettings>
+        <Position x="966" y="222" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Value name="BatchMacroGroupBy" />
+          <Value name="ControlParams"><![CDATA[Control Parameter (11)=RecordID
+]]></Value>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name>inner_batch (20)</Name>
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output15">
+          <RecordInfo>
+            <Field name="Tile" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="rotation" source="(Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="Item_Current" size="6" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="direction" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="Value" size="10" source="TextInput: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="String" />
+            <Field name="order" source="Formula: (Multiple Sources) (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int64" />
+            <Field name="RecordID" source="RecordID: Starting Value=1 (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Int32" />
+            <Field name="Group" source="TextInput: (BatchMacro) (BatchMacro) (BatchMacro) (BatchMacro)" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings Macro="inner_batch.yxmc" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="1" Connection="Output" />
+      <Destination ToolID="15" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="15" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="True" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="4" Connection="Question" />
+      <Destination ToolID="8" Connection="Question" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Output" />
+      <Destination ToolID="26" Connection="Rotation" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Output" />
+      <Destination ToolID="26" Connection="Pool" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="26" Connection="Control" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="26" Connection="Input8" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="8" Connection="Action" />
+      <Destination ToolID="2" Connection="Action" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="17" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Join" />
+      <Destination ToolID="16" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="True" />
+      <Destination ToolID="17" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="22" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="21" Connection="Output" />
+      <Destination ToolID="25" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="24" Connection="Output" />
+      <Destination ToolID="25" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="22" Connection="Output" />
+      <Destination ToolID="23" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="23" Connection="Output" />
+      <Destination ToolID="24" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="25" Connection="Join" />
+      <Destination ToolID="14" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="26" Connection="Output15" />
+      <Destination ToolID="21" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>ControlParam.Control Parameter (4)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Rotation</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (1)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (6)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (14)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>Get multiple_lines</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions>
+        <NoCondition>
+          <Type>NoCondition</Type>
+          <Description>(Always Run)</Description>
+          <True>
+            <Action>
+              <Type>UpdateValue</Type>
+              <Description />
+              <ToolId value="8" />
+              <Mode>Simple</Mode>
+              <Variable />
+              <Replace value="True" />
+              <ReplaceText>6</ReplaceText>
+              <Destination>2/Expression</Destination>
+            </Action>
+          </True>
+        </NoCondition>
+      </Actions>
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (3)</Name>
+          <ToolId value="3" />
+          <Questions>
+            <Question>
+              <Type>ControlParam</Type>
+              <Description>Control Parameter (4)</Description>
+              <Name>Control Parameter (4)</Name>
+              <ToolId value="4" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Rotation</Name>
+              <ToolId value="5" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (1)</Name>
+              <ToolId value="1" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (14)</Description>
+              <Name>Macro Output (14)</Name>
+              <ToolId value="14" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <BatchMacro>
+        <OutputMode>AllSame</OutputMode>
+        <ControlParams>
+          <ControlParam>
+            <Name>Control Parameter (4)</Name>
+            <Description>Control Parameter (4)</Description>
+          </ControlParam>
+        </ControlParams>
+      </BatchMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="26" Selected="True" />
+        <Tool ToolId="14" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
