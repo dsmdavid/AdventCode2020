@@ -37,5 +37,9 @@ I will try to solve the puzzles in Alteryx and in Python.
 1. Operation Order -- [Alteryx](Code/Alteryx/Day_18)   
 1. Monster Message -- [Alteryx](Code/Alteryx/Day_19)   
 1. Jurassic Jigsaw -- [Alteryx](Code/Alteryx/Day_20)   
-1. Allergen Assessment -- [Alteryx](Code/Alteryx/Day_21)   
+1. Allergen Assessment -- [Alteryx](Code/Alteryx/Day_21) and [Python](Code/Python/Day_21/Day_21.ipynb)    
+1. Mortal Crab Combat -- [Alteryx](Code/Alteryx/Day_22) --Note, part 2 in BaseA Alteryx takes hours to run-- and [Python](Code/Python/Day_22/Day_22.ipynb)  
+1. Hell Crab Combat -- [Alteryx - only part 1!](Code/Alteryx/Day_23) and [Python](Code/Python/Day_23/Day_23.ipynb)  
+1. Monster Message -- [Alteryx](Code/Alteryx/Day_24)   and [Python](Code/Python/Day_24/Day_24.ipynb)  
+1. Jurassic Jigsaw -- [Alteryx](Code/Alteryx/Day_25) and [Python](Code/Python/Day_25/Day_25.ipynb)  
 

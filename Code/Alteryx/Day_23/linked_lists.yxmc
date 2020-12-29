@@ -1,0 +1,967 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.TextInput.TextInput">
+        <Position x="150" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <NumRows value="9" />
+          <Fields>
+            <Field name="RecordID" />
+            <Field name="Field_1" />
+            <Field name="prev" />
+            <Field name="Next" />
+            <Field name="Max_RecordID" />
+            <Field name="Current" />
+          </Fields>
+          <Data>
+            <r>
+              <c>1</c>
+              <c>2</c>
+              <c>9</c>
+              <c>2</c>
+              <c>9</c>
+              <c>True</c>
+            </r>
+            <r>
+              <c>2</c>
+              <c>5</c>
+              <c>1</c>
+              <c>3</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>3</c>
+              <c>3</c>
+              <c>2</c>
+              <c>4</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>4</c>
+              <c>1</c>
+              <c>3</c>
+              <c>5</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>5</c>
+              <c>4</c>
+              <c>4</c>
+              <c>6</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>6</c>
+              <c>9</c>
+              <c>5</c>
+              <c>7</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>7</c>
+              <c>8</c>
+              <c>6</c>
+              <c>8</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>8</c>
+              <c>6</c>
+              <c>7</c>
+              <c>9</c>
+              <c>9</c>
+              <c />
+            </r>
+            <r>
+              <c>9</c>
+              <c>7</c>
+              <c>8</c>
+              <c>1</c>
+              <c>9</c>
+              <c />
+            </r>
+          </Data>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextInput" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="354" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsTrue</Operator>
+            <Field>Current</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-23 16:28:16</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2020-12-23 16:28:16</StartDate>
+              <EndDate>2020-12-23 16:28:16</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Current] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="474" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Next" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_Field_1" selected="True" rename="ENTRY_POINT" input="Left_" />
+                <SelectField field="Left_Max_RecordID" selected="True" input="Left_" />
+                <SelectField field="Right_RecordID" selected="True" input="Right_" />
+                <SelectField field="Right_Field_1" selected="True" input="Right_" />
+                <SelectField field="Right_prev" selected="True" input="Right_" />
+                <SelectField field="Right_Next" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Next" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="582" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Next" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_ENTRY_POINT" selected="True" input="Left_" />
+                <SelectField field="Left_Max_RecordID" selected="True" input="Left_" />
+                <SelectField field="Right_RecordID" selected="True" input="Right_" />
+                <SelectField field="Right_Field_1" selected="True" input="Right_" />
+                <SelectField field="Right_prev" selected="True" input="Right_" />
+                <SelectField field="Right_Next" selected="True" input="Right_" />
+                <SelectField field="Right_Max_RecordID" selected="False" rename="Right_Max_RecordID" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Next" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="678" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="Next" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_ENTRY_POINT" selected="True" input="Left_" />
+                <SelectField field="Left_Max_RecordID" selected="True" input="Left_" />
+                <SelectField field="Right_RecordID" selected="True" input="Right_" />
+                <SelectField field="Right_Field_1" selected="True" input="Right_" />
+                <SelectField field="Right_prev" selected="True" input="Right_" />
+                <SelectField field="Right_Next" selected="True" input="Right_" />
+                <SelectField field="Right_Max_RecordID" selected="False" rename="Right_Max_RecordID" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Next" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="8">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="126" y="78" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input8</Name>
+          <Abbrev />
+          <ShowFieldMap value="True" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="0" />
+              <Fields />
+              <Data />
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="9">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="834" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="12">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
+        <Position x="1026" y="186" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FieldName>order</FieldName>
+          <StartValue>1</StartValue>
+          <FieldType>Int32</FieldType>
+          <FieldSize>6</FieldSize>
+          <Position>0</Position>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="order" source="RecordID: Starting Value=1" type="Int32" />
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="order" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
+    </Node>
+    <Node ToolID="13">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.CrossTab.CrossTab">
+        <Position x="1110" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <GroupFields>
+            <Field field="ENTRY_POINT" />
+            <Field field="Max_RecordID" />
+          </GroupFields>
+          <HeaderField field="order" />
+          <DataField field="Field_1" />
+          <Methods>
+            <Method method="Sum" />
+          </Methods>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="CrossTab:Group:Sum:" type="Byte" />
+            <Field name="Max_RecordID" source="CrossTab:Group:Sum:" type="Byte" />
+            <Field name="1" source="CrossTab:Header:order:1:Sum:" type="Int64" />
+            <Field name="2" source="CrossTab:Header:order:2:Sum:" type="Int64" />
+            <Field name="3" source="CrossTab:Header:order:3:Sum:" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="ENTRY_POINT" order="Asc" />
+            <Field field="Max_RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxCrossTab" />
+    </Node>
+    <Node ToolID="14">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="510" y="258" width="100" height="84" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text># Remove them from the list
+        cur.next = last.next
+        cur.next.prev = cur</Text>
+          <Font name="Arial" size="8.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="15">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1194" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="max([ENTRY_POINT]-1,0)" field="dest" size="8" type="Int64" />
+            <FormulaField expression="if &#xA;[dest] = 0 then [Max_RecordID]&#xA;elseif // found in the picked up items&#xA;([dest] = [1] ||&#xA;[dest] = [2] ||&#xA;dest = [3])&#xA;then &#xA;  if // found in the picked up items&#xA;	( &#xA;  ([dest] -1) = [1] ||&#xA;  ([dest] -1)= [2] ||&#xA;  ([dest] -1)= [3]) ||&#xA;	[dest] -1 &lt;= 0&#xA;  then &#xA;        if&#xA;        ( &#xA;      ([dest] -2) = [1] ||&#xA;      ([dest] -2)= [2] ||&#xA;      ([dest] -2)= [3]) ||&#xA;		[dest] - 2 &lt;= 0&#xA;      then &#xA;        [Max_RecordID]&#xA;        else&#xA;        [dest]-2&#xA;    endif&#xA;  else&#xA;  [dest] -1&#xA;  endif&#xA;&#xA;else [dest]&#xA;endif&#xA;" field="new_entry_point" size="8" type="Int64" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>dest = max([ENTRY_POINT]-1,0)
+new_entry_point = if 
+[dest] = 0 then [Max_RecordI...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="CrossTab:Group:Sum:" type="Byte" />
+            <Field name="Max_RecordID" source="CrossTab:Group:Sum:" type="Byte" />
+            <Field name="1" source="CrossTab:Header:order:1:Sum:" type="Int64" />
+            <Field name="2" source="CrossTab:Header:order:2:Sum:" type="Int64" />
+            <Field name="3" source="CrossTab:Header:order:3:Sum:" type="Int64" />
+            <Field name="dest" source="Formula: max([ENTRY_POINT]-1,0)" type="Int64" />
+            <Field name="new_entry_point" source="Formula: if &#xA;[dest] = 0 then [Max_RecordID]&#xA;elseif // found in the picked up items&#xA;([dest] = [1] ||&#xA;[dest] = [2] ||&#xA;dest = [3])&#xA;then &#xA;  if // found in the picked up items&#xA; ( &#xA;  ([dest] -1) = [1] ||&#xA;  ([dest] -1)= [2] ||&#xA;  ([dest] -1)= [3]) ||&#xA; [dest] -1 &lt;= 0&#xA;  then &#xA;        if&#xA;        ( &#xA;      ([dest] -2) = [1] ||&#xA;      ([dest] -2)= [2] ||&#xA;      ([dest] -2)= [3]) ||&#xA;  [dest] - 2 &lt;= 0&#xA;      then &#xA;        [Max_RecordID]&#xA;        else&#xA;        [dest]-2&#xA;    endif&#xA;  else&#xA;  [dest] -1&#xA;  endif&#xA;&#xA;else [dest]&#xA;endif&#xA;" type="Int64" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="ENTRY_POINT" order="Asc" />
+            <Field field="Max_RecordID" order="Asc" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="16">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="738" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_ENTRY_POINT" selected="False" input="Source_" />
+                <SelectField field="Source_Max_RecordID" selected="False" input="Source_" />
+                <SelectField field="Source_1" selected="False" input="Source_" />
+                <SelectField field="Source_2" selected="False" input="Source_" />
+                <SelectField field="Source_3" selected="False" input="Source_" />
+                <SelectField field="Source_dest" selected="False" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="ENTRY_POINT" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="new_entry_point" source="Formula: if &#xA;[dest] = 0 then [Max_RecordID]&#xA;elseif // found in the picked up items&#xA;([dest] = [1] ||&#xA;[dest] = [2] ||&#xA;dest = [3])&#xA;then &#xA;  if // found in the picked up items&#xA; ( &#xA;  ([dest] -1) = [1] ||&#xA;  ([dest] -1)= [2] ||&#xA;  ([dest] -1)= [3]) ||&#xA; [dest] -1 &lt;= 0&#xA;  then &#xA;        if&#xA;        ( &#xA;      ([dest] -2) = [1] ||&#xA;      ([dest] -2)= [2] ||&#xA;      ([dest] -2)= [3]) ||&#xA;  [dest] - 2 &lt;= 0&#xA;      then &#xA;        [Max_RecordID]&#xA;        else&#xA;        [dest]-2&#xA;    endif&#xA;  else&#xA;  [dest] -1&#xA;  endif&#xA;&#xA;else [dest]&#xA;endif&#xA;" type="Int64" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="17">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="846" y="366" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="new_entry_point" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Left_RecordID" selected="True" rename="Next" input="Left_" />
+                <SelectField field="Right_RecordID" selected="True" input="Right_" />
+                <SelectField field="Right_Field_1" selected="True" input="Right_" />
+                <SelectField field="Right_prev" selected="True" input="Right_" />
+                <SelectField field="Right_Max_RecordID" selected="True" input="Right_" />
+                <SelectField field="Right_Current" selected="True" input="Right_" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="new_entry_point" source="Formula: if &#xA;[dest] = 0 then [Max_RecordID]&#xA;elseif // found in the picked up items&#xA;([dest] = [1] ||&#xA;[dest] = [2] ||&#xA;dest = [3])&#xA;then &#xA;  if // found in the picked up items&#xA; ( &#xA;  ([dest] -1) = [1] ||&#xA;  ([dest] -1)= [2] ||&#xA;  ([dest] -1)= [3]) ||&#xA; [dest] -1 &lt;= 0&#xA;  then &#xA;        if&#xA;        ( &#xA;      ([dest] -2) = [1] ||&#xA;      ([dest] -2)= [2] ||&#xA;      ([dest] -2)= [3]) ||&#xA;  [dest] - 2 &lt;= 0&#xA;      then &#xA;        [Max_RecordID]&#xA;        else&#xA;        [dest]-2&#xA;    endif&#xA;  else&#xA;  [dest] -1&#xA;  endif&#xA;&#xA;else [dest]&#xA;endif&#xA;" type="Int64" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="new_entry_point" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+    <Node ToolID="18">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="858" y="282" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="ENTRY_POINT" selected="False" />
+            <SelectField field="new_entry_point" selected="False" rename="prev" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="19">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="774" y="114" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Next" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="20">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Join.Join">
+        <Position x="882" y="102" />
+      </GuiSettings>
+      <Properties>
+        <Configuration joinByRecordPos="False">
+          <JoinInfo connection="Left">
+            <Field field="RecordID" />
+          </JoinInfo>
+          <JoinInfo connection="Right">
+            <Field field="Next" />
+          </JoinInfo>
+          <SelectConfiguration>
+            <Configuration outputConnection="Join">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Right_Next" selected="True" rename="Right_Next" input="Right_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Left">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="RecordID" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Join">
+          <RecordInfo>
+            <Field name="RecordID" source="TextInput:" type="Byte" />
+            <Field name="Field_1" source="TextInput:" type="Byte" />
+            <Field name="prev" source="TextInput:" type="Byte" />
+            <Field name="Next" source="TextInput:" type="Byte" />
+            <Field name="Max_RecordID" source="TextInput:" type="Byte" />
+            <Field name="Current" source="TextInput:" type="Bool" />
+            <Field name="Right_Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo>
+            <Field field="RecordID" order="" />
+          </SortInfo>
+        </MetaInfo>
+        <MetaInfo connection="Right">
+          <RecordInfo>
+            <Field name="Next" source="TextInput:" type="Byte" />
+          </RecordInfo>
+          <SortInfo noProgress="True">
+            <Field field="Next" />
+          </SortInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxJoin" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="4" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="True" />
+      <Destination ToolID="4" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="5" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Right" />
+      <Destination ToolID="5" Connection="Right" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="9" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Join" />
+      <Destination ToolID="16" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="15" Connection="Output" />
+      <Destination ToolID="16" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Right" />
+      <Destination ToolID="17" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="17" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="4" Connection="Right" />
+      <Destination ToolID="20" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="19" Connection="Output" />
+      <Destination ToolID="20" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Join" />
+      <Destination ToolID="6" Connection="Left" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="Right" />
+      <Destination ToolID="6" Connection="Right" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="6" Connection="Join" />
+      <Destination ToolID="19" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="9" Connection="Output" />
+      <Destination ToolID="12" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="12" Connection="Output" />
+      <Destination ToolID="13" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="13" Connection="Output" />
+      <Destination ToolID="15" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="16" Connection="Output" />
+      <Destination ToolID="18" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (8)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>linked_lists</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="True" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (7)</Name>
+          <ToolId value="7" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description>Macro Input (8)</Description>
+              <Name>Macro Input (8)</Name>
+              <ToolId value="8" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="8" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

@@ -1,0 +1,1979 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="251">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2238" y="330" width="624" height="216" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Round ends 
+Update previous level, end current</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="330" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="history" selected="True" size="1000000000" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Sample.Sample">
+        <Position x="510" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Last</Mode>
+          <N>1</N>
+          <GroupFields orderChanged="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Last 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSample" />
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="678" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>contains([history],[hands])</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>contains([history],[hands])</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="34">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Configuration />
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="36">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="570" y="498" width="268" height="40" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>P1 wins if hands repeated</Text>
+          <Font name="Arial" size="15.75" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="79">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="774" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[history] + ';' + [hands]" field="history" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[history = [history] + ';' + [hands]
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="179">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="882" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="GetWord([Player1],0)" field="card1" size="1073741823" type="V_WString" />
+            <FormulaField expression="GetWord([Player2],0)" field="card2" size="1073741823" type="V_WString" />
+            <FormulaField expression="Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" field="Player1" size="10000" type="V_WString" />
+            <FormulaField expression="Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" field="Player2" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>card1 = GetWord([Player1],0)
+card2 = GetWord([Player2],0)
+Player1 = Replace(
+Rep...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" size="1073741823" source="Formula: GetWord([Player1],0)" type="V_WString" />
+            <Field name="card2" size="1073741823" source="Formula: GetWord([Player2],0)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="182">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="234" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="player1" selected="True" type="V_WString" size="10000" />
+            <SelectField field="player2" selected="True" type="V_WString" size="10000" />
+            <SelectField field="level" selected="True" type="Int64" size="8" />
+            <SelectField field="history" selected="True" type="V_WString" size="1000000000" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="184">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1086" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" field="to_recursion" size="1" type="Bool" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>to_recursion = CountWords([Player1]) &gt;= [card1]
+and 
+CountWords([Player2]) &gt;= [c...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="185">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="990" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="card1" selected="True" type="Int16" size="2" />
+            <SelectField field="card2" selected="True" type="Int16" size="2" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="186">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1182" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>IsTrue</Operator>
+            <Field>to_recursion</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-23 08:26:17</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>
+              </Operand>
+              <StartDate>2020-12-23 08:26:17</StartDate>
+              <EndDate>2020-12-23 08:26:17</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[to_recursion] = 1</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="187">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="126" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Iter</Name>
+          <Abbrev>i</Abbrev>
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="Player1" />
+                <Field name="Player2" />
+                <Field name="Level" />
+                <Field name="history" />
+              </Fields>
+              <Data>
+                <r>
+                  <c><![CDATA[ 4 36 30 43 39 50 21 25 46 6 44 12 20 23 9 48 11 16 42 17 13 10  26 19]]></c>
+                  <c>24 45 28 7 41 18 38 2 3 33 14 35 40 32 47 22 29 8 37 5 1 27 34 15 49 31</c>
+                  <c>0</c>
+                  <c>;P1(  15 31 26 4 36 30 43 39 50 21 25 46 6 44 12 20 23 9 48 11 16 42 17 13 10  )P1 P2(  34 49 19 24 45 28 7 41 18 38 2 3 33 14 35 40 32 47 22 29 8 37 5 1 27  )P2;P1(  31 26 4 36 30 43 39 50 21 25 46 6 44 12 20 23 9 48 11 16 42 17 13 10  )P1 P2(  49 1...</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Input</DefaultAnnotationText>
+          <Left value="True" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="70" source="TextInput:" type="String" />
+            <Field name="Player2" size="71" source="TextInput:" type="String" />
+            <Field name="Level" source="TextInput:" type="Byte" />
+            <Field name="history" size="253" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="189">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1302" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="[level]+1" field="level" size="8" type="Int64" />
+            <FormulaField expression="'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'" field="hands" size="1000000" type="V_WString" />
+            <FormulaField expression="tostring(card1) +' ' + tostring([card2])" field="cards_at_play" size="100" type="V_WString" />
+            <FormulaField expression="';'" field="history" size="1073741823" type="V_WString" />
+            <FormulaField expression="REGEX_Replace([Player1], '((\d+\s?){' + tostring(card1) +'}).*', '$1')" field="Player1" size="10000" type="V_WString" />
+            <FormulaField expression="REGEX_Replace([Player2], '((\d+\s?){' + tostring(card2) +'}).*', '$1')" field="Player2" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>level = [level]+1
+hands = 'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'
+cards_a...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: REGEX_Replace([Player1], '((\d+\s?){' + tostring(card1) +'}).*', '$1')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: REGEX_Replace([Player2], '((\d+\s?){' + tostring(card2) +'}).*', '$1')" type="V_WString" />
+            <Field name="Level" source="Formula: [level]+1" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: ';'" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="190">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1434" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Player1" selected="True" />
+            <SelectField field="Player2" selected="True" />
+            <SelectField field="level" selected="True" />
+            <SelectField field="history" selected="True" />
+            <SelectField field="cards_at_play" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: REGEX_Replace([Player1], '((\d+\s?){' + tostring(card1) +'}).*', '$1')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: REGEX_Replace([Player2], '((\d+\s?){' + tostring(card2) +'}).*', '$1')" type="V_WString" />
+            <Field name="Level" source="Formula: [level]+1" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: ';'" type="V_WString" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="192">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1518" y="738" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if [card1] &gt; [card2] then 1 else 2 endif" field="winner" size="2" type="Int16" />
+            <FormulaField expression="if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" field="player1" size="1000" type="V_WString" />
+            <FormulaField expression="if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" field="Player2" size="1000" type="V_WString" />
+            <FormulaField expression="if CountWords([Player1]) = 0 || CountWords([Player2]) = 0&#xA;then 'end_round_winner_'+ToString(winner) else 'round_continues' endif" field="outcome" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>winner = if [card1] &gt; [card2] then 1 else 2 endif
+player1 = if winner = 1 then
+[...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+            <Field name="winner" source="Formula: if [card1] &gt; [card2] then 1 else 2 endif" type="Int16" />
+            <Field name="outcome" size="1073741823" source="Formula: if CountWords([Player1]) = 0 || CountWords([Player2]) = 0&#xA;then 'end_round_winner_'+ToString(winner) else 'round_continues' endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="193">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="1578" y="606" width="168" height="72" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>New level of recursion</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="195">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1518" y="498" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'repeated'" field="outcome" size="1073741823" type="V_WString" />
+            <FormulaField expression="1" field="winner" size="2" type="Int16" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[outcome = 'repeated'
+winner = 1
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: 'repeated'" type="V_WString" />
+            <Field name="winner" source="Formula: 1" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="196">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1518" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'recursion'" field="outcome" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[outcome = 'recursion'
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: REGEX_Replace([Player1], '((\d+\s?){' + tostring(card1) +'}).*', '$1')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: REGEX_Replace([Player2], '((\d+\s?){' + tostring(card2) +'}).*', '$1')" type="V_WString" />
+            <Field name="Level" source="Formula: [level]+1" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: ';'" type="V_WString" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: 'recursion'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="197">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="1626" y="738" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'" field="hands" size="1000000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[hands = 'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[Player1]+ ' )P1 P2( '+[Player2]+' )P2'" type="V_WString" />
+            <Field name="card1" source="Formula: GetWord([Player1],0)" type="Int16" />
+            <Field name="card2" source="Formula: GetWord([Player2],0)" type="Int16" />
+            <Field name="to_recursion" source="Formula: CountWords([Player1]) &gt;= [card1]&#xA;and &#xA;CountWords([Player2]) &gt;= [card2]" type="Bool" />
+            <Field name="winner" source="Formula: if [card1] &gt; [card2] then 1 else 2 endif" type="Int16" />
+            <Field name="outcome" size="1073741823" source="Formula: if CountWords([Player1]) = 0 || CountWords([Player2]) = 0&#xA;then 'end_round_winner_'+ToString(winner) else 'round_continues' endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="198">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2022" y="558" width="204" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>We have a winner for the round</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="255" b="128" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="199">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="1830" y="606" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="False" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="200">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="1950" y="666" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[outcome] = 'repeated'
+||
+[outcome] in ('end_round_winner_1', 'end_round_winner_2')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[outcome] = 'repeated'
+||
+[outcome] in ('end_round_winner_1', 'end_round_winner_...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="201">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2238" y="558" width="348" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>If level = 0, we're done, else
+modify the previous level</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="121" g="204" b="142" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="202">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2022" y="750" width="204" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>We don't have a winner</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor r="255" g="255" b="128" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="203">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2238" y="750" width="204" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>To next recursive level</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="204">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2238" y="966" width="204" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Next round at this level</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="205">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1938" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="level" selected="True" />
+            <SelectField field="outcome" selected="True" />
+            <SelectField field="winner" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="206">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
+        <Position x="2046" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <CartesianMode>Error</CartesianMode>
+          <SelectConfiguration>
+            <Configuration outputConnection="Output">
+              <OrderChanged value="False" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="Source_level" selected="True" rename="Source_level" input="Source_" />
+                <SelectField field="*Unknown" selected="True" />
+              </SelectFields>
+            </Configuration>
+          </SelectConfiguration>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
+    </Node>
+    <Node ToolID="207">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2262" y="654" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Level</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-23 10:59:51</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2020-12-23 10:59:51</StartDate>
+              <EndDate>2020-12-23 10:59:51</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Level] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="208">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3042" y="642" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Finish</Name>
+          <Abbrev>F</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>F Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="209">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2130" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[outcome] = 'repeated'
+||
+[outcome] in ('end_round_winner_1', 'end_round_winner_2')</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <AnnotationText>round ends</AnnotationText>
+          <DefaultAnnotationText>[outcome] = 'repeated'
+||
+[outcome] in ('end_round_winner_1', 'end_round_winner_...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="210">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2286" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Mode>Simple</Mode>
+          <Simple>
+            <Operator>=</Operator>
+            <Field>Source_level</Field>
+            <Operands>
+              <IgnoreTimeInDateTime>True</IgnoreTimeInDateTime>
+              <DateType>fixed</DateType>
+              <PeriodDate>2020-12-23 11:06:37</PeriodDate>
+              <PeriodType>
+              </PeriodType>
+              <PeriodCount>0</PeriodCount>
+              <Operand>0</Operand>
+              <StartDate>2020-12-23 11:06:37</StartDate>
+              <EndDate>2020-12-23 11:06:37</EndDate>
+            </Operands>
+          </Simple>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Source_level] = 0</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="211">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2262" y="798" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[outcome] = 'recursion'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[outcome] = 'recursion'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="213">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="1710" y="738" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="Player1" selected="True" />
+            <SelectField field="Player2" selected="True" />
+            <SelectField field="level" selected="True" />
+            <SelectField field="history" selected="True" />
+            <SelectField field="winner" selected="True" />
+            <SelectField field="outcome" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="Formula: [history] + ';' + [hands]" type="V_WString" />
+            <Field name="winner" source="Formula: if [card1] &gt; [card2] then 1 else 2 endif" type="Int16" />
+            <Field name="outcome" size="1073741823" source="Formula: if CountWords([Player1]) = 0 || CountWords([Player2]) = 0&#xA;then 'end_round_winner_'+ToString(winner) else 'round_continues' endif" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="214">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Union.Union">
+        <Position x="2970" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <ByName_ErrorMode>Warning</ByName_ErrorMode>
+          <ByName_OutputMode>All</ByName_OutputMode>
+          <Mode>ByName</Mode>
+          <SetOutputOrder value="True" />
+          <OutputOrder>
+            <Connection>#1</Connection>
+            <Connection>#2</Connection>
+            <Connection>#3</Connection>
+            <Connection>#4</Connection>
+          </OutputOrder>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxUnion" />
+    </Node>
+    <Node ToolID="215">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2262" y="882" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[outcome] = 'recursion'</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[outcome] = 'recursion'</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="cards_at_play" size="100" source="Formula: tostring(card1) +' ' + tostring([card2])" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="216">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="3102" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="player1" selected="True" />
+            <SelectField field="player2" selected="True" />
+            <SelectField field="level" selected="True" />
+            <SelectField field="history" selected="True" />
+            <SelectField field="*Unknown" selected="False" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="218">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="606" y="558" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" field="hands" size="1000000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[hands = 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="hands" size="1000000" source="Formula: 'P1( '+[player1]+ ' )P1 P2( '+[player2] + ' )P2'" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="220">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2550" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="GetWord([Player1],0)" field="card1" size="1073741823" type="V_WString" />
+            <FormulaField expression="GetWord([Player2],0)" field="card2" size="1073741823" type="V_WString" />
+            <FormulaField expression="Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" field="Player1" size="10000" type="V_WString" />
+            <FormulaField expression="Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')&#xA;" field="Player2" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>card1 = GetWord([Player1],0)
+card2 = GetWord([Player2],0)
+Player1 = Replace(
+Rep...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace(&#xA;Replace([Player1], ' '+[card1]+' ', ' '),&#xA;'  ',' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace(&#xA;Replace([Player2], ' '+[card2]+' ', ' '),&#xA;'  ',' ')&#xA;" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="card1" size="1073741823" source="Formula: GetWord([Player1],0)" type="V_WString" />
+            <Field name="card2" size="1073741823" source="Formula: GetWord([Player2],0)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="221">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2418" y="450" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[level] = ([Source_level] -1 )</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[level] = ([Source_level] -1 )</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="222">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="2682" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" field="player1" size="10000" type="V_WString" />
+            <FormulaField expression="if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" field="Player2" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>player1 = if winner = 1 then
+[Player1] + ' '+ ToString([card1]) +' '+ ToString([...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+            <Field name="card1" size="1073741823" source="Formula: GetWord([Player1],0)" type="V_WString" />
+            <Field name="card2" size="1073741823" source="Formula: GetWord([Player2],0)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="223">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+        <Position x="2778" y="438" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <OrderChanged value="False" />
+          <CommaDecimal value="False" />
+          <SelectFields>
+            <SelectField field="card1" selected="False" />
+            <SelectField field="card2" selected="False" />
+            <SelectField field="*Unknown" selected="True" />
+          </SelectFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: if winner = 1 then&#xA;[Player1] + ' '+ ToString([card1]) +' '+ ToString([card2]) +' '&#xA;else [Player1]&#xA;endif" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: if winner = 2 then&#xA;[Player2] + ' '+ ToString([card2]) +' '+ ToString([card1]) +' '&#xA;else [Player2]&#xA;endif" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+    </Node>
+    <Node ToolID="224">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2490" y="486" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[level] != [Source_level]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[level] != [Source_level]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="225">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="2370" y="1026" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[level] != [Source_level]</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[level] != [Source_level]</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Player2" size="10000" source="TextInput:" type="V_WString" />
+            <Field name="Level" source="TextInput:" type="Int64" />
+            <Field name="history" size="1073741823" source="TextInput:" type="V_WString" />
+            <Field name="Source_level" source="(Multiple Sources)" type="Int64" />
+            <Field name="outcome" size="1073741823" source="Formula: (Multiple Sources)" type="V_WString" />
+            <Field name="winner" source="Formula: (Multiple Sources)" type="Int16" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="226">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="3426" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>iteri</Name>
+          <Abbrev>i</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>i Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="249">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="3234" y="786" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="Replace([Player1], '  ', ' ')" field="Player1" size="10000" type="V_WString" />
+            <FormulaField expression="Replace([Player2], '  ', ' ')" field="Player2" size="10000" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText><![CDATA[Player1 = Replace([Player1], '  ', ' ')
+Player2 = Replace([Player2], '  ', ' ')
+]]></DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="Player1" size="10000" source="Formula: Replace([Player1], '  ', ' ')" type="V_WString" />
+            <Field name="Player2" size="10000" source="Formula: Replace([Player2], '  ', ' ')" type="V_WString" />
+            <Field name="Level" source="(Multiple Sources)" type="Int64" />
+            <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="241">
+      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
+        <Position x="3209" y="977" width="118" height="24" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Caption>Debug</Caption>
+          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
+          <Disabled value="True" />
+          <Folded value="True" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <ChildNodes>
+        <Node ToolID="235">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+            <Position x="3306" y="1026" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <FormulaFields>
+                <FormulaField expression="[Engine.IterationNumber]" field="iteration" size="8" type="Int64" />
+              </FormulaFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText><![CDATA[iteration = [Engine.IterationNumber]
+]]></DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Level" source="(Multiple Sources)" type="Int64" />
+                <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                <Field name="iteration" source="Formula: [Engine.IterationNumber]" type="Int64" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+        </Node>
+        <Node ToolID="240">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
+            <Position x="3402" y="1026" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <OrderChanged value="True" />
+              <CommaDecimal value="False" />
+              <SelectFields>
+                <SelectField field="iteration" selected="True" />
+                <SelectField field="level" selected="True" />
+                <SelectField field="Source_level" selected="True" />
+                <SelectField field="history" selected="True" />
+                <SelectField field="player1" selected="True" />
+                <SelectField field="player2" selected="True" />
+                <SelectField field="outcome" selected="True" />
+                <SelectField field="winner" selected="True" />
+                <SelectField field="hands" selected="True" />
+                <SelectField field="cards_at_play" selected="False" />
+                <SelectField field="*Unknown" selected="False" />
+              </SelectFields>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText />
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="Output">
+              <RecordInfo>
+                <Field name="iteration" source="Formula: [Engine.IterationNumber]" type="Int64" />
+                <Field name="Level" source="(Multiple Sources)" type="Int64" />
+                <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
+        </Node>
+        <Node ToolID="242">
+          <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+            <Position x="3234" y="1038" />
+          </GuiSettings>
+          <Properties>
+            <Configuration>
+              <Expression>[Engine.IterationNumber] &lt; 99
+||
+Mod([Engine.IterationNumber],1000) =0</Expression>
+              <Mode>Custom</Mode>
+            </Configuration>
+            <Annotation DisplayMode="0">
+              <Name />
+              <DefaultAnnotationText>[Engine.IterationNumber] &lt; 99
+||
+Mod([Engine.IterationNumber],1000) =0</DefaultAnnotationText>
+              <Left value="False" />
+            </Annotation>
+            <MetaInfo connection="True">
+              <RecordInfo>
+                <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Level" source="(Multiple Sources)" type="Int64" />
+                <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+            <MetaInfo connection="False">
+              <RecordInfo>
+                <Field name="Player1" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Player2" size="10000" source="(Multiple Sources)" type="V_WString" />
+                <Field name="Level" source="(Multiple Sources)" type="Int64" />
+                <Field name="history" size="1073741823" source="(Multiple Sources)" type="V_WString" />
+              </RecordInfo>
+            </MetaInfo>
+          </Properties>
+          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+        </Node>
+      </ChildNodes>
+    </Node>
+    <Node ToolID="250">
+      <GuiSettings Plugin="AlteryxGuiToolkit.TextBox.TextBox">
+        <Position x="2022" y="330" width="204" height="108" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Text>Bring outcome to all levels</Text>
+          <Font name="Arial" size="20.25" style="0" />
+          <TextColor name="Black" />
+          <FillColor name="White" />
+          <Shape shape="0" />
+          <Justification Justification="4" />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="3" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="206" Connection="Targets" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="205" Connection="Output" />
+      <Destination ToolID="206" Connection="Source" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="218" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="False" />
+      <Destination ToolID="79" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="195" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="79" Connection="Output" />
+      <Destination ToolID="179" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="179" Connection="Output" />
+      <Destination ToolID="185" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="182" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="184" Connection="Output" />
+      <Destination ToolID="186" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="185" Connection="Output" />
+      <Destination ToolID="184" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="186" Connection="True" />
+      <Destination ToolID="189" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="186" Connection="False" />
+      <Destination ToolID="192" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="187" Connection="Output" />
+      <Destination ToolID="182" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="189" Connection="Output" />
+      <Destination ToolID="190" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="190" Connection="Output" />
+      <Destination ToolID="196" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="192" Connection="Output" />
+      <Destination ToolID="197" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="195" Connection="Output" />
+      <Destination ToolID="199" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="196" Connection="Output" />
+      <Destination ToolID="199" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="213" Connection="Output" />
+      <Destination ToolID="199" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="197" Connection="Output" />
+      <Destination ToolID="213" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="199" Connection="Output" />
+      <Destination ToolID="200" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="199" Connection="Output" />
+      <Destination ToolID="205" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="200" Connection="True" />
+      <Destination ToolID="207" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="200" Connection="False" />
+      <Destination ToolID="215" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="206" Connection="Output" />
+      <Destination ToolID="209" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="207" Connection="True" />
+      <Destination ToolID="208" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="True" />
+      <Destination ToolID="210" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="209" Connection="False" />
+      <Destination ToolID="211" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="210" Connection="False" />
+      <Destination ToolID="221" Connection="Input" />
+    </Connection>
+    <Connection name="#1">
+      <Origin ToolID="211" Connection="True" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection name="#2">
+      <Origin ToolID="215" Connection="True" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection name="#6">
+      <Origin ToolID="215" Connection="False" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection name="#4">
+      <Origin ToolID="223" Connection="Output" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection name="#3">
+      <Origin ToolID="224" Connection="True" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection name="#5">
+      <Origin ToolID="225" Connection="True" />
+      <Destination ToolID="214" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="211" Connection="False" />
+      <Destination ToolID="225" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="214" Connection="Output" />
+      <Destination ToolID="216" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="216" Connection="Output" />
+      <Destination ToolID="242" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="216" Connection="Output" />
+      <Destination ToolID="249" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="218" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="220" Connection="Output" />
+      <Destination ToolID="222" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="221" Connection="True" />
+      <Destination ToolID="220" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="221" Connection="False" />
+      <Destination ToolID="224" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="222" Connection="Output" />
+      <Destination ToolID="223" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="249" Connection="Output" />
+      <Destination ToolID="226" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="235" Connection="Output" />
+      <Destination ToolID="240" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="242" Connection="True" />
+      <Destination ToolID="235" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (208)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Input (187)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (226)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>recursive_rounds_b</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (34)</Name>
+          <ToolId value="34" />
+          <Questions>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (208)</Description>
+              <Name>Macro Output (208)</Name>
+              <ToolId value="208" />
+            </Question>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (187)</Name>
+              <ToolId value="187" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (226)</Description>
+              <Name>Macro Output (226)</Name>
+              <ToolId value="226" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Iter</Input>
+        <Output>iteri</Output>
+        <IterationLimit value="5000000" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="187" Selected="True" />
+        <Tool ToolId="208" Selected="True" />
+        <Tool ToolId="226" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>

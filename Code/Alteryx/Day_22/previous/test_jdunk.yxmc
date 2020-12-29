@@ -1,0 +1,265 @@
+<?xml version="1.0"?>
+<AlteryxDocument yxmdVer="2020.4">
+  <Nodes>
+    <Node ToolID="2">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
+        <Position x="558" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <FormulaFields>
+            <FormulaField expression="IF REGEX_CountMatches(C,&quot; &quot;) = 0 THEN&#xA;   &quot;*&quot;&#xA;ELSEIF Contains(REGEX_Replace(C, &quot; ! .*$&quot;, &quot;&quot;),GetWord(C,0) + &quot;#&quot; + GetWord(C,1)) THEN&#xA;    // Player 1 win by termination&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) - 48 &lt; Length(GetWord(C,0)) and CharToInt(GetWord(C,1))-48 &lt; Length(GetWord(C,1)) THEN&#xA;    // Do I need to recurse&#xA;    Substring(GetWord(C,0),1,CharToInt(GetWord(C,0)) - 48) + &quot; &quot; + Substring(GetWord(C,1),1,CharToInt(GetWord(C,1))-48) + &quot; ! &quot;+ C&#xA;ELSEIF CharToInt(GetWord(C,0)) &gt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,1)) = 1 THEN &#xA;    // Player 1 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) &lt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,0)) = 1 THEN &#xA;    // Player 2 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,1),1) + Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;ELSE&#xA;    // Play a turn&#xA;    iif(CharToInt(GetWord(C,0))&gt;CharToInt(GetWord(C,1)),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1) + &quot; &quot; +Substring(GetWord(C,1),1),&#xA;        Substring(GetWord(C,0),1) + &quot; &quot; +Substring(GetWord(C,1),1)+ Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;&#xA;    // Add New Played&#xA;    + &quot; &quot; + GetWord(C,0) + &quot;#&quot; + GetWord(C,1) &#xA;&#xA;    // Keep Old&#xA;    + Regex_Replace(C,&quot;^[^ ]+ [^ ]+ ?&quot;, &quot; &quot;)&#xA;ENDIF" field="C" size="1073741823" type="V_WString" />
+          </FormulaFields>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>C = IF REGEX_CountMatches(C," ") = 0 THEN
+   "*"
+ELSEIF Contains(REGEX_Replace(C...</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="C" size="51" source="Formula: IF REGEX_CountMatches(C,&quot; &quot;) = 0 THEN&#xA;   &quot;*&quot;&#xA;ELSEIF Contains(REGEX_Replace(C, &quot; ! .*$&quot;, &quot;&quot;),GetWord(C,0) + &quot;#&quot; + GetWord(C,1)) THEN&#xA;    // Player 1 win by termination&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) - 48 &lt; Length(GetWord(C,0)) and CharToInt(GetWord(C,1))-48 &lt; Length(GetWord(C,1)) THEN&#xA;    // Do I need to recurse&#xA;    Substring(GetWord(C,0),1,CharToInt(GetWord(C,0)) - 48) + &quot; &quot; + Substring(GetWord(C,1),1,CharToInt(GetWord(C,1))-48) + &quot; ! &quot;+ C&#xA;ELSEIF CharToInt(GetWord(C,0)) &gt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,1)) = 1 THEN &#xA;    // Player 1 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) &lt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,0)) = 1 THEN &#xA;    // Player 2 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,1),1) + Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;ELSE&#xA;    // Play a turn&#xA;    iif(CharToInt(GetWord(C,0))&gt;CharToInt(GetWord(C,1)),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1) + &quot; &quot; +Substring(GetWord(C,1),1),&#xA;        Substring(GetWord(C,0),1) + &quot; &quot; +Substring(GetWord(C,1),1)+ Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;&#xA;    // Add New Played&#xA;    + &quot; &quot; + GetWord(C,0) + &quot;#&quot; + GetWord(C,1) &#xA;&#xA;    // Keep Old&#xA;    + Regex_Replace(C,&quot;^[^ ]+ [^ ]+ ?&quot;, &quot; &quot;)&#xA;ENDIF" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
+    </Node>
+    <Node ToolID="3">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroInput.MacroInput">
+        <Position x="342" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <UseFileInput value="False" />
+          <Name>Input3</Name>
+          <Abbrev />
+          <ShowFieldMap value="False" />
+          <Optional value="False" />
+          <TextInput>
+            <Configuration>
+              <NumRows value="1" />
+              <Fields>
+                <Field name="C" />
+              </Fields>
+              <Data>
+                <r>
+                  <c>?OJ4TN[WbEI^6\&lt;DG9`;@ZA=: RaCH]L7YBV23Q&gt;SXP_FM8U51K</c>
+                </r>
+              </Data>
+            </Configuration>
+          </TextInput>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Input</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="Output">
+          <RecordInfo>
+            <Field name="C" size="51" source="TextInput:" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroInput" />
+    </Node>
+    <Node ToolID="4">
+      <GuiSettings Plugin="AlteryxGuiToolkit.Questions.Tab.Tab">
+        <Position x="0" y="0" width="59" height="59" />
+      </GuiSettings>
+      <Properties>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText />
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+    </Node>
+    <Node ToolID="5">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.Filter.Filter">
+        <Position x="678" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Expression>[Engine.IterationNumber] &lt;= 100</Expression>
+          <Mode>Custom</Mode>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>[Engine.IterationNumber] &lt;= 100</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+        <MetaInfo connection="True">
+          <RecordInfo>
+            <Field name="C" size="51" source="Formula: IF REGEX_CountMatches(C,&quot; &quot;) = 0 THEN&#xA;   &quot;*&quot;&#xA;ELSEIF Contains(REGEX_Replace(C, &quot; ! .*$&quot;, &quot;&quot;),GetWord(C,0) + &quot;#&quot; + GetWord(C,1)) THEN&#xA;    // Player 1 win by termination&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) - 48 &lt; Length(GetWord(C,0)) and CharToInt(GetWord(C,1))-48 &lt; Length(GetWord(C,1)) THEN&#xA;    // Do I need to recurse&#xA;    Substring(GetWord(C,0),1,CharToInt(GetWord(C,0)) - 48) + &quot; &quot; + Substring(GetWord(C,1),1,CharToInt(GetWord(C,1))-48) + &quot; ! &quot;+ C&#xA;ELSEIF CharToInt(GetWord(C,0)) &gt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,1)) = 1 THEN &#xA;    // Player 1 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) &lt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,0)) = 1 THEN &#xA;    // Player 2 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,1),1) + Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;ELSE&#xA;    // Play a turn&#xA;    iif(CharToInt(GetWord(C,0))&gt;CharToInt(GetWord(C,1)),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1) + &quot; &quot; +Substring(GetWord(C,1),1),&#xA;        Substring(GetWord(C,0),1) + &quot; &quot; +Substring(GetWord(C,1),1)+ Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;&#xA;    // Add New Played&#xA;    + &quot; &quot; + GetWord(C,0) + &quot;#&quot; + GetWord(C,1) &#xA;&#xA;    // Keep Old&#xA;    + Regex_Replace(C,&quot;^[^ ]+ [^ ]+ ?&quot;, &quot; &quot;)&#xA;ENDIF" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+        <MetaInfo connection="False">
+          <RecordInfo>
+            <Field name="C" size="51" source="Formula: IF REGEX_CountMatches(C,&quot; &quot;) = 0 THEN&#xA;   &quot;*&quot;&#xA;ELSEIF Contains(REGEX_Replace(C, &quot; ! .*$&quot;, &quot;&quot;),GetWord(C,0) + &quot;#&quot; + GetWord(C,1)) THEN&#xA;    // Player 1 win by termination&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) - 48 &lt; Length(GetWord(C,0)) and CharToInt(GetWord(C,1))-48 &lt; Length(GetWord(C,1)) THEN&#xA;    // Do I need to recurse&#xA;    Substring(GetWord(C,0),1,CharToInt(GetWord(C,0)) - 48) + &quot; &quot; + Substring(GetWord(C,1),1,CharToInt(GetWord(C,1))-48) + &quot; ! &quot;+ C&#xA;ELSEIF CharToInt(GetWord(C,0)) &gt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,1)) = 1 THEN &#xA;    // Player 1 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1))&#xA;ELSEIF CharToInt(GetWord(C,0)) &lt; CharToInt(GetWord(C,1)) AND Length(GetWord(C,0)) = 1 THEN &#xA;    // Player 2 win&#xA;    iif(Contains(C,&quot; ! &quot;),&#xA;        Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + Substring(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1), 1)&#xA;        + Left(GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0), 1)&#xA;        + &quot; &quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 0) + &quot;#&quot; + GetWord(REGEX_Replace(C, &quot;^[^!]+ ! &quot;, &quot;&quot;), 1)&#xA;        + Regex_Replace(C, &quot;^[^!]+ ! [^ ]+ [^ ]+ ?&quot;, &quot; &quot;),&#xA;        Substring(GetWord(C,1),1) + Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;ELSE&#xA;    // Play a turn&#xA;    iif(CharToInt(GetWord(C,0))&gt;CharToInt(GetWord(C,1)),&#xA;        Substring(GetWord(C,0),1) + Left(GetWord(C,0),1) + Left(GetWord(C,1),1) + &quot; &quot; +Substring(GetWord(C,1),1),&#xA;        Substring(GetWord(C,0),1) + &quot; &quot; +Substring(GetWord(C,1),1)+ Left(GetWord(C,1),1) + Left(GetWord(C,0),1))&#xA;&#xA;    // Add New Played&#xA;    + &quot; &quot; + GetWord(C,0) + &quot;#&quot; + GetWord(C,1) &#xA;&#xA;    // Keep Old&#xA;    + Regex_Replace(C,&quot;^[^ ]+ [^ ]+ ?&quot;, &quot; &quot;)&#xA;ENDIF" type="String" />
+          </RecordInfo>
+        </MetaInfo>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFilter" />
+    </Node>
+    <Node ToolID="6">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="774" y="126" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>Output6</Name>
+          <Abbrev />
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+    <Node ToolID="7">
+      <GuiSettings Plugin="AlteryxBasePluginsGui.MacroOutput.MacroOutput">
+        <Position x="798" y="174" />
+      </GuiSettings>
+      <Properties>
+        <Configuration>
+          <Name>ALL</Name>
+          <Abbrev>A</Abbrev>
+        </Configuration>
+        <Annotation DisplayMode="0">
+          <Name />
+          <DefaultAnnotationText>A Output</DefaultAnnotationText>
+          <Left value="False" />
+        </Annotation>
+      </Properties>
+      <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxMacroOutput" />
+    </Node>
+  </Nodes>
+  <Connections>
+    <Connection>
+      <Origin ToolID="2" Connection="Output" />
+      <Destination ToolID="5" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="3" Connection="Output" />
+      <Destination ToolID="2" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="6" Connection="Input" />
+    </Connection>
+    <Connection>
+      <Origin ToolID="5" Connection="True" />
+      <Destination ToolID="7" Connection="Input" />
+    </Connection>
+  </Connections>
+  <Properties>
+    <Memory default="True" />
+    <GlobalRecordLimit value="0" />
+    <TempFiles default="True" />
+    <Annotation on="True" includeToolName="False" />
+    <ConvErrorLimit value="10" />
+    <ConvErrorLimit_Stop value="False" />
+    <CancelOnError value="False" />
+    <DisableBrowse value="False" />
+    <EnablePerformanceProfiling value="False" />
+    <DisableAllOutput value="False" />
+    <ShowAllMacroMessages value="False" />
+    <ShowConnectionStatusIsOn value="True" />
+    <ShowConnectionStatusOnlyWhenRunning value="False" />
+    <ZoomLevel value="0" />
+    <LayoutType>Horizontal</LayoutType>
+    <Constants>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (6)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+      <Constant>
+        <Namespace>Question</Namespace>
+        <Name>Macro Output (7)</Name>
+        <Value />
+        <IsNumeric value="False" />
+      </Constant>
+    </Constants>
+    <MetaInfo>
+      <NameIsFileName value="True" />
+      <Name>test_jdunk</Name>
+      <Description />
+      <RootToolName />
+      <ToolVersion />
+      <ToolInDb value="False" />
+      <CategoryName />
+      <SearchTags />
+      <Author />
+      <Company />
+      <Copyright />
+      <DescriptionLink actual="" displayed="" />
+      <Example>
+        <Description />
+        <File />
+      </Example>
+    </MetaInfo>
+    <Events>
+      <Enabled value="False" />
+    </Events>
+    <RuntimeProperties>
+      <Actions />
+      <Questions>
+        <Question>
+          <Type>Tab</Type>
+          <Description>Questions</Description>
+          <Name>Tab (4)</Name>
+          <ToolId value="4" />
+          <Questions>
+            <Question>
+              <Type>MacroInput</Type>
+              <Description />
+              <Name>Macro Input (3)</Name>
+              <ToolId value="3" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (6)</Description>
+              <Name>Macro Output (6)</Name>
+              <ToolId value="6" />
+            </Question>
+            <Question>
+              <Type>MacroOutput</Type>
+              <Description>Macro Output (7)</Description>
+              <Name>Macro Output (7)</Name>
+              <ToolId value="7" />
+            </Question>
+          </Questions>
+        </Question>
+      </Questions>
+      <ModuleType>Macro</ModuleType>
+      <MacroCustomHelp value="False" />
+      <MacroDynamicOutputFields value="False" />
+      <MacroImageStd value="39" />
+      <MacroInputs />
+      <MacroOutputs />
+      <IterativeMacro>
+        <Input>Input3</Input>
+        <Output>Output6</Output>
+        <IterationLimit value="150" />
+        <LimitBehavior>Error</LimitBehavior>
+        <OutputMode>AllSame</OutputMode>
+      </IterativeMacro>
+      <Wiz_CustomHelp value="False" />
+      <Wiz_CustomGraphic value="False" />
+      <Wiz_ShowOutput value="True" />
+      <Wiz_OpenOutputTools>
+        <Tool ToolId="6" Selected="True" />
+        <Tool ToolId="7" Selected="True" />
+      </Wiz_OpenOutputTools>
+      <Wiz_OutputMessage />
+      <Wiz_NoOutputFilesMessage />
+      <Wiz_ChainRunWizard />
+    </RuntimeProperties>
+  </Properties>
+</AlteryxDocument>
