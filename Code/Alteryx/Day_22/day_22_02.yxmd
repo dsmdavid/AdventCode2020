@@ -127,6 +127,9 @@
           <DefaultAnnotationText>Day_22_01.txt</DefaultAnnotationText>
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
         <MetaInfo connection="Output">
           <RecordInfo>
             <Field name="Field_1" size="254" source="File: F:\Dropbox\python\AdventCode2020\Inputs\Day_22\Day_22_01.txt" type="V_String" />
@@ -281,6 +284,9 @@
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings Macro="CountRecords.yxmc" />
     </Node>
@@ -693,19 +699,22 @@ Player2 = Replace([Player2], '  ',' ')
           <DefaultAnnotationText />
           <Left value="False" />
         </Annotation>
+        <Dependencies>
+          <Implicit />
+        </Dependencies>
       </Properties>
       <EngineSettings Macro="recursive_rounds_b.yxmc" />
     </Node>
     <Node ToolID="117">
       <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1565" y="233" width="118" height="24" />
+        <Position x="1565" y="233" width="433" height="312" />
       </GuiSettings>
       <Properties>
         <Configuration>
           <Caption>PART I</Caption>
           <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
+          <Disabled value="False" />
+          <Folded value="False" />
         </Configuration>
         <Annotation DisplayMode="0">
           <Name />
@@ -725,6 +734,9 @@ Player2 = Replace([Player2], '  ',' ')
               <DefaultAnnotationText />
               <Left value="False" />
             </Annotation>
+            <Dependencies>
+              <Implicit />
+            </Dependencies>
           </Properties>
           <EngineSettings Macro="rounds.yxmc" />
         </Node>
@@ -841,280 +853,6 @@ Player2 = Replace([Player2], '  ',' ')
         </Node>
       </ChildNodes>
     </Node>
-    <Node ToolID="511">
-      <GuiSettings Plugin="AlteryxGuiToolkit.ToolContainer.ToolContainer">
-        <Position x="1602" y="1134" width="158" height="24" />
-      </GuiSettings>
-      <Properties>
-        <Configuration>
-          <Caption>Container 495</Caption>
-          <Style TextColor="#314c4a" FillColor="#ecf2f2" BorderColor="#314c4a" Transparency="25" Margin="25" />
-          <Disabled value="True" />
-          <Folded value="True" />
-        </Configuration>
-        <Annotation DisplayMode="0">
-          <Name />
-          <DefaultAnnotationText />
-          <Left value="False" />
-        </Annotation>
-      </Properties>
-      <ChildNodes>
-        <Node ToolID="502">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="1686" y="1326" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_20984_3817ba2587fd4c16812d92275b0fd32f_\Engine_26396_3b34cbe5a33749a787da980a92971054_.yxdb</TempFile>
-              <TempFileDataProfiling />
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Profile</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="503">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1698" y="1278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="*Unknown" selected="True" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="504">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="1818" y="1278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="REGEX_Replace([hands],&#xA;'P.\((.*?)\)P.', '$1')" field="values" size="1073741823" type="V_WString" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[values = REGEX_Replace([hands],
-'P.\((.*?)\)P.', '$1')
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="505">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.TextToColumns.TextToColumns">
-            <Position x="1914" y="1278" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <Field>values</Field>
-              <Delimeters value="," />
-              <NumFields value="1" />
-              <Flags value="0" />
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxTextToColumns" />
-        </Node>
-        <Node ToolID="506">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.RecordID.RecordID">
-            <Position x="1998" y="1290" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FieldName>RecordID</FieldName>
-              <StartValue>0</StartValue>
-              <FieldType>Int32</FieldType>
-              <FieldSize>6</FieldSize>
-              <Position>0</Position>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxRecordID" />
-        </Node>
-        <Node ToolID="507">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="2010" y="1326" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <SummarizeFields>
-                <SummarizeField field="hands" action="Count" rename="Count" />
-              </SummarizeFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-        </Node>
-        <Node ToolID="508">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AppendFields.AppendFields">
-            <Position x="2070" y="1290" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <CartesianMode>Error</CartesianMode>
-              <SelectConfiguration>
-                <Configuration outputConnection="Output">
-                  <OrderChanged value="False" />
-                  <CommaDecimal value="False" />
-                  <SelectFields>
-                    <SelectField field="Target_values" selected="True" input="Target_" type="Int64" size="8" />
-                    <SelectField field="*Unknown" selected="True" />
-                  </SelectFields>
-                </Configuration>
-              </SelectConfiguration>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxAppendFields" />
-        </Node>
-        <Node ToolID="509">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.Formula.Formula">
-            <Position x="2154" y="1194" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <FormulaFields>
-                <FormulaField expression="[values] * ([Count] - [RecordID])" field="Score" size="8" type="Int64" />
-              </FormulaFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText><![CDATA[Score = [values] * ([Count] - [RecordID])
-]]></DefaultAnnotationText>
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxFormula" />
-        </Node>
-        <Node ToolID="510">
-          <GuiSettings Plugin="AlteryxSpatialPluginsGui.Summarize.Summarize">
-            <Position x="2250" y="1182" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <SummarizeFields>
-                <SummarizeField field="Score" action="Sum" rename="Sum_Score" />
-              </SummarizeFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxSpatialPluginsEngine.dll" EngineDllEntryPoint="AlteryxSummarize" />
-        </Node>
-        <Node ToolID="512">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.AlteryxSelect.AlteryxSelect">
-            <Position x="1674" y="1182" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <OrderChanged value="False" />
-              <CommaDecimal value="False" />
-              <SelectFields>
-                <SelectField field="Level" selected="True" />
-                <SelectField field="hands" selected="True" />
-                <SelectField field="history" selected="True" />
-                <SelectField field="Cards_at_play" selected="True" />
-                <SelectField field="*Unknown" selected="False" />
-              </SelectFields>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxSelect" />
-        </Node>
-        <Node ToolID="513">
-          <GuiSettings Plugin="AlteryxBasePluginsGui.BrowseV2.BrowseV2">
-            <Position x="1710" y="1362" />
-          </GuiSettings>
-          <Properties>
-            <Configuration>
-              <TempFile>C:\Users\dsmda\AppData\Local\Temp\Engine_20984_3817ba2587fd4c16812d92275b0fd32f_\Engine_26396_380af33fb2f54b19a8e50303f211501a_.yxdb</TempFile>
-              <TempFileDataProfiling />
-              <Layout>
-                <ViewMode>Single</ViewMode>
-                <ViewSize value="100" />
-                <View1>
-                  <DefaultTab>Profile</DefaultTab>
-                  <Hints>
-                    <Table />
-                  </Hints>
-                </View1>
-                <View2 />
-              </Layout>
-            </Configuration>
-            <Annotation DisplayMode="0">
-              <Name />
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings EngineDll="AlteryxBasePluginsEngine.dll" EngineDllEntryPoint="AlteryxBrowseV2" />
-        </Node>
-        <Node ToolID="523">
-          <GuiSettings>
-            <Position x="1626" y="1338" />
-          </GuiSettings>
-          <Properties>
-            <Configuration />
-            <Annotation DisplayMode="0">
-              <Name>recursive_rounds (501)</Name>
-              <DefaultAnnotationText />
-              <Left value="False" />
-            </Annotation>
-          </Properties>
-          <EngineSettings Macro="C:\Users\dsmda\Documents\DropboxLink\python\AdventCode2020\Code\Alteryx\Day_22\recursive_rounds.yxmc" />
-        </Node>
-      </ChildNodes>
-    </Node>
   </Nodes>
   <Connections>
     <Connection>
@@ -1228,50 +966,6 @@ Player2 = Replace([Player2], '  ',' ')
     <Connection>
       <Origin ToolID="107" Connection="Output" />
       <Destination ToolID="108" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="503" Connection="Output" />
-      <Destination ToolID="504" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="504" Connection="Output" />
-      <Destination ToolID="505" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="505" Connection="Output" />
-      <Destination ToolID="506" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="505" Connection="Output" />
-      <Destination ToolID="507" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="506" Connection="Output" />
-      <Destination ToolID="508" Connection="Targets" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="507" Connection="Output" />
-      <Destination ToolID="508" Connection="Source" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="508" Connection="Output" />
-      <Destination ToolID="509" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="509" Connection="Output" />
-      <Destination ToolID="510" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="512" Connection="Output" />
-      <Destination ToolID="523" Connection="iter" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="523" Connection="Result" />
-      <Destination ToolID="502" Connection="Input" />
-    </Connection>
-    <Connection>
-      <Origin ToolID="523" Connection="Result" />
-      <Destination ToolID="503" Connection="Input" />
     </Connection>
   </Connections>
   <Properties>
